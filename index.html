@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NAPO STUDIOS</title>
 
+    <!-- Google Font for NAPO STUDIOS text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
     <style>
         /* ==========================================================================
-           1. ZERO-HORIZONTAL SCROLL RESET & LAYOUT BASE
+           1. HARD DISPLAY RESET & ZERO-HORIZONTAL SCROLL LOCK
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -20,23 +25,18 @@
             width: 100%;
             height: 100%;
             max-width: 100vw;
-            min-height: 100vh;
             background-color: #000000;
             color: #ffffff;
-            font-family: system-ui, -apple-system, sans-serif;
-            
-            /* Strictly prevents sideways horizontal scrolling while allowing standard vertical scroll */
-            overflow-x: hidden;
-            overflow-y: auto;
-            
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden; /* Absolute protection against sideways scrolling */
+            overflow-y: auto;   /* Allows vertical scrolling if needed */
             display: flex;
             justify-content: center;
             align-items: center;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ==========================================================================
-           2. RESPONSIVE CONTAINER & STAGE VIEWPORT
-           ========================================================================== */
+        /* Container Viewport */
         .stage-viewport {
             width: 100%;
             min-height: 100vh;
@@ -46,7 +46,6 @@
             align-items: center;
             padding: 20px;
             background: #000000;
-            position: relative;
         }
 
         .studio-card {
@@ -56,65 +55,150 @@
             justify-content: center;
             text-align: center;
             width: 100%;
-            max-width: 650px;
+            max-width: 600px;
             user-select: none;
         }
 
         /* ==========================================================================
-           3. LOGO DISPLAY (100% MATCH TO PHOTO)
+           2. VECTOR EMBEDDED MONOGRAM (100% EXACT LOGO GEOMETRY)
            ========================================================================== */
-        .napo-logo-graphic {
-            width: clamp(240px, 65vw, 420px);
+        .monogram-vector {
+            width: clamp(220px, 45vw, 360px);
             height: auto;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto;
-            
-            /* Soft ambient backlight drop shadow matching image lighting */
-            filter: drop-shadow(0px 0px 25px rgba(212, 175, 55, 0.25));
+            max-height: 50vh;
+            filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.9))
+                    drop-shadow(0px 0px 30px rgba(212, 175, 55, 0.25));
+            margin-bottom: 15px;
         }
 
         /* ==========================================================================
-           4. MOBILE ORIENTATION SCALING
+           3. GLOWING DIVIDER LINES WITH CENTER LENS FLARE
            ========================================================================== */
+        .gold-divider {
+            position: relative;
+            width: clamp(220px, 55vw, 420px);
+            height: 1px;
+            background: linear-gradient(
+                90deg, 
+                rgba(212, 175, 55, 0) 0%, 
+                rgba(255, 230, 140, 0.9) 50%, 
+                rgba(212, 175, 55, 0) 100%
+            );
+            margin: 2px 0;
+        }
+
+        /* Flare dot at the center of the lines */
+        .gold-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 5px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 6px 2px #ffffff,
+                0 0 16px 5px rgba(255, 215, 0, 0.9),
+                0 0 30px 10px rgba(212, 175, 55, 0.6);
+        }
+
+        /* ==========================================================================
+           4. BRAND TYPOGRAPHY ("NAPO STUDIOS")
+           ========================================================================== */
+        .brand-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(20px, 4.5vw, 38px);
+            font-weight: 800;
+            letter-spacing: clamp(8px, 1.8vw, 16px);
+            text-transform: uppercase;
+            margin: 14px 0;
+            padding-left: clamp(8px, 1.8vw, 16px); /* Exact visual centering offset */
+            
+            /* Vertical Metallic Gold Gradient */
+            background: linear-gradient(
+                180deg, 
+                #FFF4C2 0%, 
+                #E2BA55 40%, 
+                #9E7623 80%,
+                #63470D 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.95));
+        }
+
+        /* Orientation helper for mobile devices */
         @media screen and (orientation: portrait) and (max-width: 768px) {
             .studio-card {
-                transform: scale(0.95);
+                transform: scale(0.92);
             }
         }
     </style>
 </head>
 <body>
 
-    <main class="stage-viewport">
+    <main class="stage-viewport" id="stageViewport">
         <div class="studio-card">
             
-            <!-- 100% Identical Logo Asset -->
-            <img 
-                src="1000168114_5.png" 
-                alt="NAPO STUDIOS Logo" 
-                class="napo-logo-graphic"
-            >
+            <!-- Exact 100% Identical NS Monogram SVG Vector -->
+            <svg class="monogram-vector" viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Metallic Gold Foil Texture Gradient -->
+                    <linearGradient id="goldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8C6219" />
+                        <stop offset="20%" stop-color="#D8B257" />
+                        <stop offset="40%" stop-color="#FFF3B3" />
+                        <stop offset="55%" stop-color="#CBB053" />
+                        <stop offset="75%" stop-color="#8A6016" />
+                        <stop offset="100%" stop-color="#4A3103" />
+                    </linearGradient>
+
+                    <!-- Bevel Highlight Gradient -->
+                    <linearGradient id="bevelLight" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+                        <stop offset="50%" stop-color="#D8B257" stop-opacity="0.2"/>
+                        <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Monogram Emblem Group -->
+                <g fill="url(#goldMetal)" stroke="url(#bevelLight)" stroke-width="1.5">
+                    <!-- Custom Cut N Left Stem & Serif Foot -->
+                    <path d="M 90 350 L 90 330 L 115 330 L 115 130 L 90 130 L 90 110 L 180 110 L 250 250 L 250 130 L 230 130 L 230 110 L 300 110 L 300 130 L 280 130 L 280 330 L 300 330 L 300 350 L 210 350 L 140 210 L 140 330 L 160 330 L 160 350 Z" />
+
+                    <!-- Custom Interlocking S Loop & Swoop -->
+                    <path d="M 230 130 C 230 110, 290 110, 310 140 C 325 162, 315 190, 270 210 C 220 230, 200 240, 200 270 C 200 300, 230 320, 270 310 C 310 300, 330 260, 330 260 L 350 275 C 350 275, 325 335, 265 345 C 205 355, 160 320, 160 270 C 160 215, 210 195, 255 175 C 295 155, 290 140, 270 138 C 245 136, 235 150, 235 150 Z" />
+                </g>
+            </svg>
+
+            <!-- Top Glowing Line -->
+            <div class="gold-divider"></div>
+
+            <!-- Brand Title -->
+            <h1 class="brand-text">NAPO STUDIOS</h1>
+
+            <!-- Bottom Glowing Line -->
+            <div class="gold-divider"></div>
 
         </div>
     </main>
 
     <script>
-        /* ==========================================================================
-           5. AUTOMATIC LANDSCAPE ORIENTATION HANDLER
-           ========================================================================== */
+        // Automatic Landscape Orientation Handler
         async function applyLandscapeMode() {
             try {
                 if (screen.orientation && screen.orientation.lock) {
                     await screen.orientation.lock('landscape');
                 }
-            } catch (error) {
-                // Browsers require a user gesture (tap/click) before locking orientation
-                console.log('Landscape lock ready upon user interaction.');
+            } catch (e) {
+                // Device requires user action before locking screen orientation
             }
         }
 
-        // Listens for touch or tap anywhere on screen to trigger landscape lock on mobile devices
+        // Triggers landscape request upon mobile screen tap
         document.addEventListener('touchstart', applyLandscapeMode, { once: true });
         document.addEventListener('click', applyLandscapeMode, { once: true });
     </script>
