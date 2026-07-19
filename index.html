@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAPO STUDIOS</title>
+    
+    <!-- Google Fonts for sleek luxury typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        .studio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --------------------------------------------------
+           MONOGRAM LOGO STYLING ("NS")
+           -------------------------------------------------- */
+        .monogram-wrapper {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .monogram-text {
+            font-family: 'Cinzel', serif;
+            font-size: 110px;
+            font-weight: 700;
+            letter-spacing: -8px;
+            line-height: 1;
+            
+            /* Metallic Gold Gradient Effect */
+            background: linear-gradient(
+                135deg, 
+                #BF953F 0%, 
+                #FCF6BA 25%, 
+                #B38728 50%, 
+                #FBF5B7 75%, 
+                #AA771C 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            /* Subtle backlight glow behind the logo */
+            filter: drop-shadow(0px 0px 15px rgba(212, 175, 55, 0.25));
+        }
+
+        /* --------------------------------------------------
+           DIVIDER WITH CENTRAL GLOW LIGHT
+           -------------------------------------------------- */
+        .gold-divider {
+            position: relative;
+            width: 260px;
+            height: 1px;
+            background: linear-gradient(
+                90deg, 
+                rgba(212, 175, 55, 0) 0%, 
+                rgba(212, 175, 55, 0.8) 50%, 
+                rgba(212, 175, 55, 0) 100%
+            );
+        }
+
+        /* Center Lens Flare Spot */
+        .gold-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 10px 2px #fff,
+                0 0 20px 6px rgba(255, 223, 0, 0.8),
+                0 0 30px 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --------------------------------------------------
+           BRAND NAME TYPOGRAPHY ("NAPO STUDIOS")
+           -------------------------------------------------- */
+        .brand-name {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 9px;
+            text-transform: uppercase;
+            margin: 18px 0;
+            padding-left: 9px; /* Offsets tracking spacing for exact center alignment */
+
+            /* Metallic Gold Text */
+            background: linear-gradient(
+                180deg, 
+                #FFE79A 0%, 
+                #D4AF37 45%, 
+                #8A661C 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.9));
+        }
+    </style>
+</head>
+<body>
+
+    <div class="studio-container">
+        
+        <!-- Gold Monogram Logo -->
+        <div class="monogram-wrapper">
+            <h1 class="monogram-text">NS</h1>
+        </div>
+
+        <!-- Top Glowing Line -->
+        <div class="gold-divider"></div>
+
+        <!-- Studio Title -->
+        <h2 class="brand-name">NAPO STUDIOS</h2>
+
+        <!-- Bottom Glowing Line -->
+        <div class="gold-divider"></div>
+
+    </div>
+
+</body>
+</html>
