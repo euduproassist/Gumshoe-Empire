@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NAPO STUDIOS</title>
+
+    <!-- Preconnect & Google Fonts Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. HARD DISPLAY RESET & DOM OVERFLOW MANAGEMENT
+           ========================================================================== */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center, dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend, table, caption,
+        tbody, tfoot, thead, tr, th, td, article, aside,
+        canvas, details, embed, figure, figcaption, footer,
+        header, hgroup, menu, nav, output, ruby, section,
+        summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Strict block against horizontal scrolling on any mobile/tablet/desktop screen */
+        html {
+            width: 100%;
+            height: 100%;
+            max-width: 100vw;
+            max-height: 100vh;
+            background-color: #000000;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            max-width: 100vw;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* ==========================================================================
+           2. VIEWPORT CONTAINER & CENTERING STAGE
+           ========================================================================== */
+        .stage-viewport {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(15px, 4vw, 40px);
+            position: relative;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+            z-index: 1;
+        }
+
+        .studio-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            user-select: none;
+            -webkit-user-select: none;
+            position: relative;
+        }
+
+        /* ==========================================================================
+           3. EXACT LOGO IMAGE EMBEDDING (100% VISUAL ACCURACY TO PHOTO)
+           ========================================================================== */
+        .logo-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: clamp(10px, 3vw, 20px);
+            width: 100%;
+        }
+
+        /* Preserves the exact 3D metallic bevel, custom interlocking S-loop, and lighting */
+        .logo-graphic {
+            width: clamp(230px, 48vw, 400px);
+            height: auto;
+            max-height: 52vh;
+            object-fit: contain;
+            filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.95)) 
+                    drop-shadow(0px 0px 25px rgba(212, 175, 55, 0.25));
+            transition: transform 0.4s ease;
+        }
+
+        /* Radial backlight glow behind the emblem */
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            width: clamp(180px, 35vw, 320px);
+            height: clamp(180px, 35vw, 320px);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ==========================================================================
+           4. GOLD DIVIDER LINES WITH LENS FLARE SPOTS
+           ========================================================================== */
+        .gold-line {
+            position: relative;
+            width: clamp(210px, 62vw, 460px);
+            height: 1px;
+            background: linear-gradient(
+                90deg, 
+                rgba(212, 175, 55, 0) 0%, 
+                rgba(255, 230, 140, 0.85) 50%, 
+                rgba(212, 175, 55, 0) 100%
+            );
+            margin: clamp(4px, 1.2vw, 8px) 0;
+            z-index: 2;
+        }
+
+        /* Center Flare Spot */
+        .gold-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 5px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 6px 2px #ffffff,
+                0 0 16px 5px rgba(255, 215, 0, 0.9),
+                0 0 30px 10px rgba(212, 175, 55, 0.6);
+        }
+
+        /* ==========================================================================
+           5. BRAND NAME TYPOGRAPHY ("NAPO STUDIOS")
+           ========================================================================== */
+        .brand-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(18px, 4.2vw, 38px);
+            font-weight: 800;
+            letter-spacing: clamp(6px, 1.6vw, 16px);
+            text-transform: uppercase;
+            margin: clamp(10px, 2.5vw, 18px) 0;
+            padding-left: clamp(6px, 1.6vw, 16px); /* Exact center alignment tracking offset */
+            z-index: 2;
+            
+            /* Metallic Gold Vertical Gradient */
+            background: linear-gradient(
+                180deg, 
+                #ffffff 0%, 
+                #fbeaa6 25%, 
+                #cfa333 60%, 
+                #7a520a 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.95));
+        }
+
+        /* ==========================================================================
+           6. AUTOMATIC MOBILE LANDSCAPE OVERLAY & HELPER
+           ========================================================================== */
+        .rotate-prompt {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.96);
+            z-index: 99999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .rotate-icon {
+            width: 45px;
+            height: 45px;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            animation: rotateSim 2s infinite ease-in-out;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        @keyframes rotateSim {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(90deg); }
+            100% { transform: rotate(90deg); }
+        }
+
+        @media screen and (max-width: 768px) and (orientation: portrait) {
+            .rotate-prompt {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Centered Layout Stage -->
+    <main class="stage-viewport">
+        <div class="studio-card">
+            
+            <!-- Exact Image Reference for 100% Monogram Fidelity -->
+            <div class="logo-wrapper">
+                <img src="1000168114_6.png" alt="NAPO STUDIOS Logo" class="logo-graphic">
+            </div>
+
+            <!-- Top Glowing Line -->
+            <div class="gold-line"></div>
+
+            <!-- Brand Typography -->
+            <h1 class="brand-text">NAPO STUDIOS</h1>
+
+            <!-- Bottom Glowing Line -->
+            <div class="gold-line"></div>
+
+        </div>
+    </main>
+
+    <!-- Rotate Prompt Overlay for Mobile Portrait Devices -->
+    <div class="rotate-prompt">
+        <div class="rotate-icon"></div>
+        <p style="color: #d4af37; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">
+            Please rotate your device to landscape
+        </p>
+    </div>
+
+    <script>
+        // Automatic Landscape Orientation Handler
+        async function forceLandscapeOrientation() {
+            try {
+                if (screen.orientation && screen.orientation.lock) {
+                    await screen.orientation.lock('landscape');
+                }
+            } catch (err) {
+                console.log('Orientation lock handled on touch.');
+            }
+        }
+
+        document.addEventListener('click', forceLandscapeOrientation);
+        document.addEventListener('touchstart', forceLandscapeOrientation);
+    </script>
+
+</body>
+</html>
