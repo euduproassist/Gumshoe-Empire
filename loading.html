@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GUMSHOE EMPIRE - Loading...</title>
+    
+    <!-- Premium Google Typography for Comic, Game, and Detective Interfaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bangers&family=Russo+One&family=Special+Elite&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. COMPREHENSIVE RENDER ENGINE CONFIGURATION & RESET
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            /* Master Color Palette Extracted Directly from Game Artwork */
+            --wood-dark: #3a2010;
+            --wood-base: #865327;
+            --wood-light: #b07c45;
+            --wood-highlight: #d7a26c;
+            
+            --text-main: #ffffff;
+            --text-stroke: #1b0f08;
+            --text-gold: #f5cf66;
+            
+            --btn-blue: #1c5fa6;
+            --btn-blue-border: #0b2e5c;
+            --btn-green: #378513;
+            --btn-green-border: #144004;
+            
+            --plaque-bg: #d2a76b;
+            --plaque-border: #5c3b1a;
+            
+            --bar-bg: #1e130b;
+            --bar-fill: linear-gradient(180deg, #7be31b 0%, #4da30b 50%, #296b02 100%);
+            --bar-border: #3d220f;
+            
+            --shadow-ambient: rgba(0, 0, 0, 0.65);
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            max-width: 100vw;
+            background-color: #1a1714;
+            color: var(--text-main);
+            font-family: 'Fredoka', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ==========================================================================
+           2. RESPONSIVE VIEWPORT ENGINE & SIDEWAYS-SCROLL BARRIER
+           ========================================================================== */
+        .game-viewport {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 20px;
+            position: relative;
+            background: #2b2822;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* High-Fidelity Pure CSS Detective Office Scene (Recreated Vector Background Layer) */
+        .game-viewport::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Sophisticated structural gradient layout creating the room perspective, walls, floor, and desk shapes */
+            background: 
+                /* Window Frame Silhouette */
+                linear-gradient(90deg, transparent 60%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.2) 85%, transparent 85%),
+                /* Bulletin Board Silhouette on Left */
+                linear-gradient(180deg, transparent 20%, #423120 20%, #423120 50%, transparent 50%),
+                /* Horizontal Wall Trim Line */
+                linear-gradient(180deg, transparent 72%, #221c16 72%, #221c16 74%, transparent 74%),
+                /* Wall to Floor Division */
+                linear-gradient(180deg, #5b564a 0%, #484338 73%, #2d363b 73%, #252d30 100%);
+            background-size: 100% 100%;
+            z-index: -2;
+        }
+
+        /* Layered Atmospheric Blur Filter to match the exact photographic focus depth */
+        .game-viewport::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ==========================================================================
+           3. CENTRAL INTERACTIVE GUI SCALER
+           ========================================================================== */
+        .gui-main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 520px;
+            margin: auto;
+            transform-origin: center center;
+        }
+
+        /* ==========================================================================
+           4. "GUMSHOE EMPIRE" MULTI-PLANK WOODEN SIGN LOGO
+           ========================================================================== */
+        .wood-logo-billboard {
+            position: relative;
+            width: 100%;
+            background: var(--wood-base);
+            border: 6px solid var(--text-stroke);
+            border-radius: 16px;
+            padding: 24px 16px 50px 16px;
+            box-shadow: 
+                0 15px 0 var(--wood-dark),
+                0 25px 35px var(--shadow-ambient);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            /* Curved perspective shape mapping */
+            clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+        }
+
+        /* Wood Plank Divider Lines */
+        .wood-plank-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--wood-dark);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        .plank-1 { top: 33%; }
+        .plank-2 { top: 66%; }
+
+        /* The Realistic Procedural Vector Bullet Holes */
+        .bullet-hole {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: #120b05;
+            border-radius: 50%;
+            box-shadow: 
+                inset 2px 2px 4px rgba(0,0,0,0.8),
+                0 0 0 4px #8f7451,
+                0 0 0 5px var(--text-stroke);
+            z-index: 5;
+        }
+        .bh-1 { top: 12%; left: 8%; }
+        .bh-2 { top: 42%; left: 5%; }
+        .bh-3 { top: 52%; left: 32%; }
+        .bh-4 { top: 38%; left: 41%; }
+        .bh-5 { top: 15%; left: 57%; }
+        .bh-6 { top: 60%; left: 71%; }
+
+        /* Typography Wrapper for the Title Text Layers */
+        .title-text-wrap {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .title-row {
+            display: block;
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            font-size: clamp(42px, 11vw, 68px);
+            line-height: 0.9;
+            color: var(--text-main);
+            /* Massive Multi-Layer Outline & Cartoon Extrusion Drop Shadows */
+            text-shadow: 
+                -3px -3px 0 var(--text-stroke),  
+                 3px -3px 0 var(--text-stroke),
+                -3px  3px 0 var(--text-stroke),
+                 3px  3px 0 var(--text-stroke),
+                 0px  6px 0 var(--text-stroke),
+                 0px 14px 0 var(--wood-dark);
+            letter-spacing: -1px;
+        }
+
+        .title-row.empire {
+            font-size: clamp(46px, 12vw, 76px);
+            color: var(--text-gold);
+            margin-top: 5px;
+        }
+
+        /* Magnifying Glass Icon embedded over the 'O' character mapping */
+        .title-row.gumshoe {
+            position: relative;
+        }
+
+        /* ==========================================================================
+           5. START SMALL & CRACK CASES RIBBONS & GOLD STAR ASSEMBLY
+           ========================================================================== */
+        .ribbon-badge-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 105%;
+            margin-top: -32px;
+            z-index: 4;
+            position: relative;
+        }
+
+        .ribbon {
+            padding: 8px 16px;
+            font-family: 'Russo One', sans-serif;
+            font-size: clamp(12px, 3.5vw, 18px);
+            text-transform: uppercase;
+            color: var(--text-main);
+            border: 4px solid var(--text-stroke);
+            box-shadow: 0 6px 0 var(--text-stroke);
+            white-space: nowrap;
+            transform: rotate(-3deg);
+        }
+
+        .ribbon.blue {
+            background: var(--btn-blue);
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-right: none;
+            transform: rotate(-4deg) translateX(5px);
+        }
+
+        .ribbon.green {
+            background: var(--btn-green);
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-left: none;
+            transform: rotate(2deg) translateX(-5px);
+        }
+
+        /* Center Character Star Badge */
+        .center-star-badge {
+            width: 42px;
+            height: 42px;
+            background: #f7bd14;
+            border: 4px solid var(--text-stroke);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            z-index: 10;
+            box-shadow: 0 4px 0 var(--text-stroke);
+            transform: scale(1.1);
+        }
+
+        /* ==========================================================================
+           6. SUB-PLAQUE: "FROM LOW-GRADE P.I. TO THE WORLD'S BEST P.I.!"
+           ========================================================================== */
+        .description-plaque {
+            width: 90%;
+            background: var(--plaque-bg);
+            border: 4px solid var(--text-stroke);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-top: 12px;
+            text-align: center;
+            box-shadow: 
+                0 8px 0 var(--plaque-border),
+                0 12px 20px var(--shadow-ambient);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Small structural screw dots on the plaque corners */
+        .description-plaque::before, .description-plaque::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            background: var(--plaque-border);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        .description-plaque::before { left: 8px; }
+        .description-plaque::after { right: 8px; }
+
+        .description-plaque p {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(13px, 3.2vw, 17px);
+            color: #1b0f08;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           7. INTERACTION / LOADING STATUS COMPONENTS
+           ========================================================================== */
+        .loading-status-group {
+            width: 100%;
+            max-width: 440px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .loading-title-text {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(22px, 6vw, 28px);
+            text-transform: uppercase;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-shadow: 2px 3px 0px rgba(0,0,0,0.5);
+            animation: pulse-text 1.5s infinite ease-in-out;
+        }
+
+        /* Precise Progress Loading Bar Containment Shell */
+        .progress-bar-shell {
+            width: 100%;
+            height: 24px;
+            background: var(--bar-bg);
+            border: 4px solid var(--bar-border);
+            border-radius: 30px;
+            padding: 2px;
+            box-shadow: 
+                inset 0 4px 8px rgba(0,0,0,0.8),
+                0 4px 10px rgba(0,0,0,0.4);
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        /* Dynamic Fluid Fill Striping Animation Layer */
+        .progress-bar-fluid {
+            width: 60%; /* Represents current screen state snapshot matches image */
+            height: 100%;
+            background: var(--bar-fill);
+            border-radius: 20px;
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);
+            transition: width 0.4s ease;
+        }
+
+        /* Dynamic Gameplay Hints Display Engine */
+        .gameplay-tip-box {
+            width: 90%;
+            text-align: center;
+        }
+
+        .gameplay-tip-box p {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            font-size: clamp(13px, 3.5vw, 16px);
+            color: #ebd1ab;
+            line-height: 1.4;
+            text-shadow: 1px 2px 2px rgba(0,0,0,0.8);
+        }
+
+        /* ==========================================================================
+           8. CORE PRESENTATIONAL ANIMATION SYSTEMS
+           ========================================================================== */
+        @keyframes pulse-text {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(0.98); }
+        }
+
+        /* ==========================================================================
+           9. HIGH-DENSITY MOBILE VIEWPORT BALANCING ENGINE
+           ========================================================================== */
+        @media screen and (max-height: 640px) {
+            .game-viewport { padding: 15px 15px; }
+            .loading-status-group { margin-top: 30px; }
+            .wood-logo-billboard { padding: 16px 12px 40px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="game-viewport" id="gameViewport">
+        
+        <!-- Center-Aligned Layout Block for Game Branding Elements -->
+        <div class="gui-main-container">
+            
+            <!-- Structural Wooden Billboard Outer Layer -->
+            <div class="wood-logo-billboard">
+                <!-- Custom Plank Join Separators -->
+                <div class="wood-plank-line plank-1"></div>
+                <div class="wood-plank-line plank-2"></div>
+
+                <!-- High-Fidelity Vector Bullet Marks scattered across the structural planks -->
+                <div class="bullet-hole bh-1"></div>
+                <div class="bullet-hole bh-2"></div>
+                <div class="bullet-hole bh-3"></div>
+                <div class="bullet-hole bh-4"></div>
+                <div class="bullet-hole bh-5"></div>
+                <div class="bullet-hole bh-6"></div>
+
+                <!-- Main Branding Typography Assembly -->
+                <div class="title-text-wrap">
+                    <h1 class="title-row gumshoe">Gumshoe</h1>
+                    <h1 class="title-row empire">Empire</h1>
+                </div>
+            </div>
+
+            <!-- Interlocking Game Objective Badging Strips -->
+            <div class="ribbon-badge-row">
+                <div class="ribbon blue">Start Small</div>
+                <div class="center-star-badge"></div>
+                <div class="ribbon green">Crack Cases</div>
+            </div>
+
+            <!-- Narrative Context Plaque Block -->
+            <div class="description-plaque">
+                <p>From Low-Grade P.I.<br>To The World's Best P.I.!</p>
+            </div>
+            
+        </div>
+
+        <!-- System Core Progress Tracking Group (Lower Layout Anchor) -->
+        <div class="loading-status-group">
+            <h2 class="loading-title-text">Loading...</h2>
+            
+            <!-- Inset Progress Gauge -->
+            <div class="progress-bar-shell">
+                <div class="progress-bar-fluid" id="loadingFluidMeter"></div>
+            </div>
+
+            <!-- Dynamic Micro-Copy System Status Tips -->
+            <div class="gameplay-tip-box">
+                <p>Tip: Check every detail. The truth is always in the evidence.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Optional gameplay simulation utility to cleanly animate the load progress fill fluidly
+        document.addEventListener("DOMContentLoaded", () => {
+            const meter = document.getElementById("loadingFluidMeter");
+            let progress = 60; // Base matching initial image visual presentation
+            
+            const dynamicFillEngine = setInterval(() => {
+                if (progress >= 100) {
+                    progress = 40; // Safely loop loading cycle for demonstration continuity
+                } else {
+                    progress += Math.random() * 2;
+                }
+                meter.style.width = `${Math.min(progress, 100)}%`;
+            }, 250);
+        });
+    </script>
+</body>
+</html>
