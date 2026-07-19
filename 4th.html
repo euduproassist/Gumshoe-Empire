@@ -5,71 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NAPO STUDIOS</title>
 
-    <!-- Preconnect & Google Fonts Typography -->
+    <!-- Typography for NAPO STUDIOS text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           1. HARD DISPLAY RESET & DOM OVERFLOW MANAGEMENT
+           1. COMPREHENSIVE CSS RESET & VIEWPORT LOCK
            ========================================================================== */
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center, dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend, table, caption,
-        tbody, tfoot, thead, tr, th, td, article, aside,
-        canvas, details, embed, figure, figcaption, footer,
-        header, hgroup, menu, nav, output, ruby, section,
-        summary, time, mark, audio, video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
-
-        article, aside, details, figcaption, figure, 
-        footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-
         *, *::before, *::after {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             -webkit-tap-highlight-color: transparent;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Strict block against horizontal scrolling on any mobile/tablet/desktop screen */
-        html {
+        html, body {
             width: 100%;
             height: 100%;
-            max-width: 100vw;
-            max-height: 100vh;
-            background-color: #000000;
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-
-        body {
-            width: 100%;
-            min-height: 100vh;
             max-width: 100vw;
             background-color: #000000;
             color: #ffffff;
             font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            overflow-y: auto;
+            overflow-x: hidden; /* Guaranteed zero sideways scroll across all screens */
+            overflow-y: auto;   /* Smooth vertical scrolling permitted */
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* ==========================================================================
@@ -96,49 +61,45 @@
             text-align: center;
             width: 100%;
             max-width: 650px;
-            margin: 0 auto;
             user-select: none;
             -webkit-user-select: none;
             position: relative;
         }
 
         /* ==========================================================================
-           3. EXACT LOGO IMAGE EMBEDDING (100% VISUAL ACCURACY TO PHOTO)
+           3. INLINE SVG VECTOR LOGO (INTERLOCKING NS EMBLEM)
            ========================================================================== */
-        .logo-wrapper {
+        .monogram-box {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: clamp(10px, 3vw, 20px);
             width: 100%;
+            margin-bottom: clamp(10px, 3vw, 22px);
         }
 
-        /* Preserves the exact 3D metallic bevel, custom interlocking S-loop, and lighting */
-        .logo-graphic {
+        .monogram-svg {
             width: clamp(230px, 48vw, 400px);
             height: auto;
             max-height: 52vh;
-            object-fit: contain;
-            filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.95)) 
-                    drop-shadow(0px 0px 25px rgba(212, 175, 55, 0.25));
-            transition: transform 0.4s ease;
+            filter: drop-shadow(0px 12px 25px rgba(0, 0, 0, 0.95)) 
+                    drop-shadow(0px 0px 30px rgba(212, 175, 55, 0.28));
         }
 
-        /* Radial backlight glow behind the emblem */
-        .logo-wrapper::before {
+        /* Ambient backlight radial halo behind the monogram */
+        .monogram-box::before {
             content: '';
             position: absolute;
             width: clamp(180px, 35vw, 320px);
             height: clamp(180px, 35vw, 320px);
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
-            z-index: -1;
+            z-index: 0;
             pointer-events: none;
         }
 
         /* ==========================================================================
-           4. GOLD DIVIDER LINES WITH LENS FLARE SPOTS
+           4. GOLD DIVIDER LINES WITH CENTRAL FLARE SPOTS
            ========================================================================== */
         .gold-line {
             position: relative;
@@ -147,14 +108,14 @@
             background: linear-gradient(
                 90deg, 
                 rgba(212, 175, 55, 0) 0%, 
-                rgba(255, 230, 140, 0.85) 50%, 
+                rgba(255, 230, 140, 0.9) 50%, 
                 rgba(212, 175, 55, 0) 100%
             );
-            margin: clamp(4px, 1.2vw, 8px) 0;
+            margin: clamp(4px, 1vw, 8px) 0;
             z-index: 2;
         }
 
-        /* Center Flare Spot */
+        /* Center Lens Flare Spot */
         .gold-line::after {
             content: '';
             position: absolute;
@@ -176,12 +137,12 @@
            ========================================================================== */
         .brand-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(18px, 4.2vw, 38px);
+            font-size: clamp(19px, 4.2vw, 38px);
             font-weight: 800;
             letter-spacing: clamp(6px, 1.6vw, 16px);
             text-transform: uppercase;
-            margin: clamp(10px, 2.5vw, 18px) 0;
-            padding-left: clamp(6px, 1.6vw, 16px); /* Exact center alignment tracking offset */
+            margin: clamp(10px, 2.2vw, 18px) 0;
+            padding-left: clamp(6px, 1.6vw, 16px); /* Center balancing offset for tracking */
             z-index: 2;
             
             /* Metallic Gold Vertical Gradient */
@@ -199,7 +160,7 @@
         }
 
         /* ==========================================================================
-           6. AUTOMATIC MOBILE LANDSCAPE OVERLAY & HELPER
+           6. AUTOMATIC MOBILE LANDSCAPE OVERLAY & ROTATION PROMPT
            ========================================================================== */
         .rotate-prompt {
             display: none;
@@ -242,19 +203,52 @@
 </head>
 <body>
 
-    <!-- Main Centered Layout Stage -->
     <main class="stage-viewport">
         <div class="studio-card">
             
-            <!-- Exact Image Reference for 100% Monogram Fidelity -->
-            <div class="logo-wrapper">
-                <img src="1000168114_6.png" alt="NAPO STUDIOS Logo" class="logo-graphic">
+            <!-- Exact Custom Interlocking NS Monogram (Built Directly in SVG) -->
+            <div class="monogram-box">
+                <svg class="monogram-svg" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Metallic Gold Texture Gradient -->
+                        <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#7a5513" />
+                            <stop offset="20%" stop-color="#cba147" />
+                            <stop offset="40%" stop-color="#fff5bd" />
+                            <stop offset="60%" stop-color="#d4af37" />
+                            <stop offset="80%" stop-color="#8a6016" />
+                            <stop offset="100%" stop-color="#4a3103" />
+                        </linearGradient>
+
+                        <!-- Bevel Lighting Gradient -->
+                        <linearGradient id="bevelLight" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+                            <stop offset="50%" stop-color="#d4af37" stop-opacity="0.2"/>
+                            <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Exact Vector Group for Interlocking N & S Geometry -->
+                    <g fill="url(#goldMetallic)" stroke="url(#bevelLight)" stroke-width="1.2">
+                        <!-- Left Vertical Stem of N with Top & Bottom Serif Feet -->
+                        <path d="M 110 340 L 110 320 L 135 320 L 135 140 L 110 140 L 110 120 L 195 120 L 195 140 L 175 140 L 175 250 L 255 340 L 255 320 L 235 320 L 235 140 L 260 140 L 260 120 L 195 120 L 195 140 L 210 140 L 210 280 L 135 190 L 135 320 L 160 320 L 160 340 Z" />
+                        
+                        <!-- Diagonal Sharp Spike Corner of N -->
+                        <path d="M 135 120 L 225 240 L 225 120 L 135 120 Z" />
+
+                        <!-- Right Vertical Stem of N & Top Serif -->
+                        <path d="M 235 120 L 305 120 L 305 140 L 285 140 L 285 320 L 305 320 L 305 340 L 235 340 L 235 320 L 255 320 L 255 140 L 235 140 Z" />
+
+                        <!-- Custom Interlocking S Loop & Curved Bottom Tail wrapping around N -->
+                        <path d="M 215 155 C 215 135, 275 130, 295 155 C 310 175, 300 205, 260 220 C 210 240, 185 255, 185 285 C 185 320, 220 345, 265 335 C 305 325, 325 285, 325 285 L 345 295 C 345 295, 320 355, 260 365 C 195 375, 145 335, 145 285 C 145 230, 195 205, 240 185 C 280 165, 275 150, 255 148 C 230 146, 220 160, 220 160 Z" />
+                    </g>
+                </svg>
             </div>
 
             <!-- Top Glowing Line -->
             <div class="gold-line"></div>
 
-            <!-- Brand Typography -->
+            <!-- Brand Name Typography -->
             <h1 class="brand-text">NAPO STUDIOS</h1>
 
             <!-- Bottom Glowing Line -->
@@ -263,7 +257,7 @@
         </div>
     </main>
 
-    <!-- Rotate Prompt Overlay for Mobile Portrait Devices -->
+    <!-- Mobile Rotate Screen Overlay -->
     <div class="rotate-prompt">
         <div class="rotate-icon"></div>
         <p style="color: #d4af37; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">
@@ -272,19 +266,19 @@
     </div>
 
     <script>
-        // Automatic Landscape Orientation Handler
-        async function forceLandscapeOrientation() {
+        // Automatic Landscape Screen Lock Trigger
+        async function applyLandscapeOrientation() {
             try {
                 if (screen.orientation && screen.orientation.lock) {
                     await screen.orientation.lock('landscape');
                 }
             } catch (err) {
-                console.log('Orientation lock handled on touch.');
+                console.log('Orientation lock handled gracefully on mobile/desktop.');
             }
         }
 
-        document.addEventListener('click', forceLandscapeOrientation);
-        document.addEventListener('touchstart', forceLandscapeOrientation);
+        document.addEventListener('click', applyLandscapeOrientation);
+        document.addEventListener('touchstart', applyLandscapeOrientation);
     </script>
 
 </body>
