@@ -2,39 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>NAPO STUDIOS - LUXURY CINEMATIC EXPERIENCE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NAPO STUDIOS - Luxury Brand Identity Platform</title>
 
-    <!-- Google Typography Fonts for Luxury Display -->
+    <!-- Premium Typographic Core for High-End Cinematic Serif Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;800;900&family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           1. CORE ARCHITECTURAL RESET & HORIZONTAL SCROLL PROTECTION
+           1. COMPREHENSIVE RESET & ANTI-SIDEWAYS SCROLL GUARD
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-            user-select: none;
         }
 
         html, body {
             width: 100%;
-            height: 100%;
-            max-width: 100vw;
+            min-height: 100vh;
             background-color: #000000;
             color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            
-            /* Anti-sideways scroll guard / vertical scrolling allowed if needed */
-            overflow-x: hidden; 
-            overflow-y: auto;
-            
+            font-family: 'Cinzel', serif;
+            overflow-x: hidden; /* Absolute technical barrier preventing horizontal overflow */
+            overflow-y: auto;   /* Fluid vertical movement allowed for all device viewports */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,23 +37,21 @@
         }
 
         /* ==========================================================================
-           2. CINEMATIC STAGE VIEWPORT (Master Container)
+           2. VIEWPORT CONTAINER ARCHITECTURE
            ========================================================================== */
         .stage-viewport {
-            position: relative;
             width: 100%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
-            background: radial-gradient(circle at center, #090703 0%, #000000 100%);
-            z-index: 1;
+            padding: 60px 20px;
+            position: relative;
+            background: #000000;
         }
 
-        /* Main presentation layout block */
-        .studio-card {
+        .brand-master-card {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -67,296 +59,207 @@
             text-align: center;
             width: 100%;
             max-width: 800px;
-            position: relative;
-            z-index: 2;
+            user-select: none;
+            perspective: 1200px;
         }
 
-        /* Ambient subtle backdrop glow directly behind the centerpiece */
-        .ambient-glow-core {
+        /* ==========================================================================
+           3. AMBIENT BACKDROP LIGHTING
+           ========================================================================== */
+        .emblem-lighting-core {
             position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(280px, 60vw, 600px);
-            height: clamp(280px, 60vw, 600px);
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(138, 96, 18, 0.02) 50%, rgba(0, 0, 0, 0) 70%);
+            width: clamp(280px, 60vw, 550px);
+            height: clamp(280px, 60vw, 550px);
+            background: radial-gradient(circle, rgba(163, 124, 52, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
-            z-index: -1;
+            z-index: 1;
             pointer-events: none;
-            filter: blur(30px);
+            transform: translateZ(-10px);
         }
 
         /* ==========================================================================
-           3. MONOGRAM EMBLEM GRAPHIC WRAPPER
+           4. CUSTOM INTERLOCKING "NS" EMBLEM BOX
            ========================================================================== */
-        .monogram-container {
-            width: clamp(200px, 40vw, 360px);
-            height: auto;
+        .emblem-wrapper {
+            position: relative;
+            width: clamp(260px, 55vw, 440px);
             margin-bottom: 45px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            filter: drop-shadow(0px 20px 35px rgba(0, 0, 0, 0.98))
-                    drop-shadow(0px 8px 20px rgba(184, 138, 40, 0.15));
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2;
+            filter: drop-shadow(0px 25px 35px rgba(0, 0, 0, 0.98)) 
+                    drop-shadow(0px 0px 50px rgba(184, 138, 40, 0.15));
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .emblem-wrapper svg {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* ==========================================================================
-           4. HIGH-INTENSITY HORIZON FLARE DIVIDERS
+           5. PREMIUM GLOWING SEPARATORS WITH LENS FLARES
            ========================================================================== */
-        .gold-flare-line {
+        .luxury-separator {
             position: relative;
-            width: clamp(240px, 65vw, 560px);
+            width: clamp(220px, 68vw, 520px);
             height: 1px;
+            z-index: 2;
             background: linear-gradient(
                 90deg, 
-                rgba(212, 175, 55, 0) 0%, 
-                rgba(212, 175, 55, 0.25) 15%,
-                rgba(255, 238, 180, 0.85) 50%, 
-                rgba(212, 175, 55, 0.25) 85%,
-                rgba(212, 175, 55, 0) 100%
+                rgba(138, 96, 18, 0) 0%, 
+                rgba(232, 203, 115, 0.4) 20%,
+                rgba(255, 255, 255, 0.85) 50%, 
+                rgba(232, 203, 115, 0.4) 80%,
+                rgba(138, 96, 18, 0) 100%
             );
         }
 
-        .line-top {
-            margin-bottom: 24px;
-        }
-
-        .line-bottom {
-            margin-top: 24px;
-        }
-
-        /* High-Intensity Centerpiece Lens Flare Spot Glow */
-        .gold-flare-line::after {
+        /* Symmetric Flare Configurations */
+        .luxury-separator::after {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 12px;
-            height: 3px;
+            width: 6px;
+            height: 6px;
             background: #ffffff;
             border-radius: 50%;
             box-shadow: 
-                0 0 10px 3px #ffffff,
-                0 0 24px 8px rgba(255, 225, 140, 1),
-                0 0 50px 15px rgba(212, 175, 55, 0.75);
+                0 0 8px 3px #ffffff,
+                0 0 22px 6px rgba(255, 225, 120, 0.9),
+                0 0 45px 12px rgba(184, 138, 40, 0.5);
         }
 
         /* ==========================================================================
-           5. BRAND NAME TYPOGRAPHY (Polished Metallic Finish)
+           6. BRAND TYPOGRAPHY (CINEMATIC SERIF DISPLAY)
            ========================================================================== */
-        .brand-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(22px, 4.2vw, 44px);
+        .brand-title-text {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(22px, 4.8vw, 44px);
             font-weight: 600;
-            letter-spacing: clamp(12px, 2.2vw, 26px);
+            letter-spacing: clamp(10px, 2.2vw, 24px);
             text-transform: uppercase;
-            line-height: 1.2;
+            margin: 32px 0;
+            /* Optical adjustment balancing tailing letter-spacing tracking */
+            padding-left: clamp(10px, 2.2vw, 24px); 
+            z-index: 2;
             
-            /* Balancing layout tracking alignment */
-            padding-left: clamp(12px, 2.2vw, 26px); 
-            
-            /* Premium Vertical Gold Profile Shading */
+            /* High-Fidelity Vertical Metal Gradient Shader Mapping */
             background: linear-gradient(
                 180deg, 
-                #ffffff 0%,
-                #fff7da 15%, 
-                #f0ca6d 45%,
-                #b08323 70%, 
-                #5e3f05 100%
+                #ffffff 0%, 
+                #fff4cc 12%,
+                #e5c169 38%, 
+                #ba9134 65%, 
+                #734f0b 90%,
+                #3b2600 100%
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.95));
+            filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.95));
         }
 
         /* ==========================================================================
-           6. RESPONSIVE ROTATION PROMPT OVERLAY FOR PORTRAIT SCREENS
+           7. ADAPTIVE MOBILE & TABLET LAYOUT ENGINE
            ========================================================================== */
-        #rotationPrompt {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #000000;
-            z-index: 99999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 35px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        #rotationPrompt.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .prompt-icon {
-            width: 70px;
-            height: 70px;
-            margin-bottom: 25px;
-            fill: #e3b852;
-            animation: rotateHintLoop 2.8s ease-in-out infinite;
-        }
-
-        .prompt-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #fff4ce;
-            margin-bottom: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .prompt-desc {
-            font-size: 13px;
-            color: #8c8c8c;
-            max-width: 320px;
-            line-height: 1.6;
-            letter-spacing: 0.5px;
-        }
-
-        @keyframes rotateHintLoop {
-            0% { transform: rotate(0deg); }
-            35% { transform: rotate(-90deg); }
-            65% { transform: rotate(-90deg); }
-            100% { transform: rotate(0deg); }
-        }
-
-        /* ==========================================================================
-           7. DESIGN COMPRESSION UNDER COMPACT VIEWPORT HEIGHTS
-           ========================================================================== */
-        @media (max-height: 540px) {
-            .monogram-container {
-                width: clamp(110px, 24vh, 180px);
-                margin-bottom: 15px;
+        @media screen and (max-height: 700px) and (orientation: landscape) {
+            .stage-viewport {
+                padding: 25px 15px;
             }
-            .brand-text {
-                font-size: clamp(16px, 6vh, 26px);
+            .emblem-wrapper {
+                width: clamp(160px, 35vh, 260px);
+                margin-bottom: 18px;
             }
-            .line-top { margin-bottom: 12px; }
-            .line-bottom { margin-top: 12px; }
+            .brand-title-text {
+                margin: 16px 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Subtle Ambient Dynamic Glow Core -->
-    <div class="ambient-glow-core"></div>
+    <!-- Central Stage Viewport Layer -->
+    <main class="stage-viewport" id="viewportContainer">
+        
+        <!-- Ambient Structural Backdrop Light Layer -->
+        <div class="emblem-lighting-core"></div>
 
-    <!-- Master Stage Screen Viewport Frame -->
-    <main class="stage-viewport" id="mainStage">
-        <div class="studio-card">
+        <!-- Master Presentation Layout Card -->
+        <div class="brand-master-card">
             
-            <!-- Hand-Optimized Premium Multi-Layer Vector Monogram System -->
-            <div class="monogram-container">
-                <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <!-- Custom Vector Array Replicating the Original Interlocking "NS" Geometry -->
+            <div class="emblem-wrapper">
+                <svg viewBox="0 0 600 650" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <!-- High-Definition Multi-Stop Gold Chisel Gradient Surface Specular mapping -->
-                        <linearGradient id="luxuryGoldFoil" x1="30%" y1="0%" x2="70%" y2="100%">
-                            <stop offset="0%" stop-color="#4e3305" />
-                            <stop offset="12%" stop-color="#9d731e" />
-                            <stop offset="25%" stop-color="#ddb858" />
-                            <stop offset="38%" stop-color="#fff8db" />
-                            <stop offset="48%" stop-color="#ffffff" />
-                            <stop offset="55%" stop-color="#f5d376" />
-                            <stop offset="72%" stop-color="#ba8c27" />
-                            <stop offset="88%" stop-color="#734d0b" />
-                            <stop offset="100%" stop-color="#331e00" />
+                        <!-- Primary Luxury 3D Foil Metal Gradient Shading Matrix -->
+                        <linearGradient id="luxuryGoldFoil" x1="15%" y1="10%" x2="85%" y2="90%">
+                            <stop offset="0%" stop-color="#4d3305" />
+                            <stop offset="12%" stop-color="#a8802c" />
+                            <stop offset="25%" stop-color="#fcefa6" />
+                            <stop offset="38%" stop-color="#ffffff" />
+                            <stop offset="50%" stop-color="#e8cb73" />
+                            <stop offset="68%" stop-color="#b88a28" />
+                            <stop offset="88%" stop-color="#7a530e" />
+                            <stop offset="100%" stop-color="#241600" />
                         </linearGradient>
 
-                        <!-- Hardware Accelerated Noise Grain Filter to Simulate Raw Heavy Gold Casting -->
-                        <filter id="goldGrainMicroTexture" x="-20%" y="-20%" width="140%" height="140%">
-                            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noiseBase" />
-                            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.12 0" result="noiseFiltered"/>
-                            <feComposite operator="in" in2="SourceGraphic" result="textureMerged" />
-                            <feBlend mode="overlay" in="textureMerged" in2="SourceGraphic" />
+                        <!-- Chiseled Edge Offset Shading Array -->
+                        <linearGradient id="chiselEdgeShadow" x1="90%" y1="10%" x2="10%" y2="90%">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+                            <stop offset="35%" stop-color="#f5d678"/>
+                            <stop offset="70%" stop-color="#8a5f10"/>
+                            <stop offset="100%" stop-color="#140d01"/>
+                        </linearGradient>
+
+                        <!-- Ultra-Fine Brushed Metallic Surface Texture Synthesis Node -->
+                        <filter id="brushedMetalGrain" x="-10%" y="-10%" width="120%" height="120%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" result="rawNoise" />
+                            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.09 0" in="rawNoise" result="filteredNoise"/>
+                            <feComposite operator="in" in2="SourceGraphic" />
+                            <feBlend mode="multiply" in="SourceGraphic" in2="filteredNoise" />
                         </filter>
                     </defs>
 
-                    <!-- Monogram Geometric Elements -->
-                    <g filter="url(#goldGrainMicroTexture)">
-                        <!-- Complete Combined Intertwined "NS" Luxury Emblem Paths -->
-                        <!-- Precise geometry handles the sharp peak serif "N", the structural stems, and the interwoven deep loop of the "S" -->
-                        <path d="M170,470 L170,215 L160,215 C138,215 125,228 125,255 L110,255 L110,185 L290,185 L290,255 L275,255 C275,228 262,215 240,215 L232,215 L232,410 L410,185 L490,185 L490,320 C465,295 435,285 410,280 L410,215 L275,385 L275,470 L282,470 C304,470 318,457 318,430 L332,430 L332,500 L150,500 L150,430 L165,430 C165,457 178,470 200,470 Z" fill="url(#luxuryGoldFoil)" />
-                        <path d="M440,230 C475,230 510,242 535,268 L555,242 L585,242 L585,350 L565,350 C558,310 532,280 492,280 C448,280 422,312 422,350 C422,415 570,402 570,505 C570,570 512,600 442,600 C392,600 328,568 290,522 L315,482 L282,482 L245,568 L270,568 C295,535 340,562 405,562 C462,562 508,535 508,490 C508,420 355,432 355,330 C355,268 398,230 440,230 Z" fill="url(#luxuryGoldFoil)" />
+                    <!-- Textured Interlocking Geometric Group Stack -->
+                    <g filter="url(#brushedMetalGrain)">
                         
-                        <!-- Internal physical shading slice providing depth overlap where the S weaves over the diagonal spine -->
-                        <path d="M355,330 C355,310 365,292 380,280 C370,298 362,322 362,345 Z" fill="#3d2502" opacity="0.5" />
+                        <!-- THE "N" PRIMARY MONOLITHIC ELEMENT -->
+                        <!-- Sharp Top-Left Peak & Left Heavy Stem Construction -->
+                        <path d="M 180 480 L 180 250 L 160 250 L 160 220 L 230 220 L 230 480 Z" fill="url(#luxuryGoldFoil)" />
+                        <!-- Sharp Angled Right-Face Bevel Cut on Left Stem -->
+                        <path d="M 230 220 L 330 430 L 330 480 L 230 480 Z" fill="url(#chiselEdgeShadow)" opacity="0.9" />
+                        <!-- Diagonal Main Traverse Beam of the N -->
+                        <path d="M 230 220 L 400 520 L 400 550 L 360 550 C 300 510, 250 440, 230 410 Z" fill="url(#luxuryGoldFoil)" />
+                        
+                        <!-- INTERLOCKING REVERSE EXTENSION & RIBBON ARCS (Linking N into S) -->
+                        <!-- Elegant Bottom Swash Arc sweeping forward under the structure -->
+                        <path d="M 250 420 C 270 480, 340 570, 440 560 C 520 550, 550 460, 490 390 L 390 340 C 330 310, 290 260, 330 180 C 370 100, 470 110, 500 190 L 440 190 C 420 150, 370 150, 360 190 C 350 240, 390 260, 440 280 L 530 320 C 610 360, 630 460, 560 540 C 470 640, 310 650, 220 530 L 250 420 Z" fill="url(#luxuryGoldFoil)" />
+                        
+                        <!-- THE "S" STRUCTURAL PILLARS & SERIFS -->
+                        <!-- Upper Top Terminal Cap Anchor -->
+                        <path d="M 330 180 H 430 V 220 H 330 V 180 Z" fill="url(#chiselEdgeShadow)"/>
+                        <!-- Center Core Column Stem Matrix Intersecting the N Alignment -->
+                        <path d="M 430 220 L 430 490 L 380 490 L 380 220 Z" fill="url(#luxuryGoldFoil)" />
+                        <!-- Base Feet Serif Terminals -->
+                        <path d="M 140 480 H 250 V 510 H 140 V 480 Z" fill="url(#luxuryGoldFoil)" />
+                        <path d="M 360 490 H 460 V 520 H 360 V 490 Z" fill="url(#chiselEdgeShadow)" />
+                        
                     </g>
                 </svg>
             </div>
 
-            <!-- Top Horizon Flare Line -->
-            <div class="gold-flare-line line-top"></div>
+            <!-- Structural Upper Divider Element -->
+            <div class="luxury-separator"></div>
 
-            <!-- Premium Brand Typography -->
-            <h1 class="brand-text">NAPO STUDIOS</h1>
+            <!-- Balanced Brand Identity Title Header -->
+            <h1 class="brand-title-text">NAPO STUDIOS</h1>
 
-            <!-- Bottom Horizon Flare Line -->
-            <div class="gold-flare-line line-bottom"></div>
+            <!-- Structural Lower Divider Element -->
+            <div class="luxury-separator"></div>
 
         </div>
     </main>
 
-    <!-- Intelligent Mobile & Tablet Landscape Hardware Guard Prompt -->
-    <div id="rotationPrompt">
-        <svg class="prompt-icon" viewBox="0 0 24 24">
-            <path d="M16.48 2.52c3.27 1.55 5.61 4.72 5.97 8.48h1.5c-.41-4.73-3.43-8.75-7.72-10.43l.25 1.95zm-12.96 1c-3.27 1.55-5.61 4.72-5.97 8.48h-1.5c.41-4.73 3.43-8.75 7.72-10.43l-.25 1.95zm16.96 16.96c3.27-1.55 5.61-4.72 5.97-8.48h1.5c-.41 4.73-3.43 8.75-7.72 10.43l-.25-1.95zm-16.96-1c-3.27-1.55-5.61-4.72-5.97-8.48h-1.5c.41 4.73 3.43 8.75 7.72 10.43l.25-1.95zM9 5h6c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H9c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2zm0 2v10h6V7H9z"/>
-        </svg>
-        <div class="prompt-title">Landscape Mode Required</div>
-        <div class="prompt-desc">Please rotate your device horizontally to view the official NAPO STUDIOS canvas in its true cinematic aspect ratio.</div>
-    </div>
-
-    <!-- Active Environment Orientation Control Script -->
-    <script>
-        /**
-         * Instructs native screen manager to programmatically lock screen to landscape aspect arrays.
-         * Gracefully logs out to sensor tracking if native system locks are unavailable.
-         */
-        async function lockLandscapeCanvas() {
-            try {
-                if (screen.orientation && screen.orientation.lock) {
-                    await screen.orientation.lock('landscape');
-                }
-            } catch (err) {
-                console.log('Programmatic API rotation deferred to sensor loop.');
-            }
-        }
-
-        /**
-         * Computes real-time screen ratios. Only prompts handheld items (Phones/Tablets) 
-         * running in restrictive portrait layouts.
-         */
-        function checkScreenGeometry() {
-            const promptLayer = document.getElementById('rotationPrompt');
-            const touchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-            
-            if (touchDevice && window.innerHeight > window.innerWidth) {
-                promptLayer.classList.add('visible');
-            } else {
-                promptLayer.classList.remove('visible');
-            }
-        }
-
-        // Hook up system operational listeners
-        window.addEventListener('resize', checkScreenGeometry);
-        window.addEventListener('DOMContentLoaded', () => {
-            checkScreenGeometry();
-            lockLandscapeCanvas();
-        });
-
-        // Re-attempt screen adjustment on user window contact points
-        document.addEventListener('click', lockLandscapeCanvas);
-        document.addEventListener('touchstart', lockLandscapeCanvas, { passive: true });
-    </script>
 </body>
 </html>
