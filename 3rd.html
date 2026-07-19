@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NAPO STUDIOS</title>
 
-    <!-- Google Typography -->
+    <!-- Google Fonts for Brand Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           1. HARD CORE DISPLAY RESET & ZERO-HORIZONTAL SCROLL CONTROL
+           1. COMPREHENSIVE CSS RESET & DISPLAY CORE
            ========================================================================== */
         html, body, div, span, applet, object, iframe,
         h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -45,7 +45,9 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Enforce absolute boundary against sideways scrolling */
+        /* ==========================================================================
+           2. VIEWPORT & OVERFLOW MANAGEMENT
+           ========================================================================== */
         html {
             width: 100%;
             height: 100%;
@@ -73,7 +75,7 @@
         }
 
         /* ==========================================================================
-           2. VIEWPORT CONTAINER & CENTERING STAGE
+           3. MASTER STAGE CONTAINER
            ========================================================================== */
         .stage-viewport {
             width: 100%;
@@ -84,7 +86,7 @@
             align-items: center;
             padding: clamp(10px, 4vw, 40px);
             position: relative;
-            background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+            background: radial-gradient(circle at center, #070707 0%, #000000 100%);
             z-index: 1;
         }
 
@@ -103,40 +105,40 @@
         }
 
         /* ==========================================================================
-           3. EXACT MONOGRAM EMBEDDED GRAPHIC
+           4. INLINE VECTOR MONOGRAM EMBLEM
            ========================================================================== */
-        .logo-wrapper {
+        .monogram-container {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: clamp(10px, 3vw, 25px);
+            margin-bottom: clamp(10px, 3vw, 20px);
             width: 100%;
         }
 
-        .logo-graphic {
-            width: clamp(220px, 48vw, 420px);
+        .monogram-svg {
+            width: clamp(230px, 46vw, 400px);
             height: auto;
-            max-height: 55vh;
-            object-fit: contain;
-            filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.95)) 
-                    drop-shadow(0px 0px 25px rgba(212, 175, 55, 0.25));
+            max-height: 52vh;
+            filter: drop-shadow(0px 12px 28px rgba(0, 0, 0, 0.98)) 
+                    drop-shadow(0px 0px 22px rgba(212, 175, 55, 0.22));
             transition: transform 0.4s ease;
         }
 
-        .logo-wrapper::before {
+        /* Backlight Ambient Glow */
+        .monogram-container::before {
             content: '';
             position: absolute;
             width: clamp(180px, 35vw, 320px);
             height: clamp(180px, 35vw, 320px);
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
             z-index: -1;
             pointer-events: none;
         }
 
         /* ==========================================================================
-           4. GLOWING DIVIDER LINES WITH CENTRAL LENS FLARE
+           5. METALLIC DIVIDER LINES & CENTRAL LENS FLARE
            ========================================================================== */
         .gold-line {
             position: relative;
@@ -169,7 +171,7 @@
         }
 
         /* ==========================================================================
-           5. BRAND TYPOGRAPHY ("NAPO STUDIOS")
+           6. BRAND TYPOGRAPHY
            ========================================================================== */
         .brand-text {
             font-family: 'Montserrat', sans-serif;
@@ -195,7 +197,7 @@
         }
 
         /* ==========================================================================
-           6. MOBILE LANDSCAPE OVERLAY & AUTOMATION
+           7. AUTOMATIC MOBILE LANDSCAPE OVERLAY
            ========================================================================== */
         .rotate-prompt {
             display: none;
@@ -241,24 +243,98 @@
     <main class="stage-viewport">
         <div class="studio-card">
             
-            <!-- Reference your exact image asset file here -->
-            <div class="logo-wrapper">
-                <img src="1000168114_6.png" alt="NAPO STUDIOS Logo" class="logo-graphic">
+            <!-- Inlined Vector Monogram (No External Image Files Required) -->
+            <div class="monogram-container">
+                <svg class="monogram-svg" viewBox="0 0 450 480" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Main Gold Foil Gradient -->
+                        <linearGradient id="napoGoldMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#5B3F08"/>
+                            <stop offset="15%" stop-color="#9C721D"/>
+                            <stop offset="30%" stop-color="#DDB95B"/>
+                            <stop offset="45%" stop-color="#FFF5BD"/>
+                            <stop offset="60%" stop-color="#CAA13E"/>
+                            <stop offset="80%" stop-color="#80560F"/>
+                            <stop offset="100%" stop-color="#402700"/>
+                        </linearGradient>
+
+                        <!-- Bevel Highlight Edge Gradient -->
+                        <linearGradient id="napoBevelGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+                            <stop offset="50%" stop-color="#DDB95B" stop-opacity="0.3"/>
+                            <stop offset="100%" stop-color="#000000" stop-opacity="0.9"/>
+                        </linearGradient>
+
+                        <!-- Subtle Inner Bevel Shadow -->
+                        <filter id="innerBevelShadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+                            <feOffset dx="2" dy="4"/>
+                            <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowDiff"/>
+                            <feFlood flood-color="#000" flood-opacity="0.75"/>
+                            <feComposite in2="shadowDiff" operator="in"/>
+                            <feComposite in2="SourceGraphic" operator="over"/>
+                        </filter>
+                    </defs>
+
+                    <!-- Exact Geometry Grouping for Interlocking NS Emblem -->
+                    <g fill="url(#napoGoldMetal)" stroke="url(#napoBevelGlow)" stroke-width="1.2" filter="url(#innerBevelShadow)">
+                        
+                        <!-- Sharp 'N' Left Pillar, Diagonal, & Foot Serifs -->
+                        <path d="M 105 380 
+                                 L 105 355 
+                                 L 132 355 
+                                 L 132 135 
+                                 L 105 135 
+                                 L 105 110 
+                                 L 200 110 
+                                 L 275 265 
+                                 L 275 135 
+                                 L 250 135 
+                                 L 250 110 
+                                 L 325 110 
+                                 L 325 135 
+                                 L 302 135 
+                                 L 302 355 
+                                 L 325 355 
+                                 L 325 380 
+                                 L 230 380 
+                                 L 155 230 
+                                 L 155 355 
+                                 L 178 355 
+                                 L 178 380 
+                                 Z" />
+
+                        <!-- Interlocking 'S' Loop, Top Crest, Bottom Sweeping Tail -->
+                        <path d="M 255 130 
+                                 C 255 105, 315 105, 340 140 
+                                 C 358 165, 345 198, 295 220 
+                                 C 240 242, 215 255, 215 290 
+                                 C 215 325, 250 348, 295 338 
+                                 C 338 328, 360 285, 360 285 
+                                 L 382 300 
+                                 C 382 300, 355 365, 290 378 
+                                 C 225 388, 172 348, 172 290 
+                                 C 172 230, 228 208, 278 185 
+                                 C 322 162, 318 145, 295 142 
+                                 C 268 140, 258 155, 258 155 
+                                 Z" />
+                    </g>
+                </svg>
             </div>
 
-            <!-- Top Glowing Line -->
+            <!-- Top Divider -->
             <div class="gold-line"></div>
 
-            <!-- Studio Name -->
+            <!-- Brand Title -->
             <h1 class="brand-text">NAPO STUDIOS</h1>
 
-            <!-- Bottom Glowing Line -->
+            <!-- Bottom Divider -->
             <div class="gold-line"></div>
 
         </div>
     </main>
 
-    <!-- Rotate Prompt Overlay for Mobile Portrait Devices -->
+    <!-- Landscape Rotate Alert overlay for mobile portrait orientation -->
     <div class="rotate-prompt">
         <div class="rotate-icon"></div>
         <p style="color: #d4af37; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">
@@ -267,7 +343,6 @@
     </div>
 
     <script>
-        // Automatic Orientation Lock for modern mobile browsers
         async function forceLandscapeOrientation() {
             try {
                 if (screen.orientation && screen.orientation.lock) {
