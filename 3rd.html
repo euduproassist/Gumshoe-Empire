@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>GUMSHOE EMPIRE - 100% Pure CSS UI Replica</title>
+    <title>GUMSHOE EMPIRE - 100% Pure CSS Engine Replica</title>
     
-    <!-- Premium Font Integrations for Cartoon Game UI Mapping -->
+    <!-- High-Fidelity Font Mappings matching Game UI Spec -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bangers&family=Russo+One&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka:wght@600;700&family=Russo+One&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           1. COMPREHENSIVE ENGINE RESET & CORE CONFIGURATION
+           1. CORE RESET & ENGINE VARIABLE MATRIX
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -24,43 +24,45 @@
         }
 
         :root {
-            /* Hyper-Targeted Palette Sampling Directly From The Graphic Pieces */
-            --wood-darkest: #1e0e05;
-            --wood-shadow: #3a2010;
-            --wood-base: #78441b;
-            --wood-mid: #945d2d;
-            --wood-light: #b57c48;
-            --wood-highlight: #dca76e;
+            /* Palette Sampling Directly From The Graphic Art Pieces */
+            --wood-darkest: #190a02;
+            --wood-shadow: #331b0c;
+            --wood-base: #703f19;
+            --wood-mid: #8e5529;
+            --wood-light: #b07442;
+            --wood-highlight: #d19a62;
             
             --text-main: #ffffff;
             --text-stroke: #160a03;
-            --text-gold-light: #fff0be;
-            --text-gold: #f8cb52;
-            --text-gold-shadow: #c08716;
+            --text-gold-light: #fff5cc;
+            --text-gold: #f2c042;
+            --text-gold-shadow: #b37a10;
             
-            --btn-blue-fill: #1964b7;
-            --btn-blue-dark: #0e3f79;
-            --btn-green-fill: #439a13;
-            --btn-green-dark: #205406;
+            --btn-blue-fill: #1b66b7;
+            --btn-blue-dark: #0f3f77;
+            --btn-green-fill: #439912;
+            --btn-green-dark: #225407;
             
-            --plaque-bg-main: #dfb274;
-            --plaque-bg-dark: #b88b4d;
+            --plaque-bg-main: #dfb273;
+            --plaque-bg-dark: #b88b4c;
             --plaque-border: #4a2d12;
             
-            --progress-container: #1b1109;
-            --progress-stroke: #452915;
-            --progress-fill-top: #82e717;
-            --progress-fill-mid: #52a90c;
-            --progress-fill-bot: #266400;
+            --progress-container: #1b110a;
+            --progress-stroke: #422714;
+            --progress-fill-top: #7ee216;
+            --progress-fill-mid: #50a60c;
+            --progress-fill-bot: #286601;
             
-            --ambient-shadow-deep: rgba(0, 0, 0, 0.85);
+            --room-wall: #58544a;
+            --room-floor: #3c484a;
+            --shadow-deep: rgba(0, 0, 0, 0.85);
         }
 
         html, body {
             width: 100%;
             height: 100%;
             max-width: 100vw;
-            background-color: #0c0a08;
+            background-color: #0c0908;
             color: var(--text-main);
             font-family: 'Fredoka', sans-serif;
             overflow-x: hidden;
@@ -72,9 +74,9 @@
         }
 
         /* ==========================================================================
-           2. ANTI-SIDEWAYS SCROLL VIEWPORT STAGE & SCENE GENERATOR
+           2. ANTI-SIDEWAYS RESPONSIVE SCENE ANCHOR STAGE
            ========================================================================== */
-        .game-viewport {
+        .game-stage-viewport {
             width: 100%;
             min-height: 100vh;
             max-width: 100vw;
@@ -82,181 +84,253 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 8vh 20px 5vh 20px;
+            padding: 5vh 20px 3vh 20px;
             position: relative;
             z-index: 1;
             overflow-x: hidden;
         }
 
-        /* 
-           PURE CSS DETECTIVE OFFICE BACKGROUND GRAPHIC ENGINE
-           Completely redraws walls, floor perspective lines, shadows, and base illumination values
-        */
-        .office-background-engine {
+        /* ==========================================================================
+           3. INTERIOR ART SCENE ENVIRONMENT (100% PURE CSS VECTOR ART)
+           ========================================================================== */
+        .office-bg-wrapper {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: 
-                /* Wall molding horizontal divider split */
-                linear-gradient(to bottom, transparent 58%, #2d2620 58%, #221c17 60%, transparent 60%),
-                /* Perspective Floor shadow grading */
-                linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%),
-                /* Main Room Split: Top Wall Cream Brown to Bottom Slate Green Blue Floor */
-                linear-gradient(to bottom, #7b7261 0%, #5d5648 58%, #3e484a 58%, #283234 100%);
-            z-index: -10;
+                /* Base Wall Trim Molding */
+                linear-gradient(to bottom, transparent 52%, #221c17 52%, #2d2620 52.5%, #16120e 53.5%, transparent 53.5%),
+                /* Vertical Atmospheric Lighting Shadow */
+                linear-gradient(to right, rgba(0,0,0,0.4) 0%, transparent 25%, transparent 75%, rgba(0,0,0,0.4) 100%),
+                /* Split Wall & Floor Matrix */
+                linear-gradient(to bottom, var(--room-wall) 0%, #464239 52%, var(--room-floor) 52%, #2b3335 100%);
+            z-index: -20;
+            filter: blur(7px); /* True Photographic Atmospheric Depth Layer */
+            transform: scale(1.05);
         }
 
-        /* Pure CSS Render Node: The Investigation Pin Board on the Left Wall */
-        .css-asset-pinboard {
+        /* Left Clue Corkboard */
+        .corkboard-canvas {
             position: absolute;
-            left: -30px;
-            top: 32%;
-            width: 260px;
-            height: 190px;
-            background: #462c17;
-            border: 8px solid #231409;
-            box-shadow: 5px 10px 20px rgba(0,0,0,0.5);
-            transform: perspective(600px) rotateY(25deg) rotate(1deg);
-            z-index: -9;
+            left: -10px; top: 28%;
+            width: 240px; height: 250px;
+            background: #3c2313;
+            border: 12px solid #1c1008;
+            border-radius: 4px;
+            box-shadow: 5px 15px 30px rgba(0,0,0,0.7);
+            transform: perspective(1000px) rotateY(30deg);
+            z-index: -18;
         }
-        .css-asset-pinboard::before {
-            content: '';
-            position: absolute;
-            top: 8px; left: 8px; right: 8px; bottom: 8px;
-            background: #946947;
-            box-shadow: inset 0 0 25px rgba(0,0,0,0.6);
+        .corkboard-canvas::before {
+            content: ''; position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            background: #9d7350;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
         }
-        /* Clustered index string links and notes on the board */
-        .css-asset-pinboard::after {
-            content: '';
-            position: absolute;
-            width: 80%; height: 100%;
-            top: 0; left: 10%;
+        /* Intricate String Matrix & Pinned Notes */
+        .corkboard-canvas::after {
+            content: ''; position: absolute; width: 100%; height: 100%;
             background: 
-                radial-gradient(circle at 20% 30%, #e8dcb5 15px, transparent 16px),
-                radial-gradient(circle at 70% 40%, #e6cd9a 20px, transparent 21px),
-                radial-gradient(circle at 40% 70%, #d5c8a0 18px, transparent 19px);
-            opacity: 0.6;
-        }
-
-        /* Pure CSS Render Node: The Detective Window and Blinds Overlapping right frame */
-        .css-asset-window {
-            position: absolute;
-            right: -20px;
-            top: 26%;
-            width: 220px;
-            height: 280px;
-            background: linear-gradient(to bottom, #8faab0, #56737c);
-            border: 10px solid #352c22;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.7), -5px 10px 20px rgba(0,0,0,0.4);
-            transform: perspective(600px) rotateY(-20deg);
-            z-index: -9;
-        }
-        /* Venetian Blinds Shadows mapped structurally */
-        .css-asset-window::before {
-            content: '';
-            position: absolute;
-            width: 100%; height: 100%;
-            background: repeating-linear-gradient(transparent 0px, transparent 8px, #1e1914 8px, #1e1914 13px);
+                linear-gradient(28deg, transparent 44%, #a02222 45%, #a02222 47%, transparent 48%),
+                linear-gradient(-35deg, transparent 48%, #801818 49%, #801818 51%, transparent 52%),
+                radial-gradient(circle at 25% 30%, #ebd6ab 24px, transparent 25px),
+                radial-gradient(circle at 70% 40%, #dec08a 28px, transparent 29px),
+                radial-gradient(circle at 50% 75%, #decfa2 22px, transparent 23px);
             opacity: 0.8;
         }
 
-        /* Pure CSS Render Node: Centered Heavy Mahogany Detective Desk Frame */
-        .css-asset-desk {
+        /* Window & Venetian Blinds Over Cityscape Skyline */
+        .window-frame-node {
             position: absolute;
-            top: 54%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 480px;
-            height: 200px;
-            background: linear-gradient(to bottom, #492a16, #1d0e06);
-            border-top: 14px solid #633a1f;
-            border-radius: 4px;
-            box-shadow: 0 30px 45px rgba(0,0,0,0.9);
-            z-index: -8;
+            right: -15px; top: 22%;
+            width: 220px; height: 320px;
+            background: linear-gradient(to bottom, #dbeff5, #7da5b2);
+            border: 14px solid #231b14;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8), -10px 15px 30px rgba(0,0,0,0.6);
+            transform: perspective(1000px) rotateY(-25deg);
+            z-index: -17;
         }
-        /* Desktop Cluttered Storage box accessories */
-        .css-asset-desk-clutter {
+        /* City Skyline Silhouettes & Blind Blades Layer */
+        .window-frame-node::before {
+            content: ''; position: absolute; width: 100%; height: 100%;
+            background: 
+                /* Skyline Skyscrapers Block Grid */
+                linear-gradient(to right, transparent 15%, #42585c 15%, #42585c 45%, transparent 45%),
+                linear-gradient(to right, transparent 55%, #2f3f42 55%, #2f3f42 85%, transparent 85%),
+                /* Micro-lines for Blinds Structure */
+                repeating-linear-gradient(transparent 0px, transparent 10px, #16120e 10px, #16120e 16px);
+            opacity: 0.9;
+        }
+
+        /* Executive Mahogany Desk Platform */
+        .desk-base-monolith {
             position: absolute;
-            left: 30px;
-            top: 50%;
-            width: 100px;
-            height: 100px;
-            background: #735338;
-            border: 4px solid #231409;
-            box-shadow: -15px 15px 30px rgba(0,0,0,0.6);
-            transform: rotate(-5deg);
+            bottom: 12%; left: 50%;
+            transform: translateX(-50%);
+            width: 540px; height: 240px;
+            background: linear-gradient(to bottom, #4f2e1a, #231207);
+            border-top: 14px solid #663d24;
+            border-radius: 6px;
+            box-shadow: 0 5px 0 #130a04, 0 30px 50px rgba(0,0,0,0.95);
+            z-index: -10;
+        }
+        /* Framed Panels Inside Executive Desk */
+        .desk-base-monolith::before {
+            content: ''; position: absolute; top: 30px; left: 35px; width: 130px; height: 160px;
+            background: #3a2011; border: 4px solid #160d07; box-shadow: inset 0 0 25px rgba(0,0,0,0.7);
+        }
+        .desk-base-monolith::after {
+            content: ''; position: absolute; top: 30px; right: 35px; width: 130px; height: 160px;
+            background: #3a2011; border: 4px solid #160d07; box-shadow: inset 0 0 25px rgba(0,0,0,0.7);
+        }
+
+        /* High Back Detective Office Chair */
+        .detective-chair-node {
+            position: absolute;
+            bottom: 28%; left: 50%;
+            transform: translateX(-50%);
+            width: 150px; height: 160px;
+            background: linear-gradient(to bottom, #1f2124, #111214);
+            border: 6px solid #0a0b0c;
+            border-radius: 24px 24px 12px 12px;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.8);
+            z-index: -12;
+        }
+        /* Tufted Chair Cushion Details */
+        .detective-chair-node::before {
+            content: ''; position: absolute; top: 20px; left: 20px; width: 20px; height: 20px;
+            background: #090a0b; border-radius: 50%;
+            box-shadow: 58px 0 0 #090a0b, 0 45px 0 #090a0b, 58px 45px 0 #090a0b;
+        }
+
+        /* Desk Clutter Documents & Assets */
+        .desk-clutter-manifest {
+            position: absolute;
+            bottom: 34%; left: 50%;
+            transform: translateX(-50%);
+            width: 500px; height: 45px;
+            z-index: -9;
+        }
+        /* Stacks of Folders on Left */
+        .clutter-folders-left {
+            position: absolute; left: 25px; bottom: -5px;
+            width: 110px; height: 35px;
+            background: #cbb28d; border: 4px solid #1c120a;
+            border-radius: 2px; box-shadow: -5px 8px 15px rgba(0,0,0,0.6);
+            transform: rotate(-2deg);
+        }
+        .clutter-folders-left::before {
+            content: ''; position: absolute; top: -10px; left: 6px; width: 95px; height: 10px;
+            background: #bd9f76; border: 4px solid #1c120a; transform: rotate(5deg);
+        }
+        /* Antique Rotary Phone Object */
+        .clutter-phone-node {
+            position: absolute; right: 180px; bottom: -8px;
+            width: 60px; height: 45px;
+            background: #191715; border: 4px solid #080706;
+            border-radius: 6px; box-shadow: 0 10px 15px rgba(0,0,0,0.7);
+        }
+
+        /* Cardboard Storage Archival Boxes On Floor Left */
+        .storage-box-stack {
+            position: absolute; left: 20px; bottom: 8%;
+            width: 130px; height: 110px;
+            background: #866140; border: 6px solid #331d0b;
+            box-shadow: inset -15px -15px 0 rgba(0,0,0,0.15), 8px 20px 35px rgba(0,0,0,0.9);
             z-index: -7;
         }
-
-        /* Pure CSS Render Node: Storage Cardboard Boxes stacked on floor left side */
-        .css-asset-floor-boxes {
-            position: absolute;
-            left: 20px;
-            bottom: 15%;
-            width: 110px;
-            height: 90px;
-            background: #8f6a48;
-            border: 5px solid #3a2512;
-            box-shadow: inset -10px -10px 0 rgba(0,0,0,0.15), 5px 15px 25px rgba(0,0,0,0.7);
+        .storage-box-stack::before {
+            content: ''; position: absolute; top: -20px; left: -6px; width: 142px; height: 26px;
+            background: #9c7552; border: 6px solid #331d0b; box-shadow: 0 5px 6px rgba(0,0,0,0.4);
+        }
+        /* Overlapping Box asset tilt */
+        .storage-box-tilt {
+            position: absolute; left: 75px; bottom: 3%;
+            width: 115px; height: 95px;
+            background: #735132; border: 6px solid #291506;
+            box-shadow: 10px 15px 30px rgba(0,0,0,0.9);
+            transform: rotate(-7deg);
             z-index: -6;
         }
-        .css-asset-floor-boxes::before {
-            content: '';
-            position: absolute;
-            top: -20px; left: -5px; width: 120px; height: 25px;
-            background: #aa825c;
-            border: 5px solid #3a2512;
+
+        /* Trench Coat Hanger Stand Assembly on Right */
+        .rack-stand-node {
+            position: absolute; right: 20px; bottom: 6%;
+            width: 80px; height: 310px;
+            z-index: -7;
+        }
+        .rack-main-pole {
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 12px; height: 310px; background: #231309;
+        }
+        .rack-coat-shape {
+            position: absolute; top: 50px; left: -8px;
+            width: 96px; height: 190px;
+            background: #967547; border: 5px solid #25190d;
+            border-radius: 20px 20px 10px 10px;
+            box-shadow: inset -15px 0 30px rgba(0,0,0,0.4), -10px 20px 25px rgba(0,0,0,0.6);
+        }
+        .rack-fedora-hat {
+            position: absolute; top: 15px; left: 2px;
+            width: 80px; height: 38px;
+            background: #4a3e36; border: 4px solid #16120e;
+            border-radius: 22px 22px 5px 5px; transform: rotate(7deg);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.5);
         }
 
-        /* Atmospheric Focal Distance Engine Blur Layer - Matches Blurry Photo Depth */
-        .atmospheric-blur-layer {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(0,0,0,0) 15%, rgba(0,0,0,0.45) 90%);
-            backdrop-filter: blur(7px);
-            -webkit-backdrop-filter: blur(7px);
+        /* Scattered Files on Floor Right */
+        .floor-litter-documents {
+            position: absolute; right: 90px; bottom: 12%;
+            width: 90px; height: 55px;
+            background: #decfa8; border: 2px solid #231b12;
+            transform: perspective(400px) rotateX(45deg) rotateZ(30deg);
+            box-shadow: 4px 8px 12px rgba(0,0,0,0.5);
             z-index: -5;
+        }
+
+        /* Lens Vignette Ambient Overlay Node */
+        .ambient-lens-vignette {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(0,0,0,0) 20%, rgba(0,0,0,0.55) 90%);
+            z-index: -4;
             pointer-events: none;
         }
 
         /* ==========================================================================
-           3. MASTER MASTER INTERFACE FLEX WRAPPER
+           4. CENTRAL GRAPHICAL DATA PLACEMENT WRAPPER
            ========================================================================== */
-        .gui-main-container {
+        .gui-interface-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 440px;
+            max-width: 450px;
             margin: 0 auto;
             position: relative;
             z-index: 5;
         }
 
         /* ==========================================================================
-           4. "GUMSHOE EMPIRE" MAIN MULTI-PLANK SIGNBOARD ARCHETYPE
+           5. "GUMSHOE EMPIRE" 3D TIMBER SIGNBOARD ASSEMBLY
            ========================================================================== */
-        .wood-logo-billboard {
+        .wood-billboard-node {
             position: relative;
             width: 100%;
-            background: linear-gradient(135deg, var(--wood-base) 0%, var(--wood-mid) 40%, var(--wood-base) 85%, var(--wood-shadow) 100%);
+            background: linear-gradient(135deg, var(--wood-base) 0%, var(--wood-mid) 45%, var(--wood-base) 85%, var(--wood-shadow) 100%);
             border: 8px solid var(--text-stroke);
-            border-radius: 20px;
-            padding: 36px 16px 56px 16px;
+            border-radius: 24px;
+            padding: 40px 16px 60px 16px;
             box-shadow: 
                 0 16px 0 var(--wood-darkest),
-                0 25px 35px var(--ambient-shadow-deep);
+                0 25px 40px var(--shadow-deep);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            /* Accurate Cartoon Curved Frame Mapping Silhouette */
             clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
         }
 
-        .wood-grain-overlay {
+        .wood-striation-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             background: repeating-linear-gradient(180deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 2px, transparent 2px, transparent 6px);
@@ -264,269 +338,269 @@
             z-index: 1;
         }
 
-        .wood-plank-joint {
+        .wood-plank-groove {
             position: absolute;
-            left: 0; width: 100%; height: 7px;
+            left: 0; width: 100%; height: 8px;
             background: var(--text-stroke);
+            opacity: 0.95;
             z-index: 2;
         }
-        .joint-alpha { top: 35%; }
-        .joint-beta { top: 67%; }
+        .groove-1 { top: 36%; }
+        .groove-2 { top: 68%; }
 
-        /* Highly Strategic Procedural Vector Bullet Impacts (Matched perfectly to image counts) */
-        .bullet-hole-vector {
+        /* Exact Splinter Vector Bullet Impacts Placement Mapping */
+        .bullet-fracture-node {
             position: absolute;
-            width: 18px;
-            height: 18px;
-            background: #0d0805;
+            width: 18px; height: 18px;
+            background: #0a0503;
             border-radius: 50%;
             box-shadow: 
-                inset 2px 2px 5px rgba(0,0,0,0.95),
+                inset 2px 2px 5px rgba(0,0,0,0.98),
                 0 0 0 4px var(--wood-highlight),
-                0 0 0 6px var(--text-stroke);
+                0 0 0 6.5px var(--text-stroke);
             z-index: 10;
         }
-        .bh-v1 { top: 29%; left: 8%; }
-        .bh-v2 { top: 31%; left: 36%; width: 16px; height: 16px; }
-        .bh-v3 { top: 28%; left: 56%; }
-        .bh-v4 { top: 32%; left: 71%; width: 17px; height: 17px; }
-        .bh-v5 { top: 64%; left: 18%; }
-        .bh-v6 { top: 62%; left: 44%; }
+        .bf-1 { top: 31%; left: 8%; }
+        .bf-2 { top: 33%; left: 36%; width: 16px; height: 16px; }
+        .bf-3 { top: 28%; left: 57%; }
+        .bf-4 { top: 34%; left: 71%; width: 17px; height: 17px; }
+        .bf-5 { top: 66%; left: 18%; }
+        .bf-6 { top: 64%; left: 44%; }
 
-        /* Typography Vector Wrappers */
-        .title-text-wrap {
+        /* Typography Vector Configuration Engine */
+        .typography-title-stack {
             text-align: center;
             z-index: 3;
             width: 100%;
         }
 
-        .title-row {
+        .title-row-line {
             display: block;
             font-family: 'Archivo Black', sans-serif;
             text-transform: uppercase;
             font-size: clamp(46px, 12.5vw, 70px);
-            line-height: 0.80;
+            line-height: 0.76;
             color: var(--text-main);
             position: relative;
-            letter-spacing: -2px;
-            /* Heavy Extrusion Comic Book Drop Shadow Stacking */
+            letter-spacing: -2.5px;
+            /* Multi-layer Heavy Outline & Shading Stack */
             text-shadow: 
                 -4px -4px 0 var(--text-stroke),  
                  4px -4px 0 var(--text-stroke),
                 -4px  4px 0 var(--text-stroke),
                  4px  4px 0 var(--text-stroke),
                  0px  6px 0 var(--text-stroke),
-                 0px 11px 0 var(--wood-darkest),
-                 0px 18px 15px rgba(0,0,0,0.65);
+                 0px 12px 0 var(--wood-darkest),
+                 0px 20px 18px rgba(0,0,0,0.75);
         }
 
-        .title-row.gumshoe {
-            transform: scaleX(0.95);
+        .title-row-line.gumshoe {
+            transform: scaleX(0.96);
         }
 
-        /* The Custom Handglass Vector Node built directly inside the Letter O */
-        .magnifier-embedded-node {
+        /* Magnifying Glass Vector Architecture Seamlessly Injected Inside 'O' */
+        .lens-embedded-o-node {
             display: inline-block;
             position: relative;
             color: transparent;
             width: clamp(46px, 12.5vw, 70px);
         }
-        .magnifier-embedded-node::before {
-            content: '';
-            position: absolute;
+        .lens-embedded-o-node::before {
+            content: ''; position: absolute;
             top: 2px; left: 4px; width: 78%; height: 78%;
-            border: 8px solid var(--text-stroke);
+            border: 8.5px solid var(--text-stroke);
             background: #ffffff;
-            border-radius: 50%;
-            z-index: 4;
+            border-radius: 50%; z-index: 4;
             box-shadow: 0 4px 0 var(--wood-darkest);
         }
-        .magnifier-embedded-node::after {
-            content: '';
+        .lens-embedded-o-node::after {
+            content: ''; position: absolute;
+            bottom: -6px; right: 2px; width: 10px; height: 22px;
+            background: var(--text-stroke); border-radius: 4px;
+            transform: rotate(-45deg); z-index: 3;
+        }
+        /* Detective Silhouette Inside Magnifier Glass */
+        .detective-inner-silhouette {
             position: absolute;
-            bottom: -5px; right: 2px; width: 9px; height: 22px;
-            background: var(--text-stroke);
-            border-radius: 3px;
-            transform: rotate(-45deg);
-            z-index: 3;
+            top: 15px; left: 16px; width: 20px; height: 24px;
+            background: #231a14; border-radius: 40% 40% 50% 50%;
+            z-index: 5; transform: rotate(12deg);
+        }
+        .detective-inner-silhouette::before {
+            content: ''; position: absolute;
+            top: -5px; left: 2px; width: 16px; height: 9px;
+            background: #231a14; border-radius: 50%;
         }
 
-        /* Bottom Row "EMPIRE" Typographic Configuration Block */
-        .title-row.empire {
+        /* Gold Coloration Component Layer "EMPIRE" */
+        .title-row-line.empire {
             font-size: clamp(54px, 14.5vw, 82px);
             color: var(--text-gold);
             margin-top: 10px;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             text-shadow: 
                 -4px -4px 0 var(--text-stroke),  
                  4px -4px 0 var(--text-stroke),
                 -4px  4px 0 var(--text-stroke),
                  4px  4px 0 var(--text-stroke),
-                 0px  5px 0 var(--text-gold-shadow),
-                 0px  9px 0 var(--text-stroke),
-                 0px 15px 0 var(--wood-darkest),
-                 0px 22px 20px rgba(0,0,0,0.75);
+                 0px  6px 0 var(--text-gold-shadow),
+                 0px 10px 0 var(--text-stroke),
+                 0px 17px 0 var(--wood-darkest),
+                 0px 26px 24px rgba(0,0,0,0.85);
         }
 
         /* ==========================================================================
-           5. INTERLOCKING FLANKED ACTION RIBBONS & GOLD BADGE
+           6. INTERLOCKING FLANKED ACTION RIBBONS & BADGE STAR CORE
            ========================================================================== */
-        .ribbon-badge-row {
+        .action-ribbon-row {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 106%;
-            margin-top: -34px;
+            margin-top: -38px;
             z-index: 15;
             position: relative;
         }
 
-        .ribbon-wing {
-            padding: 12px 18px;
+        .ribbon-wing-banner {
+            padding: 12px 22px;
             font-family: 'Russo One', sans-serif;
             font-size: clamp(13px, 3.6vw, 18px);
             text-transform: uppercase;
             color: var(--text-main);
-            border: 5px solid var(--text-stroke);
-            box-shadow: 0 7px 0 var(--text-stroke);
+            border: 5.5px solid var(--text-stroke);
+            box-shadow: 0 7.5px 0 var(--text-stroke);
             white-space: nowrap;
         }
 
-        .ribbon-wing.left-blue {
+        .ribbon-wing-banner.left-blue {
             background: linear-gradient(180deg, var(--btn-blue-fill) 0%, var(--btn-blue-dark) 100%);
-            border-top-left-radius: 12px;
-            border-bottom-left-radius: 12px;
+            border-top-left-radius: 14px; border-bottom-left-radius: 14px;
             border-right: none;
-            transform: rotate(-4deg) translateX(6px);
+            transform: rotate(-3.5deg) translateX(6px);
             text-shadow: 2px 2px 0 var(--text-stroke);
         }
 
-        .ribbon-wing.right-green {
+        .ribbon-wing-banner.right-green {
             background: linear-gradient(180deg, var(--btn-green-fill) 0%, var(--btn-green-dark) 100%);
-            border-top-right-radius: 12px;
-            border-bottom-right-radius: 12px;
+            border-top-right-radius: 14px; border-bottom-right-radius: 14px;
             border-left: none;
-            transform: rotate(3deg) translateX(-6px);
+            transform: rotate(2.5deg) translateX(-6px);
             text-shadow: 2px 2px 0 var(--text-stroke);
         }
 
-        .center-star-badge {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #ffe57f 0%, var(--text-gold) 50%, var(--text-gold-shadow) 100%);
+        .center-gold-star {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, #ffe990 0%, var(--text-gold) 50%, var(--text-gold-shadow) 100%);
             border: 5px solid var(--text-stroke);
             clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 71% 61%, 82% 100%, 50% 76%, 18% 100%, 29% 61%, 0% 38%, 37% 38%);
             z-index: 20;
-            transform: scale(1.28) rotate(-4deg);
-            filter: drop-shadow(0px 5px 0px var(--text-stroke));
+            transform: scale(1.3) rotate(-4deg);
+            filter: drop-shadow(0px 6px 0px var(--text-stroke));
         }
 
         /* ==========================================================================
-           6. DESCRIPTION METALLIC BRASS PLAQUE RENDER NODE
+           7. SUBTITLE HANGING METALLIC BRASS PLAQUE
            ========================================================================== */
-        .description-plaque-shell {
+        .hanging-brass-plaque {
             width: 92%;
             background: linear-gradient(180deg, var(--plaque-bg-main) 0%, var(--plaque-bg-dark) 100%);
-            border: 5px solid var(--text-stroke);
-            border-radius: 12px;
-            padding: 12px 18px;
-            margin-top: 18px;
+            border: 5.5px solid var(--text-stroke);
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin-top: 20px;
             text-align: center;
             box-shadow: 
                 0 9px 0 var(--plaque-border),
                 0 6px 0 var(--text-stroke),
-                0 18px 25px var(--ambient-shadow-deep);
+                0 22px 30px var(--shadow-deep);
             position: relative;
             z-index: 4;
         }
 
-        .description-plaque-shell::before, .description-plaque-shell::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 8px;
-            height: 8px;
-            background: var(--plaque-border);
-            border-radius: 50%;
-            transform: translateY(-50%);
-            box-shadow: inset 1px 1px 2px rgba(0,0,0,0.6);
+        /* Mechanical Rivets on Plaque Edges */
+        .hanging-brass-plaque::before, .hanging-brass-plaque::after {
+            content: ''; position: absolute; top: 50%;
+            width: 9px; height: 9px;
+            background: var(--plaque-border); border-radius: 50%;
+            transform: translateY(-50%); box-shadow: inset 1px 1px 2px rgba(0,0,0,0.7);
         }
-        .description-plaque-shell::before { left: 12px; }
-        .description-plaque-shell::after { right: 12px; }
+        .hanging-brass-plaque::before { left: 14px; }
+        .hanging-brass-plaque::after { right: 14px; }
 
-        .description-plaque-shell p {
+        .hanging-brass-plaque p {
             font-family: 'Archivo Black', sans-serif;
-            font-size: clamp(13px, 3.5vw, 17px);
+            font-size: clamp(13px, 3.5vw, 17.5px);
             color: #241407;
-            line-height: 1.35;
+            line-height: 1.4;
             text-transform: uppercase;
             letter-spacing: -0.5px;
         }
 
         /* ==========================================================================
-           7. LOWER PROGRESS TRACKER UI SYSTEM (STRICT ANCHORING)
+           8. LOWER PROGRESS TRACKER LOAD AREA (STRICT ZERO-HORIZONTAL SCROLL FLUIDITY)
            ========================================================================== */
-        .loading-status-group {
+        .loading-metrics-group {
             width: 100%;
-            max-width: 380px;
+            max-width: 390px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 12vh;
-            margin-bottom: 20px;
+            margin-top: 8vh;
+            margin-bottom: 15px;
             z-index: 5;
         }
 
-        .loading-title-text {
+        .loading-title-label {
             font-family: 'Archivo Black', sans-serif;
-            font-size: clamp(24px, 7vw, 32px);
+            font-size: clamp(26px, 7.5vw, 34px);
             text-transform: uppercase;
             color: var(--text-main);
             letter-spacing: 1.5px;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             text-shadow: 
                 -3px -3px 0 var(--text-stroke),
                  3px -3px 0 var(--text-stroke),
                 -3px  3px 0 var(--text-stroke),
                  3px  3px 0 var(--text-stroke),
-                 2px  5px 5px rgba(0,0,0,0.9);
+                 2px  6px 6px rgba(0,0,0,0.95);
         }
 
-        .progress-bar-shell {
+        .meter-track-shell {
             width: 100%;
-            height: 28px;
+            height: 30px;
             background: var(--progress-container);
             border: 5px solid var(--progress-stroke);
-            border-radius: 30px;
+            border-radius: 35px;
             padding: 3px;
             box-shadow: 
-                inset 0 4px 10px rgba(0,0,0,0.95),
+                inset 0 4px 12px rgba(0,0,0,0.95),
                 0 3px 0 rgba(255,255,255,0.08);
             overflow: hidden;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             position: relative;
         }
 
-        .progress-bar-fluid {
-            width: 73%; /* Hard synced exact snapshot frame match */
+        .meter-fluid-progress {
+            width: 55%; /* Synced Exactly to Match the Static Percentage Frame on the Target Blueprint */
             height: 100%;
             background: linear-gradient(180deg, var(--progress-fill-top) 0%, var(--progress-fill-mid) 45%, var(--progress-fill-bot) 100%);
             border-radius: 20px;
             box-shadow: inset 0 2px 4px rgba(255,255,255,0.6);
         }
 
-        .gameplay-tip-box {
+        .gameplay-hint-container {
             width: 95%;
             text-align: center;
-            padding: 0 8px;
+            padding: 0 6px;
         }
 
-        .gameplay-tip-box p {
+        .gameplay-hint-container p {
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
-            font-size: clamp(13px, 3.6vw, 16px);
+            font-size: clamp(13.5px, 3.6vw, 16.5px);
             color: #f7dfbe;
-            line-height: 1.4;
+            line-height: 1.45;
             text-shadow: 
                 -1px -1px 0 rgba(0,0,0,0.95),
                  1px -1px 0 rgba(0,0,0,0.95),
@@ -536,80 +610,98 @@
         }
 
         /* ==========================================================================
-           8. DEVICE ADAPTIVE MEDIA MATRIX RESPONSIVENESS
+           9. DEVICE HEIGHT ADAPTIVE DYNAMIC ADJUSTERS
            ========================================================================== */
-        @media screen and (max-height: 740px) {
-            .game-viewport { padding-top: 4vh; }
-            .loading-status-group { margin-top: 6vh; }
-            .wood-logo-billboard { padding-bottom: 42px; }
+        @media screen and (max-height: 760px) {
+            .game-stage-viewport { padding-top: 3vh; }
+            .loading-metrics-group { margin-top: 4vh; }
+            .wood-billboard-node { padding-bottom: 45px; }
+            .action-ribbon-row { margin-top: -32px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Integrated Pure CSS Environmental Scene Node Elements -->
-    <div class="office-background-engine"></div>
-    <div class="css-asset-pinboard"></div>
-    <div class="css-asset-window"></div>
-    <div class="css-asset-desk"></div>
-    <div class="css-asset-desk-clutter"></div>
-    <div class="css-asset-floor-boxes"></div>
-    <div class="atmospheric-blur-layer"></div>
+    <!-- Pure CSS Interior Scene Nodes Architecture Matrix -->
+    <div class="office-bg-wrapper"></div>
+    <div class="corkboard-canvas"></div>
+    <div class="window-frame-node"></div>
+    <div class="detective-chair-node"></div>
+    
+    <!-- Desk Monolith & Desk Clutter Assembly Layers -->
+    <div class="desk-base-monolith"></div>
+    <div class="desk-clutter-manifest">
+        <div class="clutter-folders-left"></div>
+        <div class="clutter-phone-node"></div>
+    </div>
+    
+    <!-- Environmental Left/Right Standing Graphic Elements -->
+    <div class="storage-box-stack"></div>
+    <div class="storage-box-tilt"></div>
+    <div class="floor-litter-documents"></div>
+    
+    <div class="rack-stand-node">
+        <div class="rack-main-pole"></div>
+        <div class="rack-coat-shape"></div>
+        <div class="rack-fedora-hat"></div>
+    </div>
+    
+    <div class="ambient-lens-vignette"></div>
 
-    <!-- Main Mobile Fluid Scaler Stage Viewport Frame -->
-    <main class="game-viewport" id="gameViewport">
+    <!-- Main Dynamic Interface Control Viewport Stage -->
+    <main class="game-stage-viewport" id="gameViewport">
         
-        <!-- Central GUI Panel Block Component -->
-        <div class="gui-main-container">
+        <!-- Central Graphical Blocks Alignment Component -->
+        <div class="gui-interface-container">
             
-            <!-- Heavy Timber Texture Billboard Panel Outer Shell Frame -->
-            <div class="wood-logo-billboard">
-                <div class="wood-grain-overlay"></div>
-                <div class="wood-plank-joint joint-alpha"></div>
-                <div class="wood-plank-joint joint-beta"></div>
+            <!-- Textured Timber Panel Signboard Frame -->
+            <div class="wood-billboard-node">
+                <div class="wood-striation-overlay"></div>
+                <div class="wood-plank-groove groove-1"></div>
+                <div class="wood-plank-groove groove-2"></div>
 
-                <!-- Strategic Procedural Clean Vector Splinter Holes -->
-                <div class="bullet-hole-vector bh-v1"></div>
-                <div class="bullet-hole-vector bh-v2"></div>
-                <div class="bullet-hole-vector bh-v3"></div>
-                <div class="bullet-hole-vector bh-v4"></div>
-                <div class="bullet-hole-vector bh-v5"></div>
-                <div class="bullet-hole-vector bh-v6"></div>
+                <!-- Strategic Procedural Splinter Bullet Fractures -->
+                <div class="bullet-fracture-node bf-1"></div>
+                <div class="bullet-fracture-node bf-2"></div>
+                <div class="bullet-fracture-node bf-3"></div>
+                <div class="bullet-fracture-node bf-4"></div>
+                <div class="bullet-fracture-node bf-5"></div>
+                <div class="bullet-fracture-node bf-6"></div>
 
-                <!-- Typography Layer Setup -->
-                <div class="title-text-wrap">
-                    <h1 class="title-row gumshoe">
-                        GUMSH<span class="magnifier-embedded-node">O</span>E
+                <!-- Graphic Typography Stacks Assembly -->
+                <div class="typography-title-stack">
+                    <h1 class="title-row-line gumshoe">
+                        GUMSH<span class="lens-embedded-o-node"><span class="detective-inner-silhouette"></span>O</span>E
                     </h1>
-                    <h1 class="title-row empire">EMPIRE</h1>
+                    <h1 class="title-row-line empire">EMPIRE</h1>
                 </div>
             </div>
 
-            <!-- Interlocking Subtitle Badges Flanking Star Accent Core -->
-            <div class="ribbon-badge-row">
-                <div class="ribbon-wing left-blue">Start Small</div>
-                <div class="center-star-badge"></div>
-                <div class="ribbon-wing right-green">Crack Cases</div>
+            <!-- Interlocking Subtitle Ribbon Banners Flanking Gold Badge Star Accent -->
+            <div class="action-ribbon-row">
+                <div class="ribbon-wing-banner left-blue">Start Small</div>
+                <div class="center-gold-star"></div>
+                <div class="ribbon-wing-banner right-green">Crack Cases</div>
             </div>
 
-            <!-- Lower Hanging Brass Plaque Description Node -->
-            <div class="description-plaque-shell">
+            <!-- Bottom Brass Plaque Subtext Block -->
+            <div class="hanging-brass-plaque">
                 <p>From Low-Grade P.I.<br>To The World's Best P.I.!</p>
             </div>
             
         </div>
 
-        <!-- Lower Status Track Indicator Sub-Component Layer -->
-        <div class="loading-status-group">
-            <h2 class="loading-title-text">Loading...</h2>
+        <!-- Lower Status Monitoring Systems Layer -->
+        <div class="loading-metrics-group">
+            <h2 class="loading-title-label">Loading...</h2>
             
-            <!-- Fluid Containment Shell Tracker -->
-            <div class="progress-bar-shell">
-                <div class="progress-bar-fluid"></div>
+            <!-- Glossy Fluid Progress Shell Container Tracker -->
+            <div class="meter-track-shell">
+                <div class="meter-fluid-progress"></div>
             </div>
 
-            <!-- Context Hint System Text Micro-copy Block -->
-            <div class="gameplay-tip-box">
+            <!-- Context System Micro-Copy Game Play Hints Box -->
+            <div class="gameplay-hint-container">
                 <p>Tip: Check every detail. The truth is always in the evidence.</p>
             </div>
         </div>
