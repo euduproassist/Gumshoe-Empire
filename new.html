@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>NAPO STUDIOS - OFFICIAL LUXURY LANDSCAPE PORTAL</title>
+
+    <!-- Premium Google Fonts Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;500;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. COMPREHENSIVE ARCHITECTURAL RESET & ANTI-SIDEWAYS SCROLL GUARD
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            max-width: 100vw;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            
+            /* The ultimate guard against horizontal scrolling while permitting vertical overflow */
+            overflow-x: hidden; 
+            overflow-y: auto;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ==========================================================================
+           2. LIVE PORTAL STAGE VIEWPORT (Master Container)
+           ========================================================================== */
+        .stage-viewport {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background: radial-gradient(circle at center, #0a0803 0%, #000000 100%);
+            z-index: 1;
+        }
+
+        /* Universal Studio Card with strict viewport capping */
+        .studio-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ==========================================================================
+           3. INTENSE AMBIENT BACK-GLOW (Behind Monogram)
+           ========================================================================== */
+        .ambient-glow-core {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(250px, 50vw, 550px);
+            height: clamp(250px, 50vw, 550px);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(138, 96, 18, 0.03) 50%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+            filter: blur(20px);
+        }
+
+        /* ==========================================================================
+           4. MONOGRAM SYSTEM (Vector-based Chiseled Gold Execution)
+           ========================================================================== */
+        .monogram-container {
+            width: clamp(180px, 35vw, 320px);
+            height: auto;
+            margin-bottom: 30px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.95))
+                    drop-shadow(0px 5px 15px rgba(184, 138, 40, 0.2));
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .monogram-container:hover {
+            transform: scale(1.02);
+        }
+
+        /* ==========================================================================
+           5. GLOWING DIVIDER LINES WITH HORIZON FLARES
+           ========================================================================== */
+        .gold-flare-line {
+            position: relative;
+            width: clamp(220px, 55vw, 480px);
+            height: 1px;
+            background: linear-gradient(
+                90deg, 
+                rgba(212, 175, 55, 0) 0%, 
+                rgba(212, 175, 55, 0.2) 15%,
+                rgba(255, 235, 170, 0.9) 50%, 
+                rgba(212, 175, 55, 0.2) 85%,
+                rgba(212, 175, 55, 0) 100%
+            );
+            margin: 8px 0;
+        }
+
+        /* Centralized High-Intensity Lens Flare Spot */
+        .gold-flare-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 4px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 8px 2px #ffffff,
+                0 0 20px 6px rgba(255, 220, 120, 1),
+                0 0 45px 12px rgba(212, 175, 55, 0.7);
+        }
+
+        /* ==========================================================================
+           6. BRAND TEXT TYPOGRAPHY (Polished Metallic Finish)
+           ========================================================================== */
+        .brand-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(20px, 3.8vw, 38px);
+            font-weight: 700;
+            letter-spacing: clamp(10px, 1.8vw, 22px);
+            text-transform: uppercase;
+            margin: 22px 0;
+            /* Compensating precisely for the extreme letter spacing to center alignment */
+            padding-left: clamp(10px, 1.8vw, 22px); 
+            
+            background: linear-gradient(
+                180deg, 
+                #ffffff 0%, 
+                #fff1c0 25%,
+                #d3a43c 60%, 
+                #795108 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 5px 12px rgba(0, 0, 0, 0.9));
+        }
+
+        /* ==========================================================================
+           7. DEVICE HARDWARE ROTATION PROMPT OVERLAY
+           ========================================================================== */
+        #rotationPrompt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        #rotationPrompt.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .prompt-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            fill: #d3a43c;
+            animation: rotateHint 2.5s ease-in-out infinite;
+        }
+
+        .prompt-title {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            color: #fff1c0;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .prompt-desc {
+            font-size: 14px;
+            color: #888888;
+            max-width: 300px;
+            line-height: 1.5;
+        }
+
+        @keyframes rotateHint {
+            0% { transform: rotate(0deg); }
+            30% { transform: rotate(-90deg); }
+            70% { transform: rotate(-90deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* ==========================================================================
+           8. MASTER STYLING SCALE ADJUSTMENTS BASED ON SCREEN HEIGHT
+           ========================================================================== */
+        @media (max-height: 500px) {
+            .monogram-container {
+                width: clamp(100px, 22vh, 160px);
+                margin-bottom: 10px;
+            }
+            .brand-text {
+                margin: 10px 0;
+                font-size: clamp(14px, 5vh, 24px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glow Core Behind Centerpiece -->
+    <div class="ambient-glow-core"></div>
+
+    <!-- Main Stage Dynamic Viewport -->
+    <main class="stage-viewport" id="mainStage">
+        <div class="studio-card">
+            
+            <!-- Hand-Crafted Interlocking Monogram Vector System -->
+            <div class="monogram-container">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                    <defs>
+                        <!-- Advanced Multi-Stop Metallic Shading Foil Gradient -->
+                        <linearGradient id="goldChiselGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#5a3d08" />
+                            <stop offset="15%" stop-color="#b58828" />
+                            <stop offset="30%" stop-color="#fceeac" />
+                            <stop offset="45%" stop-color="#ffffff" />
+                            <stop offset="55%" stop-color="#edd075" />
+                            <stop offset="75%" stop-color="#a27419" />
+                            <stop offset="100%" stop-color="#3a2500" />
+                        </linearGradient>
+
+                        <!-- Hardware Accelerated Metallic Foil Microtexture Filter -->
+                        <filter id="metallicGoldTexture" x="-10%" y="-10%" width="120%" height="120%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+                            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0" result="coloredNoise"/>
+                            <feComposite operator="in" in2="SourceGraphic" result="textureApplied" />
+                            <feBlend mode="overlay" in="textureApplied" in2="SourceGraphic" />
+                        </filter>
+                    </defs>
+
+                    <!-- The Interwoven "NS" Luxury Emblem Silhouette -->
+                    <g filter="url(#metallicGoldTexture)">
+                        <!-- Combined Monogram Path mapping chiseled serifs and intertwined curves exactly matching the source image -->
+                        <path d="M120,400 L120,160 L115,160 C100,160 90,170 90,190 L80,190 L80,140 L210,140 L210,190 L200,190 C200,170 190,160 175,160 L170,160 L170,320 L315,140 L370,140 L370,250 C350,230 330,220 310,215 L310,160 L200,300 L200,400 L205,400 C220,400 230,390 230,370 L240,370 L240,420 L110,420 L110,370 L120,370 C120,390 130,400 145,400 Z" fill="url(#goldChiselGrad)" />
+                        <path d="M340,175 C365,175 390,185 410,205 L425,185 L450,185 L450,270 L435,270 C430,240 410,215 380,215 C345,215 325,240 325,270 C325,320 440,310 440,390 C440,440 395,465 340,465 C300,465 250,440 220,405 L240,375 L215,375 L185,440 L205,440 C225,415 260,435 310,435 C355,435 390,415 390,380 C390,325 270,335 270,255 C270,205 305,175 340,175 Z" fill="url(#goldChiselGrad)" />
+                        <!-- Intersecting loop overlay ensuring accurate physical visual depth weaving -->
+                        <path d="M270,255 C270,240 278,225 290,215 C282,230 275,250 275,270 Z" fill="#5a3d08" opacity="0.4"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Top Horizon Flare Line -->
+            <div class="gold-flare-line"></div>
+
+            <!-- Premium Brand Typography -->
+            <h1 class="brand-text">NAPO STUDIOS</h1>
+
+            <!-- Bottom Horizon Flare Line -->
+            <div class="gold-flare-line"></div>
+
+        </div>
+    </main>
+
+    <!-- Intelligently Responsive Rotation Device Guard Overlay -->
+    <div id="rotationPrompt">
+        <svg class="prompt-icon" viewBox="0 0 24 24">
+            <path d="M16.48 2.52c3.27 1.55 5.61 4.72 5.97 8.48h1.5c-.41-4.73-3.43-8.75-7.72-10.43l.25 1.95zm-12.96 1c-3.27 1.55-5.61 4.72-5.97 8.48h-1.5c.41-4.73 3.43-8.75 7.72-10.43l-.25 1.95zm16.96 16.96c3.27-1.55 5.61-4.72 5.97-8.48h1.5c-.41 4.73-3.43 8.75-7.72 10.43l-.25-1.95zm-16.96-1c-3.27-1.55-5.61-4.72-5.97-8.48h-1.5c.41 4.73 3.43 8.75 7.72 10.43l.25-1.95zM9 5h6c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H9c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2zm0 2v10h6V7H9z"/>
+        </svg>
+        <div class="prompt-title">LANDSCAPE MODE REQUIRED</div>
+        <div class="prompt-desc">Please rotate your device horizontally to experience NAPO STUDIOS at maximum cinematic fidelity.</div>
+    </div>
+
+    <!-- Dynamic Environment Engine Script -->
+    <script>
+        /**
+         * Orchestrates orientation behavior on mobile platforms.
+         * Leverages Screen Orientation API locks and falls back cleanly on restricted sandboxed environments.
+         */
+        async function commandLandscapeEnvironment() {
+            try {
+                if (screen.orientation && screen.orientation.lock) {
+                    await screen.orientation.lock('landscape');
+                }
+            } catch (error) {
+                console.log('API Orientation Lock deferred to client hardware sensor detection loop.');
+            }
+        }
+
+        /**
+         * Evaluation module assessing landscape layouts and toggling fallback prompt.
+         */
+        function evaluateDeviceGeometry() {
+            const prompt = document.getElementById('rotationPrompt');
+            const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            
+            // Only trigger protective rotation card if it's a mobile/tablet holding portrait aspect ratios
+            if (isTouchDevice && window.innerHeight > window.innerWidth) {
+                prompt.classList.add('visible');
+            } else {
+                prompt.classList.remove('visible');
+            }
+        }
+
+        // Operational Event Registration
+        window.addEventListener('resize', evaluateDeviceGeometry);
+        window.addEventListener('DOMContentLoaded', () => {
+            evaluateDeviceGeometry();
+            commandLandscapeEnvironment();
+        });
+
+        // Event hooks tracking interaction phases
+        document.addEventListener('click', commandLandscapeEnvironment);
+        document.addEventListener('touchstart', commandLandscapeEnvironment, { passive: true });
+    </script>
+</body>
+</html>
