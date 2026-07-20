@@ -103,26 +103,6 @@
         /* ==========================================================================
            3. UI COMPONENT MODULES
            ========================================================================== */
-        .loading-text-tip {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: clamp(13px, 2.3vw, 18px);
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .loading-status-text {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: clamp(15px, 2.8vw, 20px);
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
         .loading-meter-container {
             width: 85%;
             height: 24px;
@@ -141,6 +121,42 @@
             transition: width 0.1s linear;
             box-shadow: 0 0 15px rgba(76, 176, 22, 0.6);
         }
+
+        .cta-button {
+            width: 90%;
+            max-width: 400px;
+            padding: 18px 24px;
+            margin: 10px 0;
+            border-radius: 16px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease;
+        }
+
+        .cta-button:active { transform: scale(0.96); }
+
+        .btn-guest {
+            background: linear-gradient(180deg, #72c613, #4a9405);
+            color: #fff;
+            border-bottom: 4px solid #1b4903;
+        }
+
+        .btn-google {
+            background: #fff;
+            color: #3c4043;
+            border-bottom: 4px solid #999;
+        }
+
+        /* ==========================================================================
+           4. RUNTIME LOGIC ENGINE
+           ========================================================================== */
     </style>
 </head>
 <body>
@@ -155,8 +171,6 @@
         <section class="stage" id="screen-loading">
             <img src="https://euduproassist.github.io/Gumshoe-Empire/assets/loading_bg.png" class="bg-layer" alt="Loading Background">
             <div class="ui-slot">
-                <div class="loading-text-tip">💡 Tip: Check every detail. The truth is always in the evidence.</div>
-                <div class="loading-status-text" id="status-text">Loading...</div>
                 <div class="loading-meter-container">
                     <div class="loading-meter-fill" id="meter-fill"></div>
                 </div>
@@ -167,6 +181,8 @@
         <section class="stage" id="screen-menu">
             <img src="https://euduproassist.github.io/Gumshoe-Empire/assets/menu.png" class="bg-layer" alt="Menu Background">
             <div class="ui-slot">
+                <button class="cta-button btn-guest" role="button" aria-label="Play as guest" tabindex="0">Play As Guest</button>
+                <button class="cta-button btn-google" role="button" aria-label="Sign in with Google" tabindex="0">Sign In With Google</button>
             </div>
         </section>
     </div>
@@ -178,26 +194,17 @@
                 const loading = document.getElementById('screen-loading');
                 const menu = document.getElementById('screen-menu');
                 const meter = document.getElementById('meter-fill');
-                const statusText = document.getElementById('status-text');
 
                 setTimeout(() => {
                     splash.classList.remove('is-active');
                     loading.classList.add('is-active');
                     
-                    // Loading text animation
-                    let dots = 0;
-                    const textInterval = setInterval(() => {
-                        dots = (dots + 1) % 4;
-                        statusText.textContent = "Loading" + ".".repeat(dots);
-                    }, 500);
-
                     let progress = 0;
                     const interval = setInterval(() => {
                         progress += 1.5;
                         meter.style.width = `${progress}%`;
                         if (progress >= 100) {
                             clearInterval(interval);
-                            clearInterval(textInterval);
                             loading.classList.remove('is-active');
                             menu.classList.add('is-active');
                         }
@@ -210,4 +217,3 @@
     </script>
 </body>
 </html>
-
