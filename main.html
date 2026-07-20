@@ -160,7 +160,7 @@
         /* Coordinate Alignment over asset container bar */
         .loading-bar-positional-anchor {
             position: absolute;
-            bottom: 11.8%; 
+            bottom: 27.6%; 
             width: 100%;
             max-width: 440px;
             padding: 0 10%;
@@ -168,25 +168,26 @@
             flex-direction: column;
             align-items: center;
             box-sizing: border-box;
+            z-index: 30;
         }
 
         @media screen and (min-aspect-ratio: 16/10) {
             .loading-bar-positional-anchor {
-                bottom: 8.5%;
+                bottom: 25%;
             }
         }
 
         /* High Fidelity Meter Shell System Overriding Default Graphics Layer */
         .meter-fluid-runtime-track {
-            width: 71.5%;
-            height: 24px;
-            background: rgba(0, 0, 0, 0.45);
+            width: 56.5%;
+            height: 19px;
+            background: rgba(18, 14, 11, 0.85);
             border-radius: 20px;
             padding: 2px;
-            box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.8);
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.9);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 2px solid #2d2116;
         }
 
         .meter-fluid-runtime-fill {
@@ -194,7 +195,7 @@
             height: 100%;
             background: linear-gradient(to bottom, var(--hex-fluid-green-glow) 0%, var(--hex-fluid-green) 50%, #2f750c 100%);
             border-radius: 20px;
-            box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.6), 0 0 10px rgba(76, 176, 22, 0.4);
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 0 8px rgba(76, 176, 22, 0.5);
             transition: width 0.08s linear;
             position: relative;
         }
@@ -326,9 +327,8 @@
            STAGE ONE: PROMINENT BRANDING SPLASH WINDOW
            ========================================================================== -->
         <section class="stage-view-panel state-active" id="stage-splash-screen">
-            <img src="assets/napo_studio.png" alt="Napo Studios Logo Graphic" class="panel-ambient-background-asset">
+            <img src="https://euduproassist.github.io/Gumshoe-Empire/assets/napo_studio.png" alt="Napo Studios Logo Graphic" class="panel-ambient-background-asset">
             <div class="panel-interactive-ui-layer">
-                <!-- Overlay container forcing perfect layout scale without visual clipping -->
                 <div class="splash-logo-containment-box"></div>
             </div>
         </section>
@@ -337,10 +337,10 @@
            STAGE TWO: MOUNTED RUNTIME PROGRESS LOADING COMPONENT
            ========================================================================== -->
         <section class="stage-view-panel" id="stage-loading-screen">
-            <img src="assets/loading_bg.png" alt="Gumshoe Empire Loading Canvas" class="panel-ambient-background-asset">
+            <img src="https://euduproassist.github.io/Gumshoe-Empire/assets/loading_bg.png" alt="Gumshoe Empire Loading Canvas" class="panel-ambient-background-asset">
             
             <div class="panel-interactive-ui-layer">
-                <!-- Anchor accurately positioned to fit right inside the template background's bar asset -->
+                <!-- Overlay tracking progress perfectly placed atop original loading slot asset -->
                 <div class="loading-bar-positional-anchor">
                     <div class="meter-fluid-runtime-track">
                         <div class="meter-fluid-runtime-fill" id="runtime-progress-indicator-node"></div>
@@ -353,10 +353,9 @@
            STAGE THREE: CORE SELECTION MENU ACCESS WINDOW
            ========================================================================== -->
         <section class="stage-view-panel" id="stage-interactive-menu">
-            <img src="assets/menu.png" alt="Gumshoe Empire Interactive Hub Canvas" class="panel-ambient-background-asset">
+            <img src="https://euduproassist.github.io/Gumshoe-Empire/assets/menu.png" alt="Gumshoe Empire Interactive Hub Canvas" class="panel-ambient-background-asset">
             
             <div class="panel-interactive-ui-layer">
-                <!-- Functional Button Layout Cluster -->
                 <div class="menu-action-cluster-hub">
                     
                     <button class="action-button-asset-interactive variant-guest-play" id="trigger-guest-access-node">
@@ -409,13 +408,11 @@
                 let currentProgressPercentage = 0;
                 
                 const loadingRateTimer = setInterval(() => {
-                    // Gradual accumulation pacing simulator
                     if (currentProgressPercentage < 100) {
                         currentProgressPercentage += 1;
                         domProgressBar.style.width = `${currentProgressPercentage}%`;
                     } else {
                         clearInterval(loadingRateTimer);
-                        // Trigger final sequence transition into active operational menu
                         setTimeout(() => {
                             transitionStagePanel(domStageLoading, domStageMenu);
                         }, 500);
