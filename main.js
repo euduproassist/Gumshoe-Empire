@@ -1,4 +1,4 @@
-import { auth, db } from "./firebase-firestore.js";
+import { auth, db } from "./firebase-config.js";
 import { signInWithPopup, GoogleAuthProvider, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
 import { doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
 
