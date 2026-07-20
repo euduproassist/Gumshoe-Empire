@@ -1,1 +1,23 @@
-GET https://euduproassist.github.io/Gumshoe-Empire/firebase-firestore.js net::ERR_ABORTED 404 (Not Found)
+iframe.js:311
+ Info: The current domain is not authorized for OAuth operations. This will prevent signInWithPopup, signInWithRedirect, linkWithPopup and linkWithRedirect from working. Add your domain (euduproassist.github.io) to the OAuth redirect domains list in the Firebase console -> Authentication -> Settings -> Authorized domains tab.
+kl	@	iframe.js:311
+(anonymous)	@	iframe.js:580
+a	@	iframe.js:155
+(anonymous)	@	iframe.js:155
+c	@	iframe.js:155
+e.xd	@	iframe.js:163
+hg	@	iframe.js:166
+dg	@	iframe.js:166
+F.Bk	@	iframe.js:165
+a	@	iframe.js:155
+(anonymous)	@	iframe.js:155
+c	@	iframe.js:155
+Mf	@	iframe.js:156
+a		
+Ff	@	iframe.js:156
+Zf	@	iframe.js:162
+k.l	@	iframe.js:160
+ns	@	iframe.js:579
+(anonymous)	@	iframe.js:580
+Yi	@	iframe.js:240
+b	@	iframe.js:238
