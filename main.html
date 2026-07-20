@@ -98,6 +98,14 @@
            FIX 1: THE DYNAMIC ASPECT-RATIO LOCK MATRIX CONTAINER
            ========================================================================== */
         .aspect-ratio-lock-matrix {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
         /* Handles dynamic sizing container recalculations at extreme aspect ratios */
         @media (min-aspect-ratio: 3/4) {
