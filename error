@@ -1,23 +1,57 @@
-iframe.js:311
- Info: The current domain is not authorized for OAuth operations. This will prevent signInWithPopup, signInWithRedirect, linkWithPopup and linkWithRedirect from working. Add your domain (euduproassist.github.io) to the OAuth redirect domains list in the Firebase console -> Authentication -> Settings -> Authorized domains tab.
-kl	@	iframe.js:311
-(anonymous)	@	iframe.js:580
-a	@	iframe.js:155
-(anonymous)	@	iframe.js:155
-c	@	iframe.js:155
-e.xd	@	iframe.js:163
-hg	@	iframe.js:166
-dg	@	iframe.js:166
-F.Bk	@	iframe.js:165
-a	@	iframe.js:155
-(anonymous)	@	iframe.js:155
-c	@	iframe.js:155
-Mf	@	iframe.js:156
-a		
-Ff	@	iframe.js:156
-Zf	@	iframe.js:162
-k.l	@	iframe.js:160
-ns	@	iframe.js:579
-(anonymous)	@	iframe.js:580
-Yi	@	iframe.js:240
-b	@	iframe.js:238
+popup.ts:309
+ Cross-Origin-Opener-Policy policy would block the window.closed call.
+anonymousCallbackTo: window.setTimeout	@	popup.ts:309
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+setTimeout		
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+globalCode: https://www.gstatic.com/firebasejs/auth/src/platform_browser/strategies/popup.ts	@	popup.ts:216
+PopupOperation.get eventId	@	popup.ts:279
+await in PopupOperation.get eventId		
+anonymousCallbackTo: new Promise	@	abstract_popup_redirect_operation.ts:77
+await in anonymousCallbackTo: new Promise		
+anonymousCallbackTo: new Promise	@	abstract_popup_redirect_operation.ts:72
+PopupOperation.executeNotNull	@	popup.ts:237
+reauthenticateWithPopup	@	popup.ts:141
+handleLogin	@	main.js:10
+(anonymous)
