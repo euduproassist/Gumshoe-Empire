@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Detective Profile UI</title>
+    <title>Detective Profile - Single Screen</title>
     <style>
         /* ==========================================================================
-           1. CORE RESET & ZERO SIDE-SCROLL SHIELD
+           1. ZERO SCROLL & FULL VIEWPORT LOCK
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -18,9 +18,10 @@
 
         html, body {
             width: 100%;
-            min-height: 100vh;
-            overflow-x: hidden !important; /* Strictly prevents horizontal/sideways scrolling */
-            background-color: #0d0c0a;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden !important;
+            background-color: #0b0a08;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: #111;
         }
@@ -29,12 +30,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            /* Rich Dark Wooden Desk Background */
+            justify-content: space-between;
             background: 
-                radial-gradient(circle at 50% 30%, rgba(35, 27, 20, 0.95) 0%, rgba(10, 8, 6, 0.98) 100%),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px);
-            padding: 10px 0 28px 0;
+                radial-gradient(circle at 50% 30%, rgba(30, 24, 18, 0.95) 0%, rgba(8, 6, 5, 0.98) 100%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 4px);
+            padding: clamp(6px, 1.2vh, 12px) 12px clamp(8px, 1.5vh, 16px) 12px;
         }
 
         /* ==========================================================================
@@ -43,29 +43,29 @@
         .top-bar {
             width: 100%;
             max-width: 440px;
-            padding: 8px 12px 14px 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            z-index: 10;
+            z-index: 20;
+            flex-shrink: 0;
+            padding: 2px 0;
         }
 
-        /* Rank / Level Pill */
         .status-pill {
             background: #000000;
             border: 1px solid #231e18;
             border-radius: 8px;
-            padding: 6px 10px;
+            padding: 5px 10px;
             display: flex;
             align-items: center;
             gap: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-            min-width: 135px;
+            min-width: 130px;
         }
 
         .level-badge-star {
             color: #eab308;
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 2.4vh, 1.4rem);
             line-height: 1;
         }
 
@@ -76,20 +76,19 @@
         }
 
         .rank-title {
-            font-size: 0.65rem;
+            font-size: clamp(0.58rem, 1.2vh, 0.68rem);
             font-weight: 900;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.5px;
             color: #ffffff;
             text-transform: uppercase;
         }
 
         .rank-subtitle {
-            font-size: 0.6rem;
+            font-size: clamp(0.52rem, 1.1vh, 0.62rem);
             color: #94a3b8;
             margin-bottom: 3px;
         }
 
-        /* Mini XP / Level Progress Bar */
         .level-progress-bg {
             width: 100%;
             height: 3px;
@@ -105,25 +104,23 @@
             border-radius: 2px;
         }
 
-        /* Cash Pill */
         .cash-pill {
             background: #000000;
             border: 1px solid #231e18;
             border-radius: 8px;
-            padding: 5px 8px 5px 10px;
+            padding: 4px 8px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.8);
         }
 
         .cash-icon {
-            width: 22px;
-            height: 16px;
+            width: clamp(18px, 2.5vh, 22px);
+            height: clamp(13px, 1.8vh, 16px);
             background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
             border-radius: 2px;
             position: relative;
-            box-shadow: inset 0 0 2px rgba(255,255,255,0.4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -139,7 +136,7 @@
         .cash-amount {
             color: #ffffff;
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: clamp(0.85rem, 2vh, 1.05rem);
             letter-spacing: 0.5px;
         }
 
@@ -147,143 +144,132 @@
             background: #22c55e;
             border: none;
             color: #ffffff;
-            width: 22px;
-            height: 22px;
-            border-radius: 5px;
+            width: clamp(18px, 2.4vh, 22px);
+            height: clamp(18px, 2.4vh, 22px);
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: 0.95rem;
+            font-size: clamp(0.75rem, 1.8vh, 0.9rem);
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
         }
 
-        /* Top Right Profile Button */
         .profile-top-btn {
             display: flex;
             flex-direction: column;
             align-items: center;
             color: #ffffff;
-            gap: 2px;
+            gap: 1px;
             cursor: pointer;
         }
 
         .profile-top-btn svg {
-            width: 24px;
-            height: 24px;
+            width: clamp(18px, 2.5vh, 22px);
+            height: clamp(18px, 2.5vh, 22px);
             fill: #ffffff;
         }
 
         .profile-top-btn span {
-            font-size: 0.6rem;
+            font-size: clamp(0.5rem, 1vh, 0.6rem);
             font-weight: 800;
             letter-spacing: 0.5px;
         }
 
         /* ==========================================================================
-           3. CLIPBOARD CONTAINER & PARCHMENT
+           3. MAIN CONTAINER & PARCHMENT SHEET
            ========================================================================== */
         .wrapper {
             width: 100%;
             max-width: 430px;
-            padding: 0 12px;
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            min-height: 0;
+            margin-top: 4px;
         }
 
         .clipboard {
             width: 100%;
-            background: #4a2e16;
-            background-image: 
-                linear-gradient(135deg, #5c381a 0%, #2b180a 100%);
-            border: 3px solid #1a0f06;
+            height: 100%;
+            background: #3b220f;
+            background-image: linear-gradient(135deg, #4a2b13 0%, #211207 100%);
+            border: 3px solid #140b04;
             border-radius: 12px;
-            padding: 34px 10px 12px 10px;
+            padding: clamp(18px, 3vh, 28px) clamp(8px, 2vw, 12px) clamp(8px, 1.5vh, 12px) clamp(8px, 2vw, 12px);
             position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
-            margin-top: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Metallic Top Clip Hardware */
         .clip-hardware {
             position: absolute;
-            top: -18px;
+            top: clamp(-8px, -1.2vh, -12px);
             left: 50%;
             transform: translateX(-50%);
-            width: 140px;
-            height: 36px;
-            background: linear-gradient(180deg, #b0b5bc 0%, #4b535e 50%, #21262d 100%);
-            border: 1px solid #8b929d;
-            border-radius: 8px 8px 4px 4px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+            width: clamp(110px, 25vw, 135px);
+            height: clamp(24px, 3.5vh, 32px);
+            background: linear-gradient(180deg, #9da3ad 0%, #404650 50%, #1a1e24 100%);
+            border: 1px solid #6b7280;
+            border-radius: 6px 6px 4px 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.8);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 5;
+            z-index: 10;
         }
 
         .clip-hardware-ring {
-            width: 18px;
-            height: 18px;
+            width: clamp(10px, 1.8vh, 14px);
+            height: clamp(10px, 1.8vh, 14px);
             border-radius: 50%;
-            background: #11161d;
-            border: 2px solid #6b7280;
+            background: #0d1117;
+            border: 2px solid #484f58;
             position: absolute;
-            top: -8px;
+            top: -5px;
         }
 
         .clip-indent {
-            width: 36px;
-            height: 8px;
-            background: #0d1117;
-            border-radius: 6px;
-            border: 1px solid #484f58;
-            margin-top: 6px;
+            width: clamp(26px, 5vw, 34px);
+            height: 5px;
+            background: #090c10;
+            border-radius: 4px;
+            border: 1px solid #30363d;
+            margin-top: 3px;
         }
 
-        /* Aged Parchment Sheet */
         .paper-sheet {
-            background-color: #d9be96;
+            background-color: #dfc8a6;
             background-image: 
-                radial-gradient(#cba97d 1px, transparent 0),
-                linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.05) 100%);
-            background-size: 12px 12px, 100% 100%;
+                radial-gradient(#baa17e 1.2px, transparent 1.2px),
+                linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.04) 100%);
+            background-size: 14px 14px, 100% 100%;
             border-radius: 4px;
-            border: 1px solid #9e8057;
-            padding: 22px 16px 16px 16px;
-            box-shadow: inset 0 0 30px rgba(100, 68, 28, 0.3);
+            border: 1px solid #a38760;
+            padding: clamp(12px, 2.2vh, 20px) clamp(12px, 2.5vw, 18px);
+            box-shadow: inset 0 0 25px rgba(90, 60, 24, 0.25);
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-around;
+            flex: 1;
+            min-height: 0;
             position: relative;
         }
 
-        /* Corner Paper Cut Accents */
-        .paper-sheet::before, .paper-sheet::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-style: solid;
-            border-color: #8c6f49;
-            opacity: 0.5;
-        }
-        .paper-sheet::before { top: 6px; left: 6px; border-width: 1px 0 0 1px; }
-        .paper-sheet::after { top: 6px; right: 6px; border-width: 1px 1px 0 0; }
-
-        /* Header Title */
+        /* Paper Header */
         .paper-title {
             font-family: 'Impact', 'Trebuchet MS', sans-serif;
-            font-size: 2.6rem;
+            font-size: clamp(1.8rem, 4vh, 2.5rem);
             font-weight: 900;
-            letter-spacing: 2.5px;
-            color: #1a1510;
+            letter-spacing: 3px;
+            color: #17130e;
             text-align: center;
             text-transform: uppercase;
             line-height: 1;
-            margin-bottom: 4px;
         }
 
         .star-divider {
@@ -291,34 +277,32 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            margin-bottom: 18px;
+            margin-bottom: clamp(2px, 0.8vh, 6px);
         }
 
         .star-divider::before, .star-divider::after {
             content: '';
             height: 1px;
-            width: 55px;
-            background-color: #7d6342;
+            width: clamp(40px, 9vw, 60px);
+            background-color: #6b5235;
         }
 
         .star-divider span {
             padding: 0 8px;
-            font-size: 0.7rem;
-            color: #1a1510;
+            font-size: clamp(0.55rem, 1.2vh, 0.7rem);
+            color: #17130e;
         }
 
-        /* ==========================================================================
-           4. AVATAR / PORTRAIT FRAME
-           ========================================================================== */
+        /* Portrait Avatar */
         .avatar-container {
             position: relative;
-            width: 160px;
-            height: 160px;
+            width: clamp(95px, 21vh, 155px);
+            height: clamp(95px, 21vh, 155px);
             border-radius: 50%;
-            border: 3px solid #8d7043;
-            box-shadow: 0 0 0 1px #221a12, 0 6px 16px rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
-            background: #231b14;
+            border: 3px solid #7a5f37;
+            box-shadow: 0 0 0 1px #1a120b, 0 4px 12px rgba(0, 0, 0, 0.35);
+            background: #211a13;
+            flex-shrink: 0;
         }
 
         .avatar-frame-inner {
@@ -332,75 +316,53 @@
             background: #211a13;
         }
 
-        /* Edit Pencil Floating Button */
         .edit-portrait-btn {
             position: absolute;
-            bottom: 4px;
-            right: 4px;
-            width: 34px;
-            height: 34px;
+            bottom: 2px;
+            right: 2px;
+            width: clamp(26px, 4.2vh, 34px);
+            height: clamp(26px, 4.2vh, 34px);
             background: #1a1714;
-            border: 2px solid #8d7043;
+            border: 2px solid #7a5f37;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.6);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
 
         .edit-portrait-btn svg {
-            width: 16px;
-            height: 16px;
+            width: clamp(12px, 2vh, 15px);
+            height: clamp(12px, 2vh, 15px);
             fill: #ffffff;
         }
 
-        /* ==========================================================================
-           5. FIELD LIST & SECTIONS
-           ========================================================================== */
+        /* Info Fields */
         .info-field {
             width: 100%;
-            padding: 11px 0;
-            border-bottom: 1px solid rgba(130, 103, 68, 0.3);
+            padding: clamp(5px, 1.1vh, 9px) 0;
+            border-bottom: 1px dashed rgba(110, 85, 52, 0.25);
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: clamp(10px, 2.5vw, 16px);
         }
 
         .info-field:last-child {
             border-bottom: none;
-            padding-bottom: 4px;
+            padding-bottom: 0;
         }
 
-        /* Custom Visual Field Icons */
         .field-icon-box {
-            width: 44px;
-            height: 44px;
+            width: clamp(34px, 5.2vh, 44px);
+            height: clamp(34px, 5.2vh, 44px);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-        }
-
-        /* Icon 1: Leather ID Badge */
-        .icon-badge-holder {
-            background: #231c15;
-            border: 1px solid #3d3125;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
-            border-radius: 8px;
-        }
-
-        /* Icon 2: Gold Shield */
-        .icon-shield-gold {
-            background: transparent;
-        }
-
-        /* Icon 3 & 4: Circular Dark Badges */
-        .icon-circle-dark {
-            background: #1d1915;
-            border-radius: 50%;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            background: #211a13;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         .field-content {
@@ -410,89 +372,86 @@
         }
 
         .field-label {
-            font-size: 0.68rem;
+            font-size: clamp(0.55rem, 1.1vh, 0.65rem);
             font-weight: 800;
-            color: #4d3d2c;
+            color: #594632;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-bottom: 2px;
+            letter-spacing: 0.5px;
         }
 
         .field-value-primary {
-            font-size: 1.35rem;
+            font-size: clamp(1.05rem, 2.3vh, 1.35rem);
             font-weight: 900;
-            color: #17130f;
+            color: #120e0a;
             line-height: 1.1;
         }
 
         .field-value-bold {
-            font-size: 1.05rem;
+            font-size: clamp(0.82rem, 1.8vh, 1.02rem);
             font-weight: 900;
-            color: #17130f;
+            color: #120e0a;
             text-transform: uppercase;
-            line-height: 1.15;
-            letter-spacing: -0.2px;
+            line-height: 1.1;
         }
 
-        /* Google Auth Button */
         .auth-status-btn {
-            background-color: #1a1714;
+            background-color: #171411;
             color: #ffffff;
             border-radius: 6px;
-            padding: 6px 12px;
+            padding: clamp(4px, 0.9vh, 6px) clamp(8px, 1.8vw, 12px);
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.78rem;
-            font-weight: 600;
+            gap: 7px;
+            font-size: clamp(0.68rem, 1.35vh, 0.78rem);
+            font-weight: 700;
             margin-top: 3px;
             width: fit-content;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .google-g-logo {
-            width: 15px;
-            height: 15px;
+            width: clamp(12px, 1.8vh, 14px);
+            height: clamp(12px, 1.8vh, 14px);
         }
 
         .account-id-subtext {
-            font-size: 0.65rem;
-            color: #423526;
-            margin-top: 5px;
+            font-size: clamp(0.52rem, 1.05vh, 0.62rem);
+            color: #4a3b2b;
+            margin-top: 3px;
             font-family: monospace;
             font-weight: 700;
         }
 
         /* ==========================================================================
-           6. FOOTER BACK BUTTON
+           4. FOOTER BACK BUTTON
            ========================================================================== */
         .footer-nav {
             width: 100%;
             max-width: 430px;
-            padding: 10px 12px 0 12px;
             display: flex;
             justify-content: flex-start;
+            flex-shrink: 0;
+            padding-top: clamp(6px, 1.2vh, 10px);
         }
 
         .back-btn {
-            background: #181512;
-            border: 1px solid #332b22;
+            background: #171411;
+            border: 1px solid #33291e;
             color: #ffffff;
-            padding: 8px 16px;
+            padding: clamp(6px, 1.1vh, 9px) clamp(12px, 2.5vw, 18px);
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: clamp(0.72rem, 1.5vh, 0.85rem);
             font-weight: 900;
             letter-spacing: 0.8px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.7);
         }
 
         .back-btn svg {
-            width: 14px;
-            height: 14px;
+            width: clamp(11px, 1.7vh, 14px);
+            height: clamp(11px, 1.7vh, 14px);
             fill: #ffffff;
         }
     </style>
@@ -536,13 +495,13 @@
                 <h1 class="paper-title">PROFILE</h1>
                 <div class="star-divider"><span>&#9733;</span></div>
 
-                <!-- Avatar Silhouette -->
+                <!-- Avatar -->
                 <div class="avatar-container">
                     <div class="avatar-frame-inner">
                         <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
                             <circle cx="50" cy="50" r="50" fill="#211a13"/>
-                            <circle cx="50" cy="40" r="19" fill="#d9be96"/>
-                            <path d="M 20 88 C 20 63, 80 63, 80 88 Z" fill="#d9be96"/>
+                            <circle cx="50" cy="40" r="19" fill="#dfc8a6"/>
+                            <path d="M 20 88 C 20 63, 80 63, 80 88 Z" fill="#dfc8a6"/>
                         </svg>
                     </div>
                     <button class="edit-portrait-btn" aria-label="Edit Profile Picture">
@@ -550,11 +509,11 @@
                     </button>
                 </div>
 
-                <!-- Detective Name -->
+                <!-- Field 1: Detective Name -->
                 <div class="info-field">
-                    <div class="field-icon-box icon-badge-holder">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="#cba97d">
-                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"/>
+                    <div class="field-icon-box">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="#baa17e">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
                     </div>
                     <div class="field-content">
@@ -563,14 +522,14 @@
                     </div>
                 </div>
 
-                <!-- Current Rank -->
+                <!-- Field 2: Current Rank -->
                 <div class="info-field">
-                    <div class="field-icon-box icon-shield-gold">
-                        <svg viewBox="0 0 100 100" width="42" height="42">
-                            <path d="M 50 10 L 85 25 V 50 C 85 72, 50 90, 50 90 C 50 90, 15 72, 15 50 V 25 Z" fill="#9e732d" stroke="#221a12" stroke-width="3"/>
+                    <div class="field-icon-box" style="background:#211a13;">
+                        <svg viewBox="0 0 100 100" width="36" height="36">
+                            <path d="M 50 10 L 85 25 V 50 C 85 72, 50 90, 50 90 C 50 90, 15 72, 15 50 V 25 Z" fill="#9e732d" stroke="#171411" stroke-width="3"/>
                             <path d="M 50 16 L 80 29 V 48 C 80 67, 50 83, 50 83 C 50 83, 20 67, 20 48 V 29 Z" fill="#d4af37"/>
-                            <polygon points="50,30 54,40 65,40 56,47 59,58 50,51 41,58 44,47 35,40 46,40" fill="#221a12"/>
-                            <text x="50" y="70" font-size="10" font-weight="900" fill="#221a12" text-anchor="middle" font-family="sans-serif">P.I.</text>
+                            <polygon points="50,30 54,40 65,40 56,47 59,58 50,51 41,58 44,47 35,40 46,40" fill="#171411"/>
+                            <text x="50" y="70" font-size="10" font-weight="900" fill="#171411" text-anchor="middle" font-family="sans-serif">P.I.</text>
                         </svg>
                     </div>
                     <div class="field-content">
@@ -579,10 +538,10 @@
                     </div>
                 </div>
 
-                <!-- Level -->
+                <!-- Field 3: Level -->
                 <div class="info-field">
-                    <div class="field-icon-box icon-circle-dark">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="#d4af37">
+                    <div class="field-icon-box">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="#d4af37">
                             <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
                             <rect x="4" y="14" width="3" height="5"/>
                             <rect x="10" y="11" width="3" height="8"/>
@@ -595,10 +554,10 @@
                     </div>
                 </div>
 
-                <!-- Account -->
+                <!-- Field 4: Account -->
                 <div class="info-field">
-                    <div class="field-icon-box icon-circle-dark">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="#a0a0a0">
+                    <div class="field-icon-box">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="#baa17e">
                             <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
                         </svg>
                     </div>
