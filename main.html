@@ -222,6 +222,14 @@
                 const loading = document.getElementById('screen-loading');
                 const menu = document.getElementById('screen-menu');
                 const meter = document.getElementById('meter-fill');
+                const loadingText = document.getElementById('loading-text');
+
+                let dots = 0;
+
+                setInterval(() => {
+                dots = (dots + 1) % 3;
+                loadingText.textContent = "Loading" + ".".repeat(dots + 1);
+                }, 350);
 
                 setTimeout(() => {
                     splash.classList.remove('is-active');
