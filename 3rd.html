@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Detective Profile UI</title>
+    <style>
+        /* ==========================================================================
+           1. CORE RESET & PREVENT HORIZONTAL SCROLLING
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden !important; /* Strictly prevents sideways scrolling */
+            background-color: #0d0a08;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #111;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            /* Dark wood texture effect */
+            background: radial-gradient(circle at center, #1e1914 0%, #0a0806 100%);
+            padding-bottom: 24px;
+        }
+
+        /* ==========================================================================
+           2. HEADER TOP STATUS BAR
+           ========================================================================== */
+        .top-bar {
+            width: 100%;
+            max-width: 480px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .status-pill {
+            background-color: #000000;
+            border: 1px solid #2d261e;
+            border-radius: 8px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
+
+        .star-icon-gold {
+            color: #f59e0b;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .rank-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .rank-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .rank-subtitle {
+            font-size: 0.65rem;
+            color: #94a3b8;
+        }
+
+        /* Level Progress Bar inside pill */
+        .level-progress-bg {
+            width: 80px;
+            height: 4px;
+            background: #2a241e;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 1px;
+        }
+
+        .level-progress-fill {
+            width: 25%;
+            height: 100%;
+            background: #f59e0b;
+            border-radius: 2px;
+        }
+
+        .cash-pill {
+            background-color: #000000;
+            border: 1px solid #2d261e;
+            border-radius: 8px;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
+
+        .cash-icon {
+            font-size: 1.1rem;
+        }
+
+        .cash-amount {
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+        }
+
+        .add-cash-btn {
+            background: #16a34a;
+            border: 1px solid #22c55e;
+            color: #ffffff;
+            width: 24px;
+            height: 24px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .profile-top-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffffff;
+            gap: 2px;
+            cursor: pointer;
+        }
+
+        .profile-top-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+        }
+
+        .profile-top-btn span {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           3. CLIPBOARD & MAIN PARCHMENT CONTAINER
+           ========================================================================== */
+        .wrapper {
+            width: 100%;
+            max-width: 480px;
+            padding: 0 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .clipboard {
+            width: 100%;
+            background: #4a2d17;
+            background-image: linear-gradient(135deg, #5a381e 0%, #2f1a0a 100%);
+            border: 3px solid #1c0e05;
+            border-radius: 16px;
+            padding: 44px 14px 16px 14px;
+            position: relative;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
+            margin-top: 16px;
+        }
+
+        /* Metallic Clip Hardware */
+        .clip-hardware {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 40px;
+            background: linear-gradient(180deg, #a1a5ab 0%, #4b4e52 50%, #222426 100%);
+            border: 1px solid #6b7075;
+            border-radius: 8px 8px 4px 4px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+
+        .clip-hole {
+            width: 22px;
+            height: 22px;
+            background: #111213;
+            border-radius: 50%;
+            border: 2px solid #6b7075;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* Parchment Sheet */
+        .paper-sheet {
+            background-color: #dfc49c;
+            background-image: radial-gradient(#d1b287 1px, transparent 0);
+            background-size: 16px 16px;
+            border-radius: 4px;
+            border: 1px solid #a88a5b;
+            padding: 24px 20px;
+            box-shadow: inset 0 0 30px rgba(117, 81, 35, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Title */
+        .paper-title {
+            font-family: 'Impact', 'Trebuchet MS', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #1a1612;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .star-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .star-divider::before, .star-divider::after {
+            content: '';
+            height: 2px;
+            width: 70px;
+            background-color: #1a1612;
+        }
+
+        .star-divider span {
+            padding: 0 8px;
+            font-size: 0.85rem;
+            color: #1a1612;
+        }
+
+        /* ==========================================================================
+           4. AVATAR / PORTRAIT FRAME
+           ========================================================================== */
+        .avatar-container {
+            position: relative;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid #9c7a40;
+            background: #2a221b;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 0, 0, 0.8);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-frame-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-frame-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .edit-portrait-btn {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 38px;
+            height: 38px;
+            background: #26221f;
+            border: 2px solid #9c7a40;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+        }
+
+        .edit-portrait-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+        }
+
+        /* ==========================================================================
+           5. FIELD LIST & SECTIONS
+           ========================================================================== */
+        .info-field {
+            width: 100%;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(140, 115, 82, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .info-field:last-child {
+            border-bottom: none;
+        }
+
+        /* Dark Badge Containers for Icons */
+        .field-icon-box {
+            width: 48px;
+            height: 48px;
+            background: radial-gradient(circle, #2d2721 0%, #17130f 100%);
+            border: 2px solid #3d342a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+        }
+
+        .field-icon-box.badge-shape {
+            border-radius: 8px 8px 16px 16px;
+        }
+
+        .field-icon-box.circle-shape {
+            border-radius: 50%;
+        }
+
+        .field-icon-box svg {
+            width: 26px;
+            height: 26px;
+            fill: #d4af37;
+        }
+
+        .field-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .field-label {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: #574635;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .field-value-primary {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #1a1612;
+            line-height: 1.1;
+        }
+
+        .field-value-bold {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: #1a1612;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        /* Auth Pill */
+        .auth-status-btn {
+            background-color: #1c1917;
+            color: #ffffff;
+            border-radius: 6px;
+            padding: 8px 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 4px;
+            width: fit-content;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .auth-status-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .account-id-subtext {
+            font-size: 0.7rem;
+            color: #4a3b2a;
+            margin-top: 6px;
+            font-family: monospace;
+            font-weight: 700;
+        }
+
+        /* ==========================================================================
+           6. FOOTER BACK BUTTON
+           ========================================================================== */
+        .footer-nav {
+            width: 100%;
+            max-width: 480px;
+            padding: 14px 12px 0 12px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .back-btn {
+            background: #1a1715;
+            border: 1px solid #3a3228;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+        }
+
+        .back-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Status Bar -->
+    <header class="top-bar">
+        <div class="status-pill">
+            <span class="star-icon-gold">&#9733;</span>
+            <div class="rank-info">
+                <span class="rank-title">NOVICE P.I.</span>
+                <span class="rank-subtitle">Level 1</span>
+                <div class="level-progress-bg">
+                    <div class="level-progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cash-pill">
+            <span class="cash-icon">&#128181;</span>
+            <span class="cash-amount">R12 450</span>
+            <button class="add-cash-btn">+</button>
+        </div>
+
+        <div class="profile-top-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <span>PROFILE</span>
+        </div>
+    </header>
+
+    <!-- Main Clipboard Container -->
+    <div class="wrapper">
+        <div class="clipboard">
+            <div class="clip-hardware">
+                <div class="clip-hole"></div>
+            </div>
+
+            <main class="paper-sheet">
+                <h1 class="paper-title">PROFILE</h1>
+                <div class="star-divider"><span>&#9733;</span></div>
+
+                <!-- Detective Avatar -->
+                <div class="avatar-container">
+                    <div class="avatar-frame-inner">
+                        <!-- Detective Vector Portrait -->
+                        <svg viewBox="0 0 200 200" style="width:100%; height:100%; background:#2a221b;">
+                            <rect width="200" height="200" fill="#2a221b"/>
+                            <!-- Coat -->
+                            <path d="M 40 200 C 40 140, 160 140, 160 200 Z" fill="#9e733b"/>
+                            <path d="M 75 140 L 100 200 L 125 140 Z" fill="#ffffff"/>
+                            <path d="M 95 155 L 100 200 L 105 155 Z" fill="#1c1917"/>
+                            <!-- Face -->
+                            <ellipse cx="100" cy="105" rx="35" ry="42" fill="#d9a066"/>
+                            <!-- Hat -->
+                            <path d="M 40 90 Q 100 70 160 90 Q 100 82 40 90 Z" fill="#382d24"/>
+                            <path d="M 65 85 C 65 45, 135 45, 135 85 Z" fill="#4a3c30"/>
+                            <rect x="65" y="75" width="70" height="10" fill="#1c1917"/>
+                        </svg>
+                    </div>
+                    <button class="edit-portrait-btn" aria-label="Edit Profile Picture">
+                        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    </button>
+                </div>
+
+                <!-- Data Fields -->
+                <div class="info-field">
+                    <div class="field-icon-box">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.78c0-2.33 4.67-3.5 7-3.5s7 1.17 7 2.33V19z"/></svg>
+                    </div>
+                    <div class="field-content">
+                        <span class="field-label">Detective Name</span>
+                        <span class="field-value-primary">Paul</span>
+                    </div>
+                </div>
+
+                <div class="info-field">
+                    <div class="field-icon-box badge-shape">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
+                    </div>
+                    <div class="field-content">
+                        <span class="field-label">Current Rank</span>
+                        <span class="field-value-bold">NOVICE PRIVATE INVESTIGATOR (P.I.)</span>
+                    </div>
+                </div>
+
+                <div class="info-field">
+                    <div class="field-icon-box circle-shape">
+                        <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                    </div>
+                    <div class="field-content">
+                        <span class="field-label">Level</span>
+                        <span class="field-value-primary">Level 1</span>
+                    </div>
+                </div>
+
+                <div class="info-field">
+                    <div class="field-icon-box circle-shape">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                    </div>
+                    <div class="field-content">
+                        <span class="field-label">Account</span>
+                        <div class="auth-status-btn">
+                            <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.761H12.545z"/></svg>
+                            Signed in with Google
+                        </div>
+                        <span class="account-id-subtext">Account ID: 9F3A-7B2C-1D4E-5F6A</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer Back Button -->
+        <footer class="footer-nav">
+            <button class="back-btn">
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                BACK
+            </button>
+        </footer>
+    </div>
+
+</body>
+</html>
