@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Detective Profile - Single Screen</title>
+    <title>Detective Profile UI</title>
     <style>
         /* ==========================================================================
-           1. ZERO SCROLL & FULL VIEWPORT LOCK
+           1. CORE RESET & ZERO SIDE-SCROLL SHIELD
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -18,27 +18,24 @@
 
         html, body {
             width: 100%;
-            height: 100vh;
-            height: 100dvh;
-            overflow: hidden !important;
-            background-color: #0b0a08;
+            min-height: 100vh;
+            overflow-x: hidden !important;
+            background-color: #0b0907;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #111;
+            color: #ffffff;
         }
 
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            background: 
-                radial-gradient(circle at 50% 30%, rgba(30, 24, 18, 0.95) 0%, rgba(8, 6, 5, 0.98) 100%),
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 4px);
-            padding: clamp(6px, 1.2vh, 12px) 12px clamp(8px, 1.5vh, 16px) 12px;
+            justify-content: flex-start;
+            background: radial-gradient(circle at center, #1e1710 0%, #080604 100%);
+            padding: 16px 12px 28px 12px;
         }
 
         /* ==========================================================================
-           2. HEADER TOP STATUS BAR
+           2. TOP HEADER CARDS (STRICTLY EQUAL SIZE & EVEN SPACING)
            ========================================================================== */
         .top-bar {
             width: 100%;
@@ -46,230 +43,208 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            z-index: 20;
-            flex-shrink: 0;
-            padding: 2px 0;
+            gap: 12px; /* Breathing room between cards */
+            margin-bottom: 24px; /* Breathing room above clipboard */
+            z-index: 10;
         }
 
-        .status-pill {
+        /* Base Card Styling for all 3 Top Items */
+        .top-card {
+            flex: 1 1 0px; /* Forces all 3 cards to be strictly equal width */
+            height: 54px;   /* Forces identical height */
             background: #000000;
-            border: 1px solid #231e18;
+            border: 1px solid #2a221a;
             border-radius: 8px;
-            padding: 5px 10px;
+            padding: 6px 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-            min-width: 130px;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
         }
 
-        .level-badge-star {
-            color: #eab308;
-            font-size: clamp(1.1rem, 2.4vh, 1.4rem);
+        /* Card 1: Level / Rank */
+        .level-card {
+            justify-content: flex-start;
+            gap: 8px;
+        }
+
+        .star-icon {
+            color: #f59e0b;
+            font-size: 1.3rem;
             line-height: 1;
+            flex-shrink: 0;
         }
 
         .rank-info {
             display: flex;
             flex-direction: column;
             width: 100%;
+            overflow: hidden;
         }
 
         .rank-title {
-            font-size: clamp(0.58rem, 1.2vh, 0.68rem);
-            font-weight: 900;
-            letter-spacing: 0.5px;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.3px;
             color: #ffffff;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .rank-subtitle {
-            font-size: clamp(0.52rem, 1.1vh, 0.62rem);
+            font-size: 0.58rem;
             color: #94a3b8;
             margin-bottom: 3px;
         }
 
-        .level-progress-bg {
+        .progress-bar-bg {
             width: 100%;
             height: 3px;
-            background: #2a241e;
+            background: #1c2430;
             border-radius: 2px;
             overflow: hidden;
         }
 
-        .level-progress-fill {
-            width: 18%;
+        .progress-bar-fill {
+            width: 30%;
             height: 100%;
-            background: #eab308;
-            border-radius: 2px;
+            background: #f59e0b;
         }
 
-        .cash-pill {
-            background: #000000;
-            border: 1px solid #231e18;
-            border-radius: 8px;
-            padding: 4px 8px;
+        /* Card 2: Cash */
+        .cash-card {
+            justify-content: space-between;
+            gap: 4px;
+        }
+
+        .cash-amount-group {
             display: flex;
             align-items: center;
-            gap: 6px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-        }
-
-        .cash-icon {
-            width: clamp(18px, 2.5vh, 22px);
-            height: clamp(13px, 1.8vh, 16px);
-            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
-            border-radius: 2px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cash-icon::after {
-            content: '$';
-            color: #ffffff;
-            font-size: 0.55rem;
-            font-weight: 900;
+            gap: 4px;
         }
 
         .cash-amount {
             color: #ffffff;
             font-weight: 800;
-            font-size: clamp(0.85rem, 2vh, 1.05rem);
-            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
         .add-cash-btn {
             background: #22c55e;
             border: none;
             color: #ffffff;
-            width: clamp(18px, 2.4vh, 22px);
-            height: clamp(18px, 2.4vh, 22px);
+            width: 22px;
+            height: 22px;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: clamp(0.75rem, 1.8vh, 0.9rem);
+            font-size: 0.9rem;
             cursor: pointer;
+            flex-shrink: 0;
         }
 
-        .profile-top-btn {
-            display: flex;
+        /* Card 3: Profile */
+        .profile-card {
             flex-direction: column;
-            align-items: center;
-            color: #ffffff;
-            gap: 1px;
+            gap: 2px;
             cursor: pointer;
         }
 
-        .profile-top-btn svg {
-            width: clamp(18px, 2.5vh, 22px);
-            height: clamp(18px, 2.5vh, 22px);
+        .profile-card svg {
+            width: 20px;
+            height: 20px;
             fill: #ffffff;
         }
 
-        .profile-top-btn span {
-            font-size: clamp(0.5rem, 1vh, 0.6rem);
+        .profile-card span {
+            font-size: 0.6rem;
             font-weight: 800;
             letter-spacing: 0.5px;
         }
 
         /* ==========================================================================
-           3. MAIN CONTAINER & PARCHMENT SHEET
+           3. CLIPBOARD & MAIN PARCHMENT CONTAINER
            ========================================================================== */
         .wrapper {
             width: 100%;
-            max-width: 430px;
-            flex: 1;
+            max-width: 440px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 0;
-            margin-top: 4px;
         }
 
         .clipboard {
             width: 100%;
-            height: 100%;
-            background: #3b220f;
-            background-image: linear-gradient(135deg, #4a2b13 0%, #211207 100%);
-            border: 3px solid #140b04;
+            background: #4d2f16;
+            background-image: linear-gradient(135deg, #5e391b 0%, #2b180a 100%);
+            border: 3px solid #190e06;
             border-radius: 12px;
-            padding: clamp(18px, 3vh, 28px) clamp(8px, 2vw, 12px) clamp(8px, 1.5vh, 12px) clamp(8px, 2vw, 12px);
+            padding: 24px 10px 10px 10px;
             position: relative;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
-            display: flex;
-            flex-direction: column;
         }
 
+        /* Metallic Hardware Clip */
         .clip-hardware {
             position: absolute;
-            top: clamp(-8px, -1.2vh, -12px);
+            top: -16px;
             left: 50%;
             transform: translateX(-50%);
-            width: clamp(110px, 25vw, 135px);
-            height: clamp(24px, 3.5vh, 32px);
-            background: linear-gradient(180deg, #9da3ad 0%, #404650 50%, #1a1e24 100%);
+            width: 150px;
+            height: 34px;
+            background: linear-gradient(180deg, #9ca3af 0%, #4b5563 50%, #1f2937 100%);
             border: 1px solid #6b7280;
-            border-radius: 6px 6px 4px 4px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+            border-radius: 6px 6px 3px 3px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.8);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 10;
+            z-index: 5;
         }
 
-        .clip-hardware-ring {
-            width: clamp(10px, 1.8vh, 14px);
-            height: clamp(10px, 1.8vh, 14px);
+        .clip-hole {
+            width: 16px;
+            height: 16px;
+            background: #0b0907;
             border-radius: 50%;
-            background: #0d1117;
-            border: 2px solid #484f58;
-            position: absolute;
-            top: -5px;
+            border: 2px solid #4b5563;
         }
 
-        .clip-indent {
-            width: clamp(26px, 5vw, 34px);
-            height: 5px;
-            background: #090c10;
-            border-radius: 4px;
-            border: 1px solid #30363d;
-            margin-top: 3px;
-        }
-
+        /* Parchment Paper Sheet (Fixed Blue Area Padding) */
         .paper-sheet {
-            background-color: #dfc8a6;
-            background-image: 
-                radial-gradient(#baa17e 1.2px, transparent 1.2px),
-                linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.04) 100%);
-            background-size: 14px 14px, 100% 100%;
+            background-color: #e5cc9d;
+            background-image: radial-gradient(#d6b785 1px, transparent 0);
+            background-size: 12px 12px;
             border-radius: 4px;
-            border: 1px solid #a38760;
-            padding: clamp(12px, 2.2vh, 20px) clamp(12px, 2.5vw, 18px);
-            box-shadow: inset 0 0 25px rgba(90, 60, 24, 0.25);
+            border: 2px solid #a38456;
+            padding: 30px 16px 20px 16px; /* 30px top padding provides clean spacing under clip */
+            box-shadow: inset 0 0 30px rgba(100, 65, 25, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-around;
-            flex: 1;
-            min-height: 0;
             position: relative;
         }
 
-        /* Paper Header */
+        .paper-sheet::before {
+            content: '';
+            position: absolute;
+            top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px solid rgba(138, 107, 65, 0.4);
+            pointer-events: none;
+        }
+
         .paper-title {
-            font-family: 'Impact', 'Trebuchet MS', sans-serif;
-            font-size: clamp(1.8rem, 4vh, 2.5rem);
+            font-family: 'Georgia', 'Impact', serif;
+            font-size: 2.2rem;
             font-weight: 900;
             letter-spacing: 3px;
-            color: #17130e;
+            color: #1a1510;
             text-align: center;
             text-transform: uppercase;
-            line-height: 1;
         }
 
         .star-divider {
@@ -277,32 +252,37 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            margin-bottom: clamp(2px, 0.8vh, 6px);
+            margin-bottom: 16px;
         }
 
         .star-divider::before, .star-divider::after {
             content: '';
             height: 1px;
-            width: clamp(40px, 9vw, 60px);
-            background-color: #6b5235;
+            width: 60px;
+            background-color: #8c714b;
         }
 
         .star-divider span {
             padding: 0 8px;
-            font-size: clamp(0.55rem, 1.2vh, 0.7rem);
-            color: #17130e;
+            font-size: 0.75rem;
+            color: #1a1510;
         }
 
-        /* Portrait Avatar */
+        /* ==========================================================================
+           4. AVATAR / PORTRAIT FRAME
+           ========================================================================== */
         .avatar-container {
             position: relative;
-            width: clamp(95px, 21vh, 155px);
-            height: clamp(95px, 21vh, 155px);
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 3px solid #7a5f37;
-            box-shadow: 0 0 0 1px #1a120b, 0 4px 12px rgba(0, 0, 0, 0.35);
-            background: #211a13;
-            flex-shrink: 0;
+            border: 4px solid #8c6e3d;
+            background: #1c1611;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .avatar-frame-inner {
@@ -313,56 +293,69 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #211a13;
         }
 
-        .edit-portrait-btn {
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .edit-btn {
             position: absolute;
-            bottom: 2px;
-            right: 2px;
-            width: clamp(26px, 4.2vh, 34px);
-            height: clamp(26px, 4.2vh, 34px);
-            background: #1a1714;
-            border: 2px solid #7a5f37;
+            bottom: 4px;
+            right: 4px;
+            width: 32px;
+            height: 32px;
+            background: #231c15;
+            border: 2px solid #8c6e3d;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.6);
         }
 
-        .edit-portrait-btn svg {
-            width: clamp(12px, 2vh, 15px);
-            height: clamp(12px, 2vh, 15px);
+        .edit-btn svg {
+            width: 15px;
+            height: 15px;
             fill: #ffffff;
         }
 
-        /* Info Fields */
+        /* ==========================================================================
+           5. FIELD LIST & SECTIONS
+           ========================================================================== */
         .info-field {
             width: 100%;
-            padding: clamp(5px, 1.1vh, 9px) 0;
-            border-bottom: 1px dashed rgba(110, 85, 52, 0.25);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(140, 113, 75, 0.35);
             display: flex;
             align-items: center;
-            gap: clamp(10px, 2.5vw, 16px);
+            gap: 14px;
         }
 
         .info-field:last-child {
             border-bottom: none;
-            padding-bottom: 0;
         }
 
         .field-icon-box {
-            width: clamp(34px, 5.2vh, 44px);
-            height: clamp(34px, 5.2vh, 44px);
-            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            background: #1c1813;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            background: #211a13;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            border: 1px solid #3d3122;
+        }
+
+        .field-icon-box svg {
+            width: 22px;
+            height: 22px;
+            fill: #d4af37;
         }
 
         .field-content {
@@ -372,112 +365,118 @@
         }
 
         .field-label {
-            font-size: clamp(0.55rem, 1.1vh, 0.65rem);
+            font-size: 0.65rem;
             font-weight: 800;
-            color: #594632;
+            color: #5c4731;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-bottom: 2px;
         }
 
         .field-value-primary {
-            font-size: clamp(1.05rem, 2.3vh, 1.35rem);
+            font-size: 1.2rem;
             font-weight: 900;
-            color: #120e0a;
+            color: #1a1510;
             line-height: 1.1;
         }
 
         .field-value-bold {
-            font-size: clamp(0.82rem, 1.8vh, 1.02rem);
-            font-weight: 900;
-            color: #120e0a;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #1a1510;
             text-transform: uppercase;
-            line-height: 1.1;
+            line-height: 1.2;
         }
 
         .auth-status-btn {
-            background-color: #171411;
+            background-color: #1c1813;
             color: #ffffff;
             border-radius: 6px;
-            padding: clamp(4px, 0.9vh, 6px) clamp(8px, 1.8vw, 12px);
+            padding: 6px 12px;
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            font-size: clamp(0.68rem, 1.35vh, 0.78rem);
-            font-weight: 700;
-            margin-top: 3px;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 4px;
             width: fit-content;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        .google-g-logo {
-            width: clamp(12px, 1.8vh, 14px);
-            height: clamp(12px, 1.8vh, 14px);
+        .auth-status-btn svg {
+            width: 14px;
+            height: 14px;
         }
 
         .account-id-subtext {
-            font-size: clamp(0.52rem, 1.05vh, 0.62rem);
-            color: #4a3b2b;
-            margin-top: 3px;
+            font-size: 0.65rem;
+            color: #4a3a28;
+            margin-top: 4px;
             font-family: monospace;
             font-weight: 700;
         }
 
         /* ==========================================================================
-           4. FOOTER BACK BUTTON
+           6. FOOTER NAV BUTTON
            ========================================================================== */
         .footer-nav {
             width: 100%;
-            max-width: 430px;
+            max-width: 440px;
+            padding: 14px 0 0 0;
             display: flex;
             justify-content: flex-start;
-            flex-shrink: 0;
-            padding-top: clamp(6px, 1.2vh, 10px);
         }
 
         .back-btn {
-            background: #171411;
-            border: 1px solid #33291e;
+            background: #1c1813;
+            border: 1px solid #3a3023;
             color: #ffffff;
-            padding: clamp(6px, 1.1vh, 9px) clamp(12px, 2.5vw, 18px);
-            border-radius: 6px;
-            font-size: clamp(0.72rem, 1.5vh, 0.85rem);
-            font-weight: 900;
-            letter-spacing: 0.8px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             gap: 6px;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.6);
         }
 
         .back-btn svg {
-            width: clamp(11px, 1.7vh, 14px);
-            height: clamp(11px, 1.7vh, 14px);
+            width: 14px;
+            height: 14px;
             fill: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Status Bar -->
+    <!-- Equal Sized Top Header Cards -->
     <header class="top-bar">
-        <div class="status-pill">
-            <span class="level-badge-star">&#9733;</span>
+        <!-- Card 1: Level -->
+        <div class="top-card level-card">
+            <span class="star-icon">&#9733;</span>
             <div class="rank-info">
                 <span class="rank-title">NOVICE P.I.</span>
                 <span class="rank-subtitle">Level 1</span>
-                <div class="level-progress-bg">
-                    <div class="level-progress-fill"></div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill"></div>
                 </div>
             </div>
         </div>
 
-        <div class="cash-pill">
-            <div class="cash-icon"></div>
-            <span class="cash-amount">R12 450</span>
-            <button class="add-cash-btn" aria-label="Add Cash">+</button>
+        <!-- Card 2: Cash -->
+        <div class="top-card cash-card">
+            <div class="cash-amount-group">
+                <span style="font-size: 0.95rem;">&#128181;</span>
+                <span class="cash-amount">R12 450</span>
+            </div>
+            <button class="add-cash-btn">+</button>
         </div>
 
-        <div class="profile-top-btn">
+        <!-- Card 3: Profile -->
+        <div class="top-card profile-card">
             <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
             <span>PROFILE</span>
         </div>
@@ -487,34 +486,39 @@
     <div class="wrapper">
         <div class="clipboard">
             <div class="clip-hardware">
-                <div class="clip-hardware-ring"></div>
-                <div class="clip-indent"></div>
+                <div class="clip-hole"></div>
             </div>
 
             <main class="paper-sheet">
                 <h1 class="paper-title">PROFILE</h1>
                 <div class="star-divider"><span>&#9733;</span></div>
 
-                <!-- Avatar -->
+                <!-- Avatar Portrait -->
                 <div class="avatar-container">
                     <div class="avatar-frame-inner">
-                        <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
-                            <circle cx="50" cy="50" r="50" fill="#211a13"/>
-                            <circle cx="50" cy="40" r="19" fill="#dfc8a6"/>
-                            <path d="M 20 88 C 20 63, 80 63, 80 88 Z" fill="#dfc8a6"/>
+                        <svg viewBox="0 0 100 100" class="avatar-img">
+                            <rect width="100" height="100" fill="#2d2218"/>
+                            <path d="M 20 100 L 35 60 L 50 65 L 65 60 L 80 100 Z" fill="#8c6034"/>
+                            <polygon points="42,62 58,62 50,85" fill="#ffffff"/>
+                            <polygon points="48,65 52,65 51,80 49,80" fill="#1a1510"/>
+                            <path d="M 30 100 L 42 62 L 50 82 L 35 100 Z" fill="#6e4925"/>
+                            <path d="M 70 100 L 58 62 L 50 82 L 65 100 Z" fill="#6e4925"/>
+                            <rect x="42" y="48" width="16" height="16" fill="#d0a273"/>
+                            <path d="M 36 38 C 36 28, 64 28, 64 38 L 60 54 C 60 58, 40 58, 40 54 Z" fill="#d0a273"/>
+                            <path d="M 22 38 C 35 34, 65 34, 78 38 C 82 39, 18 39, 22 38 Z" fill="#3a3025"/>
+                            <path d="M 35 36 C 35 20, 65 20, 65 36 Z" fill="#2b231a"/>
+                            <rect x="35" y="32" width="30" height="4" fill="#1a1510"/>
                         </svg>
                     </div>
-                    <button class="edit-portrait-btn" aria-label="Edit Profile Picture">
+                    <button class="edit-btn" aria-label="Edit Profile Picture">
                         <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
                     </button>
                 </div>
 
-                <!-- Field 1: Detective Name -->
+                <!-- Info Fields -->
                 <div class="info-field">
                     <div class="field-icon-box">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="#baa17e">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.78c0-2.33 4.67-3.5 7-3.5s7 1.17 7 2.33V19z"/></svg>
                     </div>
                     <div class="field-content">
                         <span class="field-label">Detective Name</span>
@@ -522,15 +526,9 @@
                     </div>
                 </div>
 
-                <!-- Field 2: Current Rank -->
                 <div class="info-field">
-                    <div class="field-icon-box" style="background:#211a13;">
-                        <svg viewBox="0 0 100 100" width="36" height="36">
-                            <path d="M 50 10 L 85 25 V 50 C 85 72, 50 90, 50 90 C 50 90, 15 72, 15 50 V 25 Z" fill="#9e732d" stroke="#171411" stroke-width="3"/>
-                            <path d="M 50 16 L 80 29 V 48 C 80 67, 50 83, 50 83 C 50 83, 20 67, 20 48 V 29 Z" fill="#d4af37"/>
-                            <polygon points="50,30 54,40 65,40 56,47 59,58 50,51 41,58 44,47 35,40 46,40" fill="#171411"/>
-                            <text x="50" y="70" font-size="10" font-weight="900" fill="#171411" text-anchor="middle" font-family="sans-serif">P.I.</text>
-                        </svg>
+                    <div class="field-icon-box">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                     </div>
                     <div class="field-content">
                         <span class="field-label">Current Rank</span>
@@ -538,15 +536,9 @@
                     </div>
                 </div>
 
-                <!-- Field 3: Level -->
                 <div class="info-field">
                     <div class="field-icon-box">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="#d4af37">
-                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
-                            <rect x="4" y="14" width="3" height="5"/>
-                            <rect x="10" y="11" width="3" height="8"/>
-                            <rect x="16" y="7" width="3" height="12"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
                     </div>
                     <div class="field-content">
                         <span class="field-label">Level</span>
@@ -554,22 +546,14 @@
                     </div>
                 </div>
 
-                <!-- Field 4: Account -->
                 <div class="info-field">
                     <div class="field-icon-box">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="#baa17e">
-                            <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                     </div>
                     <div class="field-content">
                         <span class="field-label">Account</span>
                         <div class="auth-status-btn">
-                            <svg class="google-g-logo" viewBox="0 0 24 24">
-                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-                            </svg>
+                            <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.761H12.545z"/></svg>
                             Signed in with Google
                         </div>
                         <span class="account-id-subtext">Account ID: 9F3A-7B2C-1D4E-5F6A</span>
@@ -578,7 +562,6 @@
             </main>
         </div>
 
-        <!-- Footer Back Button -->
         <footer class="footer-nav">
             <button class="back-btn">
                 <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
