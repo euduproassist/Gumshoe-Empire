@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>GUMSHOE EMPIRE - 100% Pure CSS Engine Replica</title>
+    <title>GUMSHOE EMPIRE - 100% Pure CSS Master Blueprint</title>
     
-    <!-- High-Fidelity Font Mappings matching Game UI Spec -->
+    <!-- Premium Vector Game Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fredoka:wght@600;700&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Russo+One&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           1. CORE RESET & ENGINE VARIABLE MATRIX
+           1. CORE CORE RESET & SCENE CONFIGURATION
            ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
@@ -24,366 +24,383 @@
         }
 
         :root {
-            /* Palette Sampling Directly From The Graphic Art Pieces */
-            --wood-darkest: #190a02;
-            --wood-shadow: #331b0c;
+            --wood-darkest: #160b04;
+            --wood-shadow: #331c0d;
             --wood-base: #703f19;
-            --wood-mid: #8e5529;
-            --wood-light: #b07442;
-            --wood-highlight: #d19a62;
+            --wood-mid: #8a5629;
+            --wood-light: #ab7543;
+            --wood-highlight: #d49f65;
             
             --text-main: #ffffff;
-            --text-stroke: #160a03;
-            --text-gold-light: #fff5cc;
-            --text-gold: #f2c042;
-            --text-gold-shadow: #b37a10;
+            --text-stroke: #160a04;
+            --text-gold: #fbc63b;
+            --text-gold-shadow: #b37b12;
             
-            --btn-blue-fill: #1b66b7;
-            --btn-blue-dark: #0f3f77;
-            --btn-green-fill: #439912;
-            --btn-green-dark: #225407;
+            --btn-blue-fill: #1a62b3;
+            --btn-blue-dark: #0d3d75;
+            --btn-green-fill: #459616;
+            --btn-green-dark: #215108;
             
-            --plaque-bg-main: #dfb273;
-            --plaque-bg-dark: #b88b4c;
-            --plaque-border: #4a2d12;
+            --plaque-bg-main: #ddaf70;
+            --plaque-bg-dark: #b58749;
+            --plaque-border: #452910;
             
-            --progress-container: #1b110a;
-            --progress-stroke: #422714;
-            --progress-fill-top: #7ee216;
-            --progress-fill-mid: #50a60c;
-            --progress-fill-bot: #286601;
-            
-            --room-wall: #58544a;
-            --room-floor: #3c484a;
-            --shadow-deep: rgba(0, 0, 0, 0.85);
+            --progress-container: #180f08;
+            --progress-stroke: #402613;
+            --progress-fill-top: #85e418;
+            --progress-fill-mid: #52a60b;
+            --progress-fill-bot: #256100;
         }
 
         html, body {
             width: 100%;
             height: 100%;
             max-width: 100vw;
-            background-color: #0c0908;
+            background-color: #080706;
             color: var(--text-main);
             font-family: 'Fredoka', sans-serif;
             overflow-x: hidden;
             overflow-y: auto;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            -webkit-font-smoothing: antialiased;
         }
 
         /* ==========================================================================
-           2. ANTI-SIDEWAYS RESPONSIVE SCENE ANCHOR STAGE
+           2. RESPONSIBILITY PROTECTION STAGE (NO SIDEWAYS SCROLL)
            ========================================================================== */
-        .game-stage-viewport {
+        .game-viewport {
             width: 100%;
             min-height: 100vh;
-            max-width: 100vw;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            padding: 5vh 20px 3vh 20px;
+            padding: 6vh 20px 4vh 20px;
             position: relative;
-            z-index: 1;
             overflow-x: hidden;
+            z-index: 1;
         }
 
         /* ==========================================================================
-           3. INTERIOR ART SCENE ENVIRONMENT (100% PURE CSS VECTOR ART)
+           3. ADVANCED PURE CSS ARTWORK SCENE ENGINE (OFFICE BACKGROUND)
            ========================================================================== */
-        .office-bg-wrapper {
+        .office-bg-engine {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: 
-                /* Base Wall Trim Molding */
-                linear-gradient(to bottom, transparent 52%, #221c17 52%, #2d2620 52.5%, #16120e 53.5%, transparent 53.5%),
-                /* Vertical Atmospheric Lighting Shadow */
-                linear-gradient(to right, rgba(0,0,0,0.4) 0%, transparent 25%, transparent 75%, rgba(0,0,0,0.4) 100%),
-                /* Split Wall & Floor Matrix */
-                linear-gradient(to bottom, var(--room-wall) 0%, #464239 52%, var(--room-floor) 52%, #2b3335 100%);
+                /* Room Split Perspective */
+                linear-gradient(to bottom, transparent 62%, #26211a 62%, #1b1712 63.5%, transparent 63.5%),
+                linear-gradient(to bottom, #706757 0%, #564f41 62%, #3c4446 62%, #232a2c 100%);
             z-index: -20;
-            filter: blur(7px); /* True Photographic Atmospheric Depth Layer */
-            transform: scale(1.05);
-        }
-
-        /* Left Clue Corkboard */
-        .corkboard-canvas {
-            position: absolute;
-            left: -10px; top: 28%;
-            width: 240px; height: 250px;
-            background: #3c2313;
-            border: 12px solid #1c1008;
-            border-radius: 4px;
-            box-shadow: 5px 15px 30px rgba(0,0,0,0.7);
-            transform: perspective(1000px) rotateY(30deg);
-            z-index: -18;
-        }
-        .corkboard-canvas::before {
-            content: ''; position: absolute;
-            top: 4px; left: 4px; right: 4px; bottom: 4px;
-            background: #9d7350;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
-        }
-        /* Intricate String Matrix & Pinned Notes */
-        .corkboard-canvas::after {
-            content: ''; position: absolute; width: 100%; height: 100%;
-            background: 
-                linear-gradient(28deg, transparent 44%, #a02222 45%, #a02222 47%, transparent 48%),
-                linear-gradient(-35deg, transparent 48%, #801818 49%, #801818 51%, transparent 52%),
-                radial-gradient(circle at 25% 30%, #ebd6ab 24px, transparent 25px),
-                radial-gradient(circle at 70% 40%, #dec08a 28px, transparent 29px),
-                radial-gradient(circle at 50% 75%, #decfa2 22px, transparent 23px);
-            opacity: 0.8;
-        }
-
-        /* Window & Venetian Blinds Over Cityscape Skyline */
-        .window-frame-node {
-            position: absolute;
-            right: -15px; top: 22%;
-            width: 220px; height: 320px;
-            background: linear-gradient(to bottom, #dbeff5, #7da5b2);
-            border: 14px solid #231b14;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.8), -10px 15px 30px rgba(0,0,0,0.6);
-            transform: perspective(1000px) rotateY(-25deg);
-            z-index: -17;
-        }
-        /* City Skyline Silhouettes & Blind Blades Layer */
-        .window-frame-node::before {
-            content: ''; position: absolute; width: 100%; height: 100%;
-            background: 
-                /* Skyline Skyscrapers Block Grid */
-                linear-gradient(to right, transparent 15%, #42585c 15%, #42585c 45%, transparent 45%),
-                linear-gradient(to right, transparent 55%, #2f3f42 55%, #2f3f42 85%, transparent 85%),
-                /* Micro-lines for Blinds Structure */
-                repeating-linear-gradient(transparent 0px, transparent 10px, #16120e 10px, #16120e 16px);
-            opacity: 0.9;
-        }
-
-        /* Executive Mahogany Desk Platform */
-        .desk-base-monolith {
-            position: absolute;
-            bottom: 12%; left: 50%;
-            transform: translateX(-50%);
-            width: 540px; height: 240px;
-            background: linear-gradient(to bottom, #4f2e1a, #231207);
-            border-top: 14px solid #663d24;
-            border-radius: 6px;
-            box-shadow: 0 5px 0 #130a04, 0 30px 50px rgba(0,0,0,0.95);
-            z-index: -10;
-        }
-        /* Framed Panels Inside Executive Desk */
-        .desk-base-monolith::before {
-            content: ''; position: absolute; top: 30px; left: 35px; width: 130px; height: 160px;
-            background: #3a2011; border: 4px solid #160d07; box-shadow: inset 0 0 25px rgba(0,0,0,0.7);
-        }
-        .desk-base-monolith::after {
-            content: ''; position: absolute; top: 30px; right: 35px; width: 130px; height: 160px;
-            background: #3a2011; border: 4px solid #160d07; box-shadow: inset 0 0 25px rgba(0,0,0,0.7);
-        }
-
-        /* High Back Detective Office Chair */
-        .detective-chair-node {
-            position: absolute;
-            bottom: 28%; left: 50%;
-            transform: translateX(-50%);
-            width: 150px; height: 160px;
-            background: linear-gradient(to bottom, #1f2124, #111214);
-            border: 6px solid #0a0b0c;
-            border-radius: 24px 24px 12px 12px;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.8);
-            z-index: -12;
-        }
-        /* Tufted Chair Cushion Details */
-        .detective-chair-node::before {
-            content: ''; position: absolute; top: 20px; left: 20px; width: 20px; height: 20px;
-            background: #090a0b; border-radius: 50%;
-            box-shadow: 58px 0 0 #090a0b, 0 45px 0 #090a0b, 58px 45px 0 #090a0b;
-        }
-
-        /* Desk Clutter Documents & Assets */
-        .desk-clutter-manifest {
-            position: absolute;
-            bottom: 34%; left: 50%;
-            transform: translateX(-50%);
-            width: 500px; height: 45px;
-            z-index: -9;
-        }
-        /* Stacks of Folders on Left */
-        .clutter-folders-left {
-            position: absolute; left: 25px; bottom: -5px;
-            width: 110px; height: 35px;
-            background: #cbb28d; border: 4px solid #1c120a;
-            border-radius: 2px; box-shadow: -5px 8px 15px rgba(0,0,0,0.6);
-            transform: rotate(-2deg);
-        }
-        .clutter-folders-left::before {
-            content: ''; position: absolute; top: -10px; left: 6px; width: 95px; height: 10px;
-            background: #bd9f76; border: 4px solid #1c120a; transform: rotate(5deg);
-        }
-        /* Antique Rotary Phone Object */
-        .clutter-phone-node {
-            position: absolute; right: 180px; bottom: -8px;
-            width: 60px; height: 45px;
-            background: #191715; border: 4px solid #080706;
-            border-radius: 6px; box-shadow: 0 10px 15px rgba(0,0,0,0.7);
-        }
-
-        /* Cardboard Storage Archival Boxes On Floor Left */
-        .storage-box-stack {
-            position: absolute; left: 20px; bottom: 8%;
-            width: 130px; height: 110px;
-            background: #866140; border: 6px solid #331d0b;
-            box-shadow: inset -15px -15px 0 rgba(0,0,0,0.15), 8px 20px 35px rgba(0,0,0,0.9);
-            z-index: -7;
-        }
-        .storage-box-stack::before {
-            content: ''; position: absolute; top: -20px; left: -6px; width: 142px; height: 26px;
-            background: #9c7552; border: 6px solid #331d0b; box-shadow: 0 5px 6px rgba(0,0,0,0.4);
-        }
-        /* Overlapping Box asset tilt */
-        .storage-box-tilt {
-            position: absolute; left: 75px; bottom: 3%;
-            width: 115px; height: 95px;
-            background: #735132; border: 6px solid #291506;
-            box-shadow: 10px 15px 30px rgba(0,0,0,0.9);
-            transform: rotate(-7deg);
-            z-index: -6;
-        }
-
-        /* Trench Coat Hanger Stand Assembly on Right */
-        .rack-stand-node {
-            position: absolute; right: 20px; bottom: 6%;
-            width: 80px; height: 310px;
-            z-index: -7;
-        }
-        .rack-main-pole {
-            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-            width: 12px; height: 310px; background: #231309;
-        }
-        .rack-coat-shape {
-            position: absolute; top: 50px; left: -8px;
-            width: 96px; height: 190px;
-            background: #967547; border: 5px solid #25190d;
-            border-radius: 20px 20px 10px 10px;
-            box-shadow: inset -15px 0 30px rgba(0,0,0,0.4), -10px 20px 25px rgba(0,0,0,0.6);
-        }
-        .rack-fedora-hat {
-            position: absolute; top: 15px; left: 2px;
-            width: 80px; height: 38px;
-            background: #4a3e36; border: 4px solid #16120e;
-            border-radius: 22px 22px 5px 5px; transform: rotate(7deg);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.5);
-        }
-
-        /* Scattered Files on Floor Right */
-        .floor-litter-documents {
-            position: absolute; right: 90px; bottom: 12%;
-            width: 90px; height: 55px;
-            background: #decfa8; border: 2px solid #231b12;
-            transform: perspective(400px) rotateX(45deg) rotateZ(30deg);
-            box-shadow: 4px 8px 12px rgba(0,0,0,0.5);
-            z-index: -5;
-        }
-
-        /* Lens Vignette Ambient Overlay Node */
-        .ambient-lens-vignette {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(0,0,0,0) 20%, rgba(0,0,0,0.55) 90%);
-            z-index: -4;
             pointer-events: none;
         }
 
+        /* The Investigation Board with String Links */
+        .art-corkboard {
+            position: absolute;
+            left: -20px;
+            top: 30%;
+            width: 280px;
+            height: 220px;
+            background: #472f1c;
+            border: 10px solid #23150b;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.6), 5px 15px 25px rgba(0,0,0,0.5);
+            transform: perspective(800px) rotateY(28deg);
+            z-index: -15;
+        }
+        .art-corkboard::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            background: #966c4a;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+        }
+        /* Mathematical simulation of string lines connecting notes */
+        .art-corkboard::after {
+            content: '';
+            position: absolute;
+            width: 100%; height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 46%, #782119 47%, #782119 49%, transparent 50%),
+                linear-gradient(-35deg, transparent 30%, #8a251c 31%, #8a251c 33%, transparent 34%),
+                radial-gradient(box at 30% 40%, #ebdca5 25px, transparent 26px),
+                radial-gradient(box at 70% 30%, #e6caa0 30px, transparent 31px),
+                radial-gradient(box at 50% 70%, #decb97 22px, transparent 23px);
+            opacity: 0.55;
+        }
+
+        /* Office Window with Custom Venetian Blinds & Skyline Silhouette */
+        .art-window {
+            position: absolute;
+            right: -30px;
+            top: 25%;
+            width: 260px;
+            height: 310px;
+            background: linear-gradient(to bottom, #8faab2, #56737c);
+            border: 12px solid #362d24;
+            box-shadow: -10px 15px 30px rgba(0,0,0,0.4);
+            transform: perspective(800px) rotateY(-25deg);
+            z-index: -15;
+        }
+        /* Skyline Building Blocks */
+        .art-window::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 45%;
+            background: 
+                linear-gradient(90deg, #445961 40px, transparent 40px) 20px 0,
+                linear-gradient(90deg, #3d5057 55px, transparent 55px) 80px 20px,
+                linear-gradient(90deg, #495e66 35px, transparent 35px) 150px 10px;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+        }
+        /* Venetian Blind Slats Layer */
+        .art-window-blinds {
+            position: absolute;
+            width: 100%; height: 100%;
+            background: repeating-linear-gradient(transparent 0px, transparent 9px, #1c1814 9px, #1c1814 14px);
+            opacity: 0.75;
+        }
+
+        /* Central Heavy Executive Detective Desk Frame */
+        .art-desk {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 520px;
+            height: 240px;
+            background: linear-gradient(to bottom, #442613, #1c0e06);
+            border-top: 16px solid #5e351b;
+            border-radius: 4px;
+            box-shadow: 0 35px 50px rgba(0,0,0,0.85);
+            z-index: -10;
+        }
+        /* Classical wood panel detailing lines on front of desk */
+        .art-desk::before {
+            content: '';
+            position: absolute;
+            top: 20px; left: 20px; right: 20px; bottom: 20px;
+            border: 4px solid #28150a;
+            background: linear-gradient(90deg, transparent 48%, #28150a 48%, #28150a 52%, transparent 52%);
+            opacity: 0.4;
+        }
+
+        /* Desk Clutter: Retro Rotary Telephone & Paper Stacks */
+        .art-desk-clutter {
+            position: absolute;
+            top: 52%;
+            left: 54%;
+            width: 70px;
+            height: 45px;
+            background: #1a1917;
+            border-radius: 8px 8px 4px 4px;
+            z-index: -9;
+            box-shadow: -10px 10px 15px rgba(0,0,0,0.5);
+        }
+        /* Telephone handset piece loop */
+        .art-desk-clutter::before {
+            content: '';
+            position: absolute;
+            top: -8px; left: -5px; width: 80px; height: 16px;
+            background: #262522;
+            border-radius: 6px;
+        }
+        /* Left side paper stack box */
+        .art-paper-stack {
+            position: absolute;
+            top: 53%;
+            left: 32%;
+            width: 90px;
+            height: 35px;
+            background: #dedcd8;
+            border: 2px solid #9c9993;
+            box-shadow: -5px 8px 12px rgba(0,0,0,0.4);
+            transform: rotate(-3deg);
+            z-index: -9;
+        }
+
+        /* High-Back Office Chair Silhouette rising behind the desk */
+        .art-detective-chair {
+            position: absolute;
+            top: 44%;
+            left: 36%;
+            width: 110px;
+            height: 120px;
+            background: #1e1d1c;
+            border-radius: 24px 24px 8px 8px;
+            box-shadow: inset 0 10px 20px rgba(255,255,255,0.05), -15px 15px 30px rgba(0,0,0,0.6);
+            z-index: -12;
+        }
+        .art-detective-chair::before {
+            content: '';
+            position: absolute;
+            bottom: -30px; left: 45px; width: 20px; height: 40px;
+            background: #111;
+        }
+
+        /* Cardboard Archive Boxes Stacked on the floor */
+        .art-floor-boxes {
+            position: absolute;
+            left: 25px;
+            bottom: 12%;
+            width: 120px;
+            height: 100px;
+            background: #8c6746;
+            border: 6px solid #3b2512;
+            box-shadow: inset -12px -12px 0 rgba(0,0,0,0.12), 10px 20px 30px rgba(0,0,0,0.7);
+            z-index: -8;
+        }
+        .art-floor-boxes::before {
+            content: '';
+            position: absolute;
+            top: -22px; left: -6px; width: 132px; height: 26px;
+            background: #a87f59;
+            border: 6px solid #3b2512;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        /* Coat Rack Stand with Hat & Trench Coat Silhouette on the right side */
+        .art-coat-rack {
+            position: absolute;
+            right: 30px;
+            bottom: 15%;
+            width: 14px;
+            height: 340px;
+            background: #26170c;
+            box-shadow: 15px 10px 25px rgba(0,0,0,0.5);
+            z-index: -9;
+        }
+        /* Coat hanging form outline overlay */
+        .art-coat-rack::before {
+            content: '';
+            position: absolute;
+            top: 40px; left: -35px; width: 84px; height: 210px;
+            background: #a3814b;
+            border-radius: 20px 20px 8px 8px;
+            box-shadow: inset -15px 0 20px rgba(0,0,0,0.25), 10px 15px 25px rgba(0,0,0,0.4);
+        }
+        /* Fedora Hat on top block */
+        .art-coat-rack::after {
+            content: '';
+            position: absolute;
+            top: 5px; left: -25px; width: 64px; height: 36px;
+            background: #3d352b;
+            border-radius: 12px 12px 2px 2px;
+            box-shadow: 0 6px 0 #1c1814;
+        }
+
+        /* Scattered Case File Folders Left on Floor */
+        .art-floor-papers {
+            position: absolute;
+            right: 80px;
+            bottom: 16%;
+            width: 85px;
+            height: 60px;
+            background: #cfb37c;
+            transform: rotate(25deg) skewX(10deg);
+            box-shadow: 5px 8px 15px rgba(0,0,0,0.5);
+            z-index: -7;
+        }
+
+        /* Strategic Atmospheric Focus Blur Gradient Overlay matching image focal depth */
+        .atmospheric-blur-layer {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(0,0,0,0) 20%, rgba(0,0,0,0.5) 95%);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            pointer-events: none;
+            z-index: -5;
+        }
+
         /* ==========================================================================
-           4. CENTRAL GRAPHICAL DATA PLACEMENT WRAPPER
+           4. MAIN CONTENT CONTAINER UNIT
            ========================================================================== */
-        .gui-interface-container {
+        .gui-main-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
             max-width: 450px;
-            margin: 0 auto;
             position: relative;
-            z-index: 5;
+            z-index: 10;
         }
 
         /* ==========================================================================
-           5. "GUMSHOE EMPIRE" 3D TIMBER SIGNBOARD ASSEMBLY
+           5. "GUMSHOE EMPIRE" TIMBER SIGNBOARD COMPONENT
            ========================================================================== */
-        .wood-billboard-node {
+        .wood-logo-billboard {
             position: relative;
             width: 100%;
-            background: linear-gradient(135deg, var(--wood-base) 0%, var(--wood-mid) 45%, var(--wood-base) 85%, var(--wood-shadow) 100%);
+            background: linear-gradient(135deg, var(--wood-base) 0%, var(--wood-mid) 45%, var(--wood-base) 90%, var(--wood-shadow) 100%);
             border: 8px solid var(--text-stroke);
-            border-radius: 24px;
-            padding: 40px 16px 60px 16px;
+            border-radius: 22px;
+            padding: 38px 18px 58px 18px;
             box-shadow: 
                 0 16px 0 var(--wood-darkest),
-                0 25px 40px var(--shadow-deep);
+                0 28px 35px rgba(0,0,0,0.8);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* Accurate Cartoon Curved Frame Mapping Silhouette */
-            clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(2.5% 0%, 97.5% 0%, 100% 100%, 0% 100%);
         }
 
-        .wood-striation-overlay {
+        .wood-grain-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: repeating-linear-gradient(180deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 2px, transparent 2px, transparent 6px);
+            background: repeating-linear-gradient(180deg, rgba(0,0,0,0.12) 0px, rgba(0,0,0,0.12) 2px, transparent 2px, transparent 5px);
             pointer-events: none;
             z-index: 1;
         }
 
-        .wood-plank-groove {
+        .wood-plank-joint {
             position: absolute;
-            left: 0; width: 100%; height: 8px;
+            left: 0; width: 100%; height: 7px;
             background: var(--text-stroke);
-            opacity: 0.95;
             z-index: 2;
         }
-        .groove-1 { top: 36%; }
-        .groove-2 { top: 68%; }
+        .joint-alpha { top: 35%; }
+        .joint-beta { top: 67%; }
 
-        /* Exact Splinter Vector Bullet Impacts Placement Mapping */
-        .bullet-fracture-node {
+        /* Strategic Clean Vector Bullet Impacts matching original positions */
+        .bullet-hole-vector {
             position: absolute;
-            width: 18px; height: 18px;
-            background: #0a0503;
+            width: 18px;
+            height: 18px;
+            background: #0b0603;
             border-radius: 50%;
             box-shadow: 
-                inset 2px 2px 5px rgba(0,0,0,0.98),
-                0 0 0 4px var(--wood-highlight),
-                0 0 0 6.5px var(--text-stroke);
+                inset 2px 2px 4px rgba(0,0,0,0.95),
+                0 0 0 5px var(--wood-highlight),
+                0 0 0 7px var(--text-stroke);
             z-index: 10;
         }
-        .bf-1 { top: 31%; left: 8%; }
-        .bf-2 { top: 33%; left: 36%; width: 16px; height: 16px; }
-        .bf-3 { top: 28%; left: 57%; }
-        .bf-4 { top: 34%; left: 71%; width: 17px; height: 17px; }
-        .bf-5 { top: 66%; left: 18%; }
-        .bf-6 { top: 64%; left: 44%; }
+        .bh-v1 { top: 30%; left: 8%; }
+        .bh-v2 { top: 31%; left: 36%; width: 16px; height: 16px; }
+        .bh-v3 { top: 29%; left: 56%; }
+        .bh-v4 { top: 32%; left: 71%; width: 17px; height: 17px; }
+        .bh-v5 { top: 64%; left: 18%; }
+        .bh-v6 { top: 62%; left: 44%; }
 
-        /* Typography Vector Configuration Engine */
-        .typography-title-stack {
+        .title-text-wrap {
             text-align: center;
             z-index: 3;
             width: 100%;
         }
 
-        .title-row-line {
+        .title-row {
             display: block;
             font-family: 'Archivo Black', sans-serif;
             text-transform: uppercase;
-            font-size: clamp(46px, 12.5vw, 70px);
-            line-height: 0.76;
+            font-size: clamp(48px, 12.8vw, 74px);
+            line-height: 0.78;
             color: var(--text-main);
             position: relative;
-            letter-spacing: -2.5px;
-            /* Multi-layer Heavy Outline & Shading Stack */
+            letter-spacing: -2px;
             text-shadow: 
                 -4px -4px 0 var(--text-stroke),  
                  4px -4px 0 var(--text-stroke),
@@ -391,53 +408,46 @@
                  4px  4px 0 var(--text-stroke),
                  0px  6px 0 var(--text-stroke),
                  0px 12px 0 var(--wood-darkest),
-                 0px 20px 18px rgba(0,0,0,0.75);
+                 0px 20px 15px rgba(0,0,0,0.7);
         }
 
-        .title-row-line.gumshoe {
+        .title-row.gumshoe {
             transform: scaleX(0.96);
         }
 
-        /* Magnifying Glass Vector Architecture Seamlessly Injected Inside 'O' */
-        .lens-embedded-o-node {
+        /* Magnifying Glass Element Vector nested inside the Letter O */
+        .magnifier-embedded-node {
             display: inline-block;
             position: relative;
             color: transparent;
-            width: clamp(46px, 12.5vw, 70px);
+            width: clamp(48px, 12.8vw, 74px);
         }
-        .lens-embedded-o-node::before {
-            content: ''; position: absolute;
+        .magnifier-embedded-node::before {
+            content: '';
+            position: absolute;
             top: 2px; left: 4px; width: 78%; height: 78%;
-            border: 8.5px solid var(--text-stroke);
+            border: 8px solid var(--text-stroke);
             background: #ffffff;
-            border-radius: 50%; z-index: 4;
+            border-radius: 50%;
+            z-index: 4;
             box-shadow: 0 4px 0 var(--wood-darkest);
         }
-        .lens-embedded-o-node::after {
-            content: ''; position: absolute;
-            bottom: -6px; right: 2px; width: 10px; height: 22px;
-            background: var(--text-stroke); border-radius: 4px;
-            transform: rotate(-45deg); z-index: 3;
-        }
-        /* Detective Silhouette Inside Magnifier Glass */
-        .detective-inner-silhouette {
+        .magnifier-embedded-node::after {
+            content: '';
             position: absolute;
-            top: 15px; left: 16px; width: 20px; height: 24px;
-            background: #231a14; border-radius: 40% 40% 50% 50%;
-            z-index: 5; transform: rotate(12deg);
-        }
-        .detective-inner-silhouette::before {
-            content: ''; position: absolute;
-            top: -5px; left: 2px; width: 16px; height: 9px;
-            background: #231a14; border-radius: 50%;
+            bottom: -6px; right: 2px; width: 9px; height: 24px;
+            background: var(--text-stroke);
+            border-radius: 3px;
+            transform: rotate(-45deg);
+            z-index: 3;
         }
 
-        /* Gold Coloration Component Layer "EMPIRE" */
-        .title-row-line.empire {
-            font-size: clamp(54px, 14.5vw, 82px);
+        /* Bottom Row "EMPIRE" Block */
+        .title-row.empire {
+            font-size: clamp(56px, 14.8vw, 86px);
             color: var(--text-gold);
-            margin-top: 10px;
-            letter-spacing: -1.5px;
+            margin-top: 12px;
+            letter-spacing: -1px;
             text-shadow: 
                 -4px -4px 0 var(--text-stroke),  
                  4px -4px 0 var(--text-stroke),
@@ -445,53 +455,56 @@
                  4px  4px 0 var(--text-stroke),
                  0px  6px 0 var(--text-gold-shadow),
                  0px 10px 0 var(--text-stroke),
-                 0px 17px 0 var(--wood-darkest),
-                 0px 26px 24px rgba(0,0,0,0.85);
+                 0px 16px 0 var(--wood-darkest),
+                 0px 24px 20px rgba(0,0,0,0.85);
         }
 
         /* ==========================================================================
-           6. INTERLOCKING FLANKED ACTION RIBBONS & BADGE STAR CORE
+           6. FLANKING ACTION RIBBONS & BADGE HEADER
            ========================================================================== */
-        .action-ribbon-row {
+        .ribbon-badge-row {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 106%;
-            margin-top: -38px;
+            margin-top: -36px;
             z-index: 15;
             position: relative;
         }
 
-        .ribbon-wing-banner {
-            padding: 12px 22px;
+        .ribbon-wing {
+            padding: 12px 20px;
             font-family: 'Russo One', sans-serif;
-            font-size: clamp(13px, 3.6vw, 18px);
+            font-size: clamp(14px, 3.8vw, 19px);
             text-transform: uppercase;
             color: var(--text-main);
-            border: 5.5px solid var(--text-stroke);
-            box-shadow: 0 7.5px 0 var(--text-stroke);
+            border: 5px solid var(--text-stroke);
+            box-shadow: 0 8px 0 var(--text-stroke);
             white-space: nowrap;
         }
 
-        .ribbon-wing-banner.left-blue {
+        .ribbon-wing.left-blue {
             background: linear-gradient(180deg, var(--btn-blue-fill) 0%, var(--btn-blue-dark) 100%);
-            border-top-left-radius: 14px; border-bottom-left-radius: 14px;
+            border-top-left-radius: 14px;
+            border-bottom-left-radius: 14px;
             border-right: none;
-            transform: rotate(-3.5deg) translateX(6px);
+            transform: rotate(-4deg) translateX(6px);
             text-shadow: 2px 2px 0 var(--text-stroke);
         }
 
-        .ribbon-wing-banner.right-green {
+        .ribbon-wing.right-green {
             background: linear-gradient(180deg, var(--btn-green-fill) 0%, var(--btn-green-dark) 100%);
-            border-top-right-radius: 14px; border-bottom-right-radius: 14px;
+            border-top-right-radius: 14px;
+            border-bottom-right-radius: 14px;
             border-left: none;
-            transform: rotate(2.5deg) translateX(-6px);
+            transform: rotate(3deg) translateX(-6px);
             text-shadow: 2px 2px 0 var(--text-stroke);
         }
 
-        .center-gold-star {
-            width: 52px; height: 52px;
-            background: linear-gradient(135deg, #ffe990 0%, var(--text-gold) 50%, var(--text-gold-shadow) 100%);
+        .center-star-badge {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #fff099 0%, var(--text-gold) 50%, var(--text-gold-shadow) 100%);
             border: 5px solid var(--text-stroke);
             clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 71% 61%, 82% 100%, 50% 76%, 18% 100%, 29% 61%, 0% 38%, 37% 38%);
             z-index: 20;
@@ -500,12 +513,12 @@
         }
 
         /* ==========================================================================
-           7. SUBTITLE HANGING METALLIC BRASS PLAQUE
+           7. BRASS PLAQUE INFOCARD NODE
            ========================================================================== */
-        .hanging-brass-plaque {
+        .description-plaque-shell {
             width: 92%;
             background: linear-gradient(180deg, var(--plaque-bg-main) 0%, var(--plaque-bg-dark) 100%);
-            border: 5.5px solid var(--text-stroke);
+            border: 5px solid var(--text-stroke);
             border-radius: 14px;
             padding: 14px 20px;
             margin-top: 20px;
@@ -513,45 +526,49 @@
             box-shadow: 
                 0 9px 0 var(--plaque-border),
                 0 6px 0 var(--text-stroke),
-                0 22px 30px var(--shadow-deep);
+                0 20px 25px rgba(0,0,0,0.75);
             position: relative;
             z-index: 4;
         }
 
-        /* Mechanical Rivets on Plaque Edges */
-        .hanging-brass-plaque::before, .hanging-brass-plaque::after {
-            content: ''; position: absolute; top: 50%;
-            width: 9px; height: 9px;
-            background: var(--plaque-border); border-radius: 50%;
-            transform: translateY(-50%); box-shadow: inset 1px 1px 2px rgba(0,0,0,0.7);
+        .description-plaque-shell::before, .description-plaque-shell::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--plaque-border);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            box-shadow: inset 1px 1px 2px rgba(0,0,0,0.6);
         }
-        .hanging-brass-plaque::before { left: 14px; }
-        .hanging-brass-plaque::after { right: 14px; }
+        .description-plaque-shell::before { left: 14px; }
+        .description-plaque-shell::after { right: 14px; }
 
-        .hanging-brass-plaque p {
+        .description-plaque-shell p {
             font-family: 'Archivo Black', sans-serif;
-            font-size: clamp(13px, 3.5vw, 17.5px);
-            color: #241407;
+            font-size: clamp(14px, 3.6vw, 18px);
+            color: #261609;
             line-height: 1.4;
             text-transform: uppercase;
             letter-spacing: -0.5px;
         }
 
         /* ==========================================================================
-           8. LOWER PROGRESS TRACKER LOAD AREA (STRICT ZERO-HORIZONTAL SCROLL FLUIDITY)
+           8. TRACKER BAR COMPONENT (STRICT CONTAINMENT)
            ========================================================================== */
-        .loading-metrics-group {
+        .loading-status-group {
             width: 100%;
             max-width: 390px;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-top: 8vh;
-            margin-bottom: 15px;
-            z-index: 5;
+            margin-bottom: 20px;
+            z-index: 10;
         }
 
-        .loading-title-label {
+        .loading-title-text {
             font-family: 'Archivo Black', sans-serif;
             font-size: clamp(26px, 7.5vw, 34px);
             text-transform: uppercase;
@@ -563,43 +580,43 @@
                  3px -3px 0 var(--text-stroke),
                 -3px  3px 0 var(--text-stroke),
                  3px  3px 0 var(--text-stroke),
-                 2px  6px 6px rgba(0,0,0,0.95);
+                 2px  6px 6px rgba(0,0,0,0.9);
         }
 
-        .meter-track-shell {
+        .progress-bar-shell {
             width: 100%;
             height: 30px;
             background: var(--progress-container);
             border: 5px solid var(--progress-stroke);
-            border-radius: 35px;
+            border-radius: 30px;
             padding: 3px;
             box-shadow: 
-                inset 0 4px 12px rgba(0,0,0,0.95),
+                inset 0 4px 10px rgba(0,0,0,0.95),
                 0 3px 0 rgba(255,255,255,0.08);
             overflow: hidden;
             margin-bottom: 20px;
             position: relative;
         }
 
-        .meter-fluid-progress {
-            width: 55%; /* Synced Exactly to Match the Static Percentage Frame on the Target Blueprint */
+        .progress-bar-fluid {
+            width: 60%; /* Hard-anchored baseline state matching standard reference image frame */
             height: 100%;
             background: linear-gradient(180deg, var(--progress-fill-top) 0%, var(--progress-fill-mid) 45%, var(--progress-fill-bot) 100%);
             border-radius: 20px;
             box-shadow: inset 0 2px 4px rgba(255,255,255,0.6);
         }
 
-        .gameplay-hint-container {
+        .gameplay-tip-box {
             width: 95%;
             text-align: center;
             padding: 0 6px;
         }
 
-        .gameplay-hint-container p {
+        .gameplay-tip-box p {
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
-            font-size: clamp(13.5px, 3.6vw, 16.5px);
-            color: #f7dfbe;
+            font-size: clamp(14px, 3.6vw, 17px);
+            color: #fce3c3;
             line-height: 1.45;
             text-shadow: 
                 -1px -1px 0 rgba(0,0,0,0.95),
@@ -610,98 +627,86 @@
         }
 
         /* ==========================================================================
-           9. DEVICE HEIGHT ADAPTIVE DYNAMIC ADJUSTERS
+           9. HIGH-DENSITY DEVICE ADAPTABILITY CONSTRAINTS
            ========================================================================== */
-        @media screen and (max-height: 760px) {
-            .game-stage-viewport { padding-top: 3vh; }
-            .loading-metrics-group { margin-top: 4vh; }
-            .wood-billboard-node { padding-bottom: 45px; }
-            .action-ribbon-row { margin-top: -32px; }
+        @media screen and (max-height: 740px) {
+            .game-viewport { padding-top: 3vh; }
+            .loading-status-group { margin-top: 4vh; }
+            .wood-logo-billboard { padding-bottom: 44px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Pure CSS Interior Scene Nodes Architecture Matrix -->
-    <div class="office-bg-wrapper"></div>
-    <div class="corkboard-canvas"></div>
-    <div class="window-frame-node"></div>
-    <div class="detective-chair-node"></div>
-    
-    <!-- Desk Monolith & Desk Clutter Assembly Layers -->
-    <div class="desk-base-monolith"></div>
-    <div class="desk-clutter-manifest">
-        <div class="clutter-folders-left"></div>
-        <div class="clutter-phone-node"></div>
+    <!-- CSS Render Engine Node Assets -->
+    <div class="office-bg-engine"></div>
+    <div class="art-corkboard"></div>
+    <div class="art-window">
+        <div class="art-window-blinds"></div>
     </div>
-    
-    <!-- Environmental Left/Right Standing Graphic Elements -->
-    <div class="storage-box-stack"></div>
-    <div class="storage-box-tilt"></div>
-    <div class="floor-litter-documents"></div>
-    
-    <div class="rack-stand-node">
-        <div class="rack-main-pole"></div>
-        <div class="rack-coat-shape"></div>
-        <div class="rack-fedora-hat"></div>
-    </div>
-    
-    <div class="ambient-lens-vignette"></div>
+    <div class="art-detective-chair"></div>
+    <div class="art-desk"></div>
+    <div class="art-desk-clutter"></div>
+    <div class="art-paper-stack"></div>
+    <div class="art-floor-boxes"></div>
+    <div class="art-coat-rack"></div>
+    <div class="art-floor-papers"></div>
+    <div class="atmospheric-blur-layer"></div>
 
-    <!-- Main Dynamic Interface Control Viewport Stage -->
-    <main class="game-stage-viewport" id="gameViewport">
+    <!-- Active Device Containment Interface Viewport -->
+    <main class="game-viewport" id="gameViewport">
         
-        <!-- Central Graphical Blocks Alignment Component -->
-        <div class="gui-interface-container">
+        <!-- Central Signboard Container -->
+        <div class="gui-main-container">
             
-            <!-- Textured Timber Panel Signboard Frame -->
-            <div class="wood-billboard-node">
-                <div class="wood-striation-overlay"></div>
-                <div class="wood-plank-groove groove-1"></div>
-                <div class="wood-plank-groove groove-2"></div>
+            <!-- Structural Wooden Billboard Shield -->
+            <div class="wood-logo-billboard">
+                <div class="wood-grain-overlay"></div>
+                <div class="wood-plank-joint joint-alpha"></div>
+                <div class="wood-plank-joint joint-beta"></div>
 
-                <!-- Strategic Procedural Splinter Bullet Fractures -->
-                <div class="bullet-fracture-node bf-1"></div>
-                <div class="bullet-fracture-node bf-2"></div>
-                <div class="bullet-fracture-node bf-3"></div>
-                <div class="bullet-fracture-node bf-4"></div>
-                <div class="bullet-fracture-node bf-5"></div>
-                <div class="bullet-fracture-node bf-6"></div>
+                <!-- Vector Impact Marks -->
+                <div class="bullet-hole-vector bh-v1"></div>
+                <div class="bullet-hole-vector bh-v2"></div>
+                <div class="bullet-hole-vector bh-v3"></div>
+                <div class="bullet-hole-vector bh-v4"></div>
+                <div class="bullet-hole-vector bh-v5"></div>
+                <div class="bullet-hole-vector bh-v6"></div>
 
-                <!-- Graphic Typography Stacks Assembly -->
-                <div class="typography-title-stack">
-                    <h1 class="title-row-line gumshoe">
-                        GUMSH<span class="lens-embedded-o-node"><span class="detective-inner-silhouette"></span>O</span>E
+                <!-- Text Layer Core -->
+                <div class="title-text-wrap">
+                    <h1 class="title-row gumshoe">
+                        GUMSH<span class="magnifier-embedded-node">O</span>E
                     </h1>
-                    <h1 class="title-row-line empire">EMPIRE</h1>
+                    <h1 class="title-row empire">EMPIRE</h1>
                 </div>
             </div>
 
-            <!-- Interlocking Subtitle Ribbon Banners Flanking Gold Badge Star Accent -->
-            <div class="action-ribbon-row">
-                <div class="ribbon-wing-banner left-blue">Start Small</div>
-                <div class="center-gold-star"></div>
-                <div class="ribbon-wing-banner right-green">Crack Cases</div>
+            <!-- Interlocking Header Sub-Ribbon Matrix -->
+            <div class="ribbon-badge-row">
+                <div class="ribbon-wing left-blue">Start Small</div>
+                <div class="center-star-badge"></div>
+                <div class="ribbon-wing right-green">Crack Cases</div>
             </div>
 
-            <!-- Bottom Brass Plaque Subtext Block -->
-            <div class="hanging-brass-plaque">
+            <!-- Metallic Plaque Block Node -->
+            <div class="description-plaque-shell">
                 <p>From Low-Grade P.I.<br>To The World's Best P.I.!</p>
             </div>
             
         </div>
 
-        <!-- Lower Status Monitoring Systems Layer -->
-        <div class="loading-metrics-group">
-            <h2 class="loading-title-label">Loading...</h2>
+        <!-- Lower Loading Status Group Component Layer -->
+        <div class="loading-status-group">
+            <h2 class="loading-title-text">Loading...</h2>
             
-            <!-- Glossy Fluid Progress Shell Container Tracker -->
-            <div class="meter-track-shell">
-                <div class="meter-fluid-progress"></div>
+            <!-- Fluid Progress Containing Shell -->
+            <div class="progress-bar-shell">
+                <div class="progress-bar-fluid"></div>
             </div>
 
-            <!-- Context System Micro-Copy Game Play Hints Box -->
-            <div class="gameplay-hint-container">
+            <!-- System Information Tips Block -->
+            <div class="gameplay-tip-box">
                 <p>Tip: Check every detail. The truth is always in the evidence.</p>
             </div>
         </div>
