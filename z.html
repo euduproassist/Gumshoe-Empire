@@ -671,6 +671,114 @@
             }
         }
 
+                /* Very Short Heights Edge Case (Landscape under 380px) */
+        @media screen and (max-height: 380px) and (orientation: landscape) {
+            .paper-title {
+                font-size: 1rem;
+            }
+            .avatar-container {
+                width: 40px;
+                height: 40px;
+            }
+            .edit-portrait-btn {
+                width: 14px;
+                height: 14px;
+                bottom: 0px;
+                right: 0px;
+            }
+            .field-icon-box {
+                width: 20px;
+                height: 20px;
+            }
+            .field-value-primary {
+                font-size: 0.68rem;
+            }
+            .field-value-bold {
+                font-size: 0.55rem;
+            }
+            .auth-status-btn {
+                padding: 1px 4px;
+                font-size: 0.48rem;
+            }
+        }
+
+        /* Avatar Selector Modal Styles */
+        .avatar-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .avatar-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .avatar-modal {
+            background: #1f1912;
+            border: 2px solid #6e5330;
+            border-radius: 12px;
+            padding: 16px;
+            width: 90%;
+            max-width: 340px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .avatar-modal-title {
+            color: #dfc7a5;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .avatar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .avatar-option {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 2px solid #3d2f21;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .avatar-option:hover, .avatar-option:active {
+            transform: scale(1.05);
+            border-color: #eab308;
+        }
+
+        .avatar-modal-close {
+            background: #120f0c;
+            border: 1px solid #3d2f21;
+            color: #dfc7a5;
+            padding: 6px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
