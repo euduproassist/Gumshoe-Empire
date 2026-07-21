@@ -1564,42 +1564,6 @@
             const avatarFrame = document.getElementById('avatarFrame');
             const avatarOptions = document.querySelectorAll('.avatar-option');
 
-            // View Toggle Elements
-            const addCashBtn = document.querySelector('.add-cash-btn');
-            const cashPill = document.querySelector('.cash-pill');
-            const profileTopBtn = document.querySelector('.profile-top-btn');
-            const backBtn = document.querySelector('.back-btn');
-            const profileView = document.getElementById('profileView');
-            const cashStoreView = document.getElementById('cashStoreView');
-
-            function showCashStore() {
-                profileView.classList.remove('active-view');
-                cashStoreView.classList.add('active-view');
-            }
-
-            function showProfile() {
-                cashStoreView.classList.remove('active-view');
-                profileView.classList.add('active-view');
-            }
-
-            // Click Events to Open Cash Store
-            if (addCashBtn) addCashBtn.addEventListener('click', showCashStore);
-            if (cashPill) cashPill.addEventListener('click', showCashStore);
-
-            // Click Event to Return to Profile
-            if (profileTopBtn) profileTopBtn.addEventListener('click', showProfile);
-
-            // Footer Back Button logic
-            if (backBtn) {
-                backBtn.addEventListener('click', () => {
-                    if (cashStoreView.classList.contains('active-view')) {
-                        showProfile();
-                    } else {
-                        // Action for back button on Profile view (e.g. return to main menu)
-                    }
-                });
-            }
-
             // Modal Functionality
             if (editBtn) {
                 editBtn.addEventListener('click', () => {
