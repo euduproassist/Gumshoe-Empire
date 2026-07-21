@@ -1,0 +1,1182 @@
+I like this challenge. I won't try to "beat Gemini"—I'll just focus on making something that feels like a real premium detective game. My goal is that every mission feels like an episode of a TV series rather than a checklist.
+
+One thing I intentionally changed from your original idea:
+
+A **Trainee Investigator** should **not** be solving murders immediately. That would make the promotion system meaningless. At Level 1, the player learns observation, evidence handling, interviewing, timelines, and basic reasoning. Even the "easy" missions are designed to make the player think.
+
+---
+
+# LEVEL 1 — TRAINEE INVESTIGATOR
+
+**Role**
+
+You have just joined the agency.
+
+Nobody trusts your judgment yet.
+
+Senior investigators constantly watch your work.
+
+One mistake can ruin evidence.
+
+Your job is to prove you deserve your investigator license.
+
+Difficulty:
+⭐⭐☆☆☆
+
+---
+
+# Mission 1
+
+## The Forgotten Backpack
+
+**Difficulty**
+⭐☆☆☆☆
+
+Estimated Time
+5–8 minutes
+
+### Story
+
+A university student reports that someone stole his backpack during lunch.
+
+Security believes he simply forgot where he left it.
+
+Your supervisor doesn't even think this deserves investigation.
+
+He tells you:
+
+> "Just prove whether he's lying or not."
+
+### Objective
+
+Determine where the backpack actually disappeared.
+
+### Gameplay
+
+The player receives:
+
+* Four CCTV screenshots taken five minutes apart.
+* Three witness statements.
+* A campus map.
+* A list of items inside the backpack.
+
+The player notices one witness says:
+
+> "He left carrying a blue backpack."
+
+But CCTV shows:
+
+The student entered with a black backpack.
+
+The blue backpack belonged to another student.
+
+The player must identify which backpack belongs to the victim.
+
+Then determine where it vanished.
+
+### Twist
+
+Nobody stole it.
+
+Another student accidentally took the wrong backpack.
+
+### Why it belongs here
+
+This teaches:
+
+* Observation
+* Comparing evidence
+* Paying attention to detail
+
+---
+
+# Mission 2
+
+## The Broken Window
+
+Difficulty
+⭐⭐☆☆☆
+
+Estimated Time
+8–10 minutes
+
+### Story
+
+A small electronics shop claims burglars broke the window overnight.
+
+Insurance is ready to pay.
+
+Your supervisor wants confirmation.
+
+### Objective
+
+Determine whether this was burglary or insurance fraud.
+
+### Gameplay
+
+Evidence:
+
+* Window photos
+* Glass fragments
+* Store inventory
+* Security alarm log
+
+The player discovers:
+
+Glass lies mostly outside.
+
+Instead of inside.
+
+Real break-ins leave most glass inside.
+
+### Twist
+
+Owner smashed the window himself.
+
+### New Skill
+
+Crime scene logic.
+
+Noticing physical evidence.
+
+---
+
+# Mission 3
+
+## Who Was Really Late?
+
+Difficulty
+⭐⭐☆☆☆
+
+Estimated Time
+10 minutes
+
+### Story
+
+An employee says traffic caused him to arrive one hour late.
+
+His boss believes him.
+
+HR doesn't.
+
+### Objective
+
+Determine whether traffic really caused the delay.
+
+### Gameplay
+
+Evidence:
+
+GPS timeline
+
+Fuel receipt
+
+Coffee purchase receipt
+
+Parking ticket
+
+Traffic report
+
+The player notices:
+
+Traffic cleared before he even left home.
+
+### Twist
+
+He overslept.
+
+### New Skill
+
+Timeline reconstruction.
+
+---
+
+# Mission 4
+
+## The Missing Necklace
+
+Difficulty
+⭐⭐⭐☆☆
+
+Estimated Time
+12 minutes
+
+### Story
+
+An elderly woman reports her necklace disappeared during a family gathering.
+
+Everyone blames the maid.
+
+### Objective
+
+Determine who actually took it.
+
+### Gameplay
+
+Evidence:
+
+Family photos
+
+Dining room layout
+
+Witness interviews
+
+Jewelry box
+
+Timeline
+
+The player notices:
+
+One grandson secretly borrowed it to propose to his girlfriend.
+
+### Twist
+
+Nobody intended theft.
+
+### New Skill
+
+Human behavior.
+
+Avoiding assumptions.
+
+---
+
+# Mission 5
+
+## The Fake Delivery Driver
+
+Difficulty
+⭐⭐⭐☆☆
+
+Estimated Time
+15 minutes
+
+### Story
+
+An expensive package disappeared.
+
+Delivery company says it was delivered.
+
+Homeowner insists nobody arrived.
+
+### Objective
+
+Find out who impersonated the courier.
+
+### Gameplay
+
+Evidence:
+
+Doorbell footage
+
+Delivery signature
+
+Van GPS
+
+Uniform comparison
+
+Phone records
+
+Player notices:
+
+Uniform logo is outdated.
+
+Courier company changed logos six months ago.
+
+### Twist
+
+Professional package thief.
+
+### New Skill
+
+Spotting inconsistencies.
+
+---
+
+# Mission 6
+
+## The Silent Witness
+
+Difficulty
+⭐⭐⭐⭐☆
+
+Estimated Time
+18 minutes
+
+### Story
+
+A child witnessed a robbery.
+
+But refuses to speak.
+
+### Objective
+
+Understand what really happened.
+
+### Gameplay
+
+Instead of questioning,
+
+Player must reconstruct events using:
+
+Drawings
+
+Toy placement
+
+Family conversations
+
+Audio recordings
+
+Small clues
+
+Eventually player realizes:
+
+The child keeps pointing at a dog.
+
+### Twist
+
+The dog belongs to the robber.
+
+### New Skill
+
+Indirect investigation.
+
+---
+
+# Mission 7
+
+## The Two Phones
+
+Difficulty
+⭐⭐⭐⭐☆
+
+Estimated Time
+20 minutes
+
+### Story
+
+A suspect claims:
+
+"I've never been to that warehouse."
+
+### Objective
+
+Verify his alibi.
+
+### Gameplay
+
+Evidence
+
+Phone GPS
+
+Call logs
+
+WiFi connections
+
+Cell tower records
+
+Photos
+
+Player notices:
+
+His main phone stayed home.
+
+His second phone travelled.
+
+### Twist
+
+He intentionally left one phone behind.
+
+### New Skill
+
+Digital thinking.
+
+---
+
+# Mission 8
+
+## The Impossible Timeline
+
+Difficulty
+⭐⭐⭐⭐⭐
+
+Estimated Time
+25 minutes
+
+### Story
+
+Four witnesses all tell believable stories.
+
+Only one can be true.
+
+### Objective
+
+Find the lie.
+
+### Gameplay
+
+Evidence:
+
+Clock tower bells
+
+Bus schedule
+
+Rain report
+
+Restaurant receipt
+
+Street camera
+
+Player realizes:
+
+One witness described sunshine.
+
+Rain had already started.
+
+### Twist
+
+Witness fabricated entire story.
+
+### New Skill
+
+Cross-referencing independent evidence.
+
+---
+
+# Mission 9
+
+## The Warehouse Fire
+
+Difficulty
+⭐⭐⭐⭐⭐
+
+Estimated Time
+30 minutes
+
+### Story
+
+A warehouse burns overnight.
+
+Owner claims electrical fault.
+
+Fire department isn't convinced.
+
+### Objective
+
+Determine origin.
+
+### Gameplay
+
+Evidence
+
+Electrical map
+
+Insurance policy
+
+Chemical residues
+
+Employee interviews
+
+Building plans
+
+Player notices:
+
+Power to warehouse had been disconnected two days earlier.
+
+### Twist
+
+Intentional arson.
+
+### New Skill
+
+Complex evidence synthesis.
+
+---
+
+# Mission 10 (Promotion Boss)
+
+# The Midnight Jewel Heist
+
+Difficulty
+⭐⭐⭐⭐⭐
+
+Estimated Time
+35–45 minutes
+
+## Story
+
+A priceless diamond disappears during a charity gala attended by politicians, celebrities and business leaders.
+
+No alarms.
+
+No broken glass.
+
+No fingerprints.
+
+Twenty-three guests.
+
+Only one thief.
+
+Your supervisor says:
+
+> "If you solve this... I'll personally recommend your promotion."
+
+## Objective
+
+Identify the thief and reconstruct the entire heist.
+
+## Evidence
+
+The player receives:
+
+* 14 witness interviews
+* Ballroom floor plan
+* CCTV from six cameras
+* Catering schedule
+* Waiter attendance logs
+* Guest seating chart
+* Security patrol route
+* Elevator usage logs
+* Photos before and after the theft
+* Timeline notebook
+* Staff phone records
+* Lighting schedule
+* Fingerprint report (contains misleading prints)
+* One hidden clue buried inside an unrelated document
+
+## Gameplay
+
+Nothing obvious points to the criminal.
+
+The player must discover that:
+
+* The thief never approached the display case directly.
+* A waiter intentionally spilled champagne to redirect security.
+* The lights dimmed for exactly 14 seconds during a speech.
+* CCTV Camera 4 briefly lost signal—not because it failed, but because someone unplugged a maintenance switch in another room.
+* The diamond was replaced with a perfect fake several minutes before anyone noticed.
+
+The final accusation requires the player to present the evidence in the correct logical order. Present one piece too early, and the suspect explains it away. Present them in the right sequence, and the contradictions trap them.
+
+## Final Twist
+
+The mastermind isn't the wealthy guest everyone suspected.
+
+It's the event planner, who spent six months organizing the gala specifically to create the perfect opportunity.
+
+## Reward
+
+* Promotion to **Junior Investigator**
+* Detective Notebook Level II unlocked
+* Evidence Comparison tool unlocked
+* Interrogation Mode unlocked
+* New clothing item
+* 500 Detective Credits
+* Achievement: **"First Real Case"**
+
+---
+
+This Level 1 is designed to leave the player feeling that they have genuinely *earned* the right to become a Junior Investigator. When you ask for Level 2, the jump in complexity will be obvious: suspects become more deceptive, evidence becomes less straightforward, and cases start involving organized fraud and coordinated crimes rather than isolated incidents.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I actually like the direction we took with Level 1. Now Level 2 should feel like you've been promoted. You're no longer proving you can observe—you've proven that already. Now you're expected to **solve** cases with less guidance, spot deception, connect multiple pieces of evidence, and make judgments that can ruin or save investigations.
+
+The jump should be obvious. A player should think:
+
+> "Wow...they're trusting me with real investigations now."
+
+---
+
+# LEVEL 2 — JUNIOR INVESTIGATOR
+
+### Role
+
+Congratulations.
+
+You've earned your Investigator License.
+
+You're no longer supervised every minute.
+
+Senior investigators now assign you actual cases.
+
+You're expected to make your own decisions.
+
+One wrong accusation could destroy an innocent person's life.
+
+**Difficulty**
+⭐⭐⭐☆☆
+
+---
+
+# Mission 1
+
+# The Duplicate Receipt
+
+**Difficulty**
+⭐⭐☆☆☆
+
+Estimated Time:
+10–12 minutes
+
+## Story
+
+A local restaurant reports that an employee has been stealing cash.
+
+Three waiters handled the register that evening.
+
+Everyone blames the newest employee.
+
+Your job is to determine who actually stole the money.
+
+## Objective
+
+Find the thief using transaction records.
+
+## Gameplay
+
+Evidence includes:
+
+* Register sales log
+* Printed receipts
+* Kitchen order times
+* Customer payment methods
+* Employee clock-in records
+
+The player notices two receipts have the same receipt number.
+
+Impossible.
+
+Eventually they discover one employee secretly printed an old receipt to hide stolen cash.
+
+## Twist
+
+The newest employee is innocent.
+
+The most trusted waiter manipulated the register.
+
+## New Skill
+
+Financial record comparison.
+
+---
+
+# Mission 2
+
+# The Stolen Prototype
+
+Difficulty
+⭐⭐⭐☆☆
+
+Estimated Time:
+15 minutes
+
+## Story
+
+A technology company claims someone stole confidential product designs.
+
+Everyone suspects hackers.
+
+Your agency believes the leak came from inside.
+
+## Objective
+
+Identify the insider.
+
+## Gameplay
+
+Evidence
+
+Employee access logs
+
+Printer records
+
+USB activity
+
+Office CCTV
+
+Meeting schedules
+
+The player discovers:
+
+Nobody hacked anything.
+
+One engineer photographed the blueprints using smart glasses.
+
+## Twist
+
+The evidence isn't digital.
+
+It's optical.
+
+## New Skill
+
+Thinking beyond obvious cybercrime.
+
+---
+
+# Mission 3
+
+# The Anonymous Blackmailer
+
+Difficulty
+⭐⭐⭐☆☆
+
+Estimated Time:
+15–18 minutes
+
+## Story
+
+A local politician receives anonymous threatening messages demanding R500,000.
+
+The messages come from untraceable numbers.
+
+## Objective
+
+Find the sender.
+
+## Gameplay
+
+Evidence
+
+Phone metadata
+
+Writing style
+
+Grammar mistakes
+
+Delivery times
+
+Public schedules
+
+The player realizes:
+
+Every message arrives exactly five minutes after council meetings end.
+
+Only one employee leaves at that exact time.
+
+## Twist
+
+The sender isn't using their own phone.
+
+They're using stolen prepaid SIM cards.
+
+## New Skill
+
+Behavioral profiling.
+
+---
+
+# Mission 4
+
+# The Missing Painting
+
+Difficulty
+⭐⭐⭐☆☆
+
+Estimated Time:
+18 minutes
+
+## Story
+
+A famous painting disappears from a luxury hotel.
+
+No alarms triggered.
+
+No doors forced open.
+
+## Objective
+
+Determine how it was stolen.
+
+## Gameplay
+
+Evidence
+
+Maintenance schedule
+
+Cleaning logs
+
+Elevator usage
+
+Room service records
+
+Guest list
+
+Player notices:
+
+The painting was removed during a scheduled wall repaint.
+
+Nobody questioned workers carrying a covered canvas.
+
+## Twist
+
+The thieves disguised themselves as maintenance staff.
+
+## New Skill
+
+Recognizing social engineering.
+
+---
+
+# Mission 5
+
+# The Perfect Alibi
+
+Difficulty
+⭐⭐⭐⭐☆
+
+Estimated Time:
+20 minutes
+
+## Story
+
+A businessman has a perfect alibi for a robbery.
+
+Security cameras show him eating dinner across town.
+
+## Objective
+
+Break the alibi.
+
+## Gameplay
+
+Evidence
+
+Restaurant CCTV
+
+Parking ticket
+
+Phone battery history
+
+Traffic cameras
+
+Credit card payments
+
+Player notices:
+
+The CCTV footage is real.
+
+But it was recorded yesterday.
+
+The restaurant owner unknowingly replayed archived footage.
+
+## Twist
+
+The businessman bribed the owner.
+
+## New Skill
+
+Authenticating digital evidence.
+
+---
+
+# Mission 6
+
+# The Missing Accountant
+
+Difficulty
+⭐⭐⭐⭐☆
+
+Estimated Time:
+22 minutes
+
+## Story
+
+A company accountant disappears two days before a financial audit.
+
+Everyone fears kidnapping.
+
+## Objective
+
+Locate the accountant.
+
+## Gameplay
+
+Evidence
+
+Bank transactions
+
+Laptop login history
+
+Taxi records
+
+Email drafts
+
+Apartment CCTV
+
+The player discovers:
+
+Nobody kidnapped him.
+
+He staged his disappearance after discovering millions in company fraud.
+
+## Twist
+
+He's hiding because he's terrified.
+
+Not guilty.
+
+## New Skill
+
+Separating victims from suspects.
+
+---
+
+# Mission 7
+
+# The Counterfeit Medicine Ring
+
+Difficulty
+⭐⭐⭐⭐☆
+
+Estimated Time:
+25 minutes
+
+## Story
+
+Several patients become seriously ill after taking medication.
+
+The pharmacy insists everything came from legitimate suppliers.
+
+## Objective
+
+Trace the counterfeit medicine.
+
+## Gameplay
+
+Evidence
+
+Shipment records
+
+Batch numbers
+
+Supplier invoices
+
+Warehouse CCTV
+
+Chemical reports
+
+Player notices:
+
+One shipment contains labels from two different factories.
+
+Someone replaced medicine during transport.
+
+## Twist
+
+The delivery company manager leads the operation.
+
+## New Skill
+
+Supply chain investigation.
+
+---
+
+# Mission 8
+
+# The Dead Man's Voice
+
+Difficulty
+⭐⭐⭐⭐⭐
+
+Estimated Time:
+30 minutes
+
+## Story
+
+A murder victim leaves a voicemail naming his killer.
+
+Case solved?
+
+Not quite.
+
+## Objective
+
+Determine whether the recording is genuine.
+
+## Gameplay
+
+Evidence
+
+Audio waveform
+
+Phone logs
+
+Ambient background noise
+
+Traffic sounds
+
+Voice stress
+
+Player discovers:
+
+The recording was stitched together using multiple older voice messages.
+
+## Twist
+
+Someone tried framing another suspect.
+
+## New Skill
+
+Basic audio forensics.
+
+---
+
+# Mission 9
+
+# The Three Robberies
+
+Difficulty
+⭐⭐⭐⭐⭐
+
+Estimated Time:
+35 minutes
+
+## Story
+
+Three robberies occur on the same night.
+
+Three different gangs confess.
+
+Police close all three cases.
+
+Your agency believes they're connected.
+
+## Objective
+
+Prove all three crimes were committed by one mastermind.
+
+## Gameplay
+
+Evidence
+
+Crime scene photos
+
+Vehicle sightings
+
+Ballistics
+
+Witnesses
+
+Escape routes
+
+Financial transfers
+
+The player discovers:
+
+Each robbery distracted police from the real target:
+
+A bank vault transfer.
+
+## Twist
+
+The robberies were decoys.
+
+## New Skill
+
+Recognizing coordinated criminal strategy.
+
+---
+
+# Mission 10 (Promotion Boss)
+
+# The Phantom Investor
+
+Difficulty
+⭐⭐⭐⭐⭐
+
+Estimated Time:
+45–60 minutes
+
+## Story
+
+Over 400 people lose their life savings after investing in what appeared to be a legitimate financial company.
+
+The CEO disappears.
+
+Every document is legal.
+
+Every signature is genuine.
+
+Every employee insists the CEO existed.
+
+Yet no government record shows he was ever born.
+
+Your Director tells you:
+
+> "This isn't just fraud. Someone erased an identity."
+
+## Objective
+
+Identify who the "CEO" really was and recover enough evidence to prosecute the organization.
+
+## Gameplay
+
+Evidence
+
+* 28 employee interviews
+* Investor contracts
+* Company registration records
+* Offshore bank transfers
+* Email servers
+* CCTV from six office buildings
+* Passport scans
+* Airport records
+* Tax filings
+* Voice recordings
+* Corporate board minutes
+* Financial statements
+* Facial recognition reports
+* Website source code
+* Archived news articles
+
+The player slowly uncovers that:
+
+* The CEO's face belongs to a real person—but under another name.
+* Every official document uses different signatures that are almost, but not quite, identical.
+* The company website originally listed a different founder before being secretly edited.
+* The same laptop logged into four different executive accounts.
+* The "CEO" is actually the company's legal advisor, who created an entirely fake executive identity to shield himself.
+
+The player must reconstruct the complete conspiracy timeline and present evidence in the correct order. Present the wrong accusation, and the entire case collapses.
+
+## Final Twist
+
+When officers raid the office, they discover it was abandoned just 30 minutes earlier.
+
+The mastermind escapes...
+
+...leaving behind only one encrypted hard drive.
+
+The final screen simply says:
+
+> **"Case Partially Solved."**
+
+A shadowy figure watches the raid from a rooftop before disappearing into the night.
+
+---
+
+## Rewards
+
+* Promotion to **Private Investigator**
+* Financial Investigation Toolkit unlocked
+* Audio Analysis Tool unlocked
+* Multi-Evidence Comparison Board unlocked
+* 750 Detective Credits
+* Achievement: **"Trust Earned"**
+
+---
+
+This is the point where the game begins to feel like a serious detective thriller. By the time the player reaches **Level 3 (Private Investigator)**, they'll be handling missing persons, kidnappings, high-value thefts, organized crime, and their first homicide investigation, making the jump from Level 2 feel earned rather than artificial.
