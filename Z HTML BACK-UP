@@ -1147,6 +1147,13 @@
                             <span class="notice-title">IMPORTANT</span>
                             <span class="notice-desc">All purchases are final and non-refundable. Play fair and have fun!</span>
                         </div>
+                        <svg class="watermark-seal" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#4a3822" stroke-width="4"/>
+                            <polygon points="50,15 61,38 85,38 66,52 73,75 50,60 27,75 34,52 15,38 39,38" fill="#4a3822"/>
+                        </svg>
+                    </div>
+                </div>
+            </main>
 
         </div>
 
