@@ -1181,37 +1181,5 @@
             <button class="avatar-modal-close" id="closeAvatarModal">CANCEL</button>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const editBtn = document.getElementById('editAvatarBtn');
-            const modal = document.getElementById('avatarModal');
-            const closeBtn = document.getElementById('closeAvatarModal');
-            const avatarFrame = document.getElementById('avatarFrame');
-            const avatarOptions = document.querySelectorAll('.avatar-option');
-
-            editBtn.addEventListener('click', () => {
-                modal.classList.add('active');
-            });
-
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
-            });
-
-            avatarOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    const selectedSrc = option.getAttribute('data-src');
-                    avatarFrame.innerHTML = `<img src="${selectedSrc}" alt="Detective Avatar" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">`;
-                    modal.classList.remove('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
