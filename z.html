@@ -898,3 +898,62 @@
                 </div>
             </main>
         </div>
+
+        <!-- Footer Back Button -->
+        <footer class="footer-nav">
+            <button class="back-btn">
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                BACK
+            </button>
+        </footer>
+    </div>
+
+    <!-- Avatar Selection Modal -->
+    <div class="avatar-modal-overlay" id="avatarModal">
+        <div class="avatar-modal">
+            <div class="avatar-modal-title">Select Avatar</div>
+            <div class="avatar-grid">
+                <img src="assets/black-male.png" alt="Black Male" class="avatar-option" data-src="assets/black-male.png">
+                <img src="assets/white-male.png" alt="White Male" class="avatar-option" data-src="assets/white-male.png">
+                <img src="assets/mixed-male.png" alt="Mixed Male" class="avatar-option" data-src="assets/mixed-male.png">
+                <img src="assets/black-female.png" alt="Black Female" class="avatar-option" data-src="assets/black-female.png">
+                <img src="assets/white-female.png" alt="White Female" class="avatar-option" data-src="assets/white-female.png">
+                <img src="assets/mixed-female.png" alt="Mixed Female" class="avatar-option" data-src="assets/mixed-female.png">
+            </div>
+            <button class="avatar-modal-close" id="closeAvatarModal">CANCEL</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const editBtn = document.getElementById('editAvatarBtn');
+            const modal = document.getElementById('avatarModal');
+            const closeBtn = document.getElementById('closeAvatarModal');
+            const avatarFrame = document.getElementById('avatarFrame');
+            const avatarOptions = document.querySelectorAll('.avatar-option');
+
+            editBtn.addEventListener('click', () => {
+                modal.classList.add('active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            avatarOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const selectedSrc = option.getAttribute('data-src');
+                    avatarFrame.innerHTML = `<img src="${selectedSrc}" alt="Detective Avatar" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">`;
+                    modal.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
