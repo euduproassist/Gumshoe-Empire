@@ -1564,6 +1564,59 @@
             const avatarFrame = document.getElementById('avatarFrame');
             const avatarOptions = document.querySelectorAll('.avatar-option');
 
+            // View Toggle Elements
+            const statusPill = document.querySelector('.status-pill');
+            const addCashBtn = document.querySelector('.add-cash-btn');
+            const cashPill = document.querySelector('.cash-pill');
+            const profileTopBtn = document.querySelector('.profile-top-btn');
+            const backBtn = document.querySelector('.back-btn');
+
+            const profileView = document.getElementById('profileView');
+            const cashStoreView = document.getElementById('cashStoreView');
+            const levelDetailsView = document.getElementById('levelDetailsView');
+
+            function hideAllViews() {
+                profileView.classList.remove('active-view');
+                cashStoreView.classList.remove('active-view');
+                levelDetailsView.classList.remove('active-view');
+            }
+
+            function showCashStore() {
+                hideAllViews();
+                cashStoreView.classList.add('active-view');
+            }
+
+            function showProfile() {
+                hideAllViews();
+                profileView.classList.add('active-view');
+            }
+
+            function showLevelDetails() {
+                hideAllViews();
+                levelDetailsView.classList.add('active-view');
+            }
+
+            // Open Level Details View
+            if (statusPill) statusPill.addEventListener('click', showLevelDetails);
+
+            // Open Cash Store View
+            if (addCashBtn) addCashBtn.addEventListener('click', showCashStore);
+            if (cashPill) cashPill.addEventListener('click', showCashStore);
+
+            // Return to Profile View
+            if (profileTopBtn) profileTopBtn.addEventListener('click', showProfile);
+
+            // Footer Back Button logic
+            if (backBtn) {
+                backBtn.addEventListener('click', () => {
+                    if (!profileView.classList.contains('active-view')) {
+                        showProfile();
+                    } else {
+                        // Action for back button when on Profile view
+                    }
+                });
+            }
+
             // Modal Functionality
             if (editBtn) {
                 editBtn.addEventListener('click', () => {
