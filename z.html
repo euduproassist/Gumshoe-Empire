@@ -671,7 +671,7 @@
             }
         }
 
-                /* Very Short Heights Edge Case (Landscape under 380px) */
+        /* Very Short Heights Edge Case (Landscape under 380px) */
         @media screen and (max-height: 380px) and (orientation: landscape) {
             .paper-title {
                 font-size: 1rem;
@@ -767,6 +767,205 @@
             border-color: #eab308;
         }
 
+        .avatar-modal-close {
+            background: #120f0c;
+            border: 1px solid #3d2f21;
+            color: #dfc7a5;
+            padding: 6px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* View Toggle System */
+        .view-section {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .view-section.active-view {
+            display: flex;
+        }
+
+        /* Cash Store Styles */
+        .store-section-badge {
+            align-self: flex-start;
+            background: #1d4ed8;
+            color: #ffffff;
+            font-size: clamp(0.5rem, 1.1vh, 0.62rem);
+            font-weight: 900;
+            padding: 2px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            border: 1px solid #1e3a8a;
+        }
+
+        .store-section-badge.green {
+            background: #15803d;
+            border-color: #166534;
+        }
+
+        .store-card {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid #b89c79;
+            border-radius: 8px;
+            padding: clamp(4px, 1vh, 8px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .store-card-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .store-item-icon {
+            width: clamp(32px, 5vh, 48px);
+            height: clamp(32px, 5vh, 48px);
+            object-fit: contain;
+        }
+
+        .store-item-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .store-item-title {
+            font-size: clamp(0.65rem, 1.4vh, 0.85rem);
+            font-weight: 900;
+            color: #120e0a;
+            text-transform: uppercase;
+        }
+
+        .store-item-sub {
+            font-size: clamp(0.55rem, 1.2vh, 0.7rem);
+            font-weight: 800;
+            color: #15803d;
+        }
+
+        .store-item-desc {
+            font-size: clamp(0.48rem, 1vh, 0.58rem);
+            color: #524231;
+            font-weight: 700;
+        }
+
+        .green-action-btn {
+            background: linear-gradient(180deg, #22c55e 0%, #15803d 100%);
+            border: 1px solid #166534;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: clamp(0.65rem, 1.4vh, 0.85rem);
+            padding: clamp(6px, 1.2vh, 10px) clamp(10px, 2vw, 16px);
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .cash-list-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(4px, 0.8vh, 8px);
+        }
+
+        .cash-row {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid #b89c79;
+            border-radius: 8px;
+            padding: clamp(4px, 0.8vh, 6px) clamp(8px, 1.5vw, 12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .cash-row-val {
+            font-size: clamp(0.9rem, 2vh, 1.2rem);
+            font-weight: 900;
+            color: #120e0a;
+        }
+
+        .best-value-ribbon {
+            position: absolute;
+            left: -4px;
+            bottom: -4px;
+            background: #b91c1c;
+            color: #ffffff;
+            font-size: 0.45rem;
+            font-weight: 900;
+            padding: 1px 4px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .store-notice-box {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px dashed #a38763;
+            border-radius: 8px;
+            padding: clamp(6px, 1vh, 10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .notice-icon-safe {
+            width: clamp(28px, 4.5vh, 40px);
+            height: clamp(28px, 4.5vh, 40px);
+            background: #1f1912;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dfc7a5;
+            flex-shrink: 0;
+        }
+
+        .notice-text-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .notice-title {
+            font-size: clamp(0.55rem, 1.1vh, 0.65rem);
+            font-weight: 900;
+            color: #120e0a;
+            text-transform: uppercase;
+        }
+
+        .notice-desc {
+            font-size: clamp(0.48rem, 1vh, 0.58rem);
+            color: #4a3822;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .watermark-seal {
+            width: clamp(36px, 6vh, 50px);
+            height: clamp(36px, 6vh, 50px);
+            opacity: 0.35;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 <body>
 
