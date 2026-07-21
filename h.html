@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Detective Profile - Single Screen</title>
+    <style>
+        /* ==========================================================================
+           1. ZERO SCROLL & FULL VIEWPORT LOCK WITH SAFE AREA SUPPORT
+           ========================================================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden !important;
+            background-color: #0d0c0a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #111;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background: #090807;
+            padding-top: calc(clamp(4px, 1.2vh, 10px) + env(safe-area-inset-top, 0px));
+            padding-bottom: calc(clamp(6px, 1.5vh, 12px) + env(safe-area-inset-bottom, 0px));
+            padding-left: calc(clamp(8px, 2vw, 16px) + env(safe-area-inset-left, 0px));
+            padding-right: calc(clamp(8px, 2vw, 16px) + env(safe-area-inset-right, 0px));
+        }
+
+        /* ==========================================================================
+           2. HEADER TOP STATUS BAR
+           ========================================================================== */
+        .top-bar {
+            width: 100%;
+            max-width: min(420px, 92vw);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 20;
+            flex-shrink: 0;
+            gap: clamp(10px, 2.4vw, 18px);
+            padding-bottom: clamp(2px, 0.5vh, 4px);
+            flex-wrap: nowrap;
+        }
+
+        .status-pill {
+            background: #000000;
+            border: 1px solid #1f1b15;
+            border-radius: clamp(6px, 1.5vw, 8px);
+            padding: clamp(3px, 0.8vh, 6px) clamp(6px, 1.5vw, 10px);
+            display: flex;
+            align-items: center;
+            gap: clamp(4px, 1vw, 8px);
+            flex: 1 1 0px;
+            min-width: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .level-badge-star {
+            color: #eab308;
+            font-size: clamp(0.85rem, 2.2vh, 1.1rem);
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .rank-info {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .rank-title {
+            font-size: clamp(0.5rem, 1.3vh, 0.62rem);
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .rank-subtitle {
+            font-size: clamp(0.45rem, 1.1vh, 0.55rem);
+            color: #8a8a8a;
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+
+        .level-progress-bg {
+            width: 100%;
+            height: 2px;
+            background: #2a241e;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .level-progress-fill {
+            width: 25%;
+            height: 100%;
+            background: #eab308;
+        }
+
+        .cash-pill {
+            background: #000000;
+            border: 1px solid #1f1b15;
+            border-radius: clamp(6px, 1.5vw, 8px);
+            padding: clamp(3px, 0.8vh, 5px) clamp(6px, 1.2vw, 8px);
+            display: flex;
+            align-items: center;
+            gap: clamp(4px, 1vw, 8px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            flex: 0 1 auto;
+            white-space: nowrap;
+        }
+
+        .cash-icon {
+            width: clamp(16px, 3.5vh, 20px);
+            height: clamp(16px, 3.5vh, 20px);
+            background: #22c55e;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: clamp(0.6rem, 1.4vh, 0.75rem);
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .cash-amount {
+            color: #ffffff;
+            font-weight: 900;
+            font-size: clamp(0.78rem, 1.8vh, 1rem);
+            letter-spacing: 0.5px;
+        }
+
+        .add-cash-btn {
+            background: #22c55e;
+            border: none;
+            color: #ffffff;
+            width: clamp(15px, 3vh, 18px);
+            height: clamp(15px, 3vh, 18px);
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: clamp(0.65rem, 1.4vh, 0.8rem);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .profile-top-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffffff;
+            gap: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .profile-top-btn svg {
+            width: clamp(16px, 3.5vh, 20px);
+            height: clamp(16px, 3.5vh, 20px);
+            fill: #ffffff;
+        }
+
+        .profile-top-btn span {
+            font-size: clamp(0.45rem, 1.1vh, 0.55rem);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           3. MAIN CONTAINER & PARCHMENT BOARD
+           ========================================================================== */
+        .wrapper {
+            width: 100%;
+            max-width: min(420px, 92vw);
+            flex: 1;
+            margin-top: clamp(10px, 2vh, 18px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 0;
+        }
+
+        .clipboard {
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            background: #331f10;
+            background-image: linear-gradient(180deg, #3a2211 0%, #201207 100%);
+            border: 2px solid #120904;
+            border-radius: 12px;
+            padding: clamp(12px, 2.5vh, 24px) clamp(6px, 1.5vw, 10px) clamp(6px, 1.2vh, 10px) clamp(6px, 1.5vw, 10px);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        /* Metallic Clip Top */
+        .clip-hardware {
+            position: absolute;
+            top: clamp(-8px, -1.2vh, -5px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(90px, 25vw, 120px);
+            height: clamp(20px, 4vh, 28px);
+            background: linear-gradient(180deg, #525861 0%, #2a2e35 60%, #15181c 100%);
+            border: 1px solid #606772;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .clip-hardware-dot {
+            width: clamp(6px, 1.4vh, 10px);
+            height: clamp(6px, 1.4vh, 10px);
+            border-radius: 50%;
+            background: #090b0d;
+            border: 1px solid #3a3f47;
+            margin-bottom: 2px;
+        }
+
+        .clip-indent {
+            width: clamp(18px, 5vw, 28px);
+            height: clamp(2px, 0.4vh, 3px);
+            background: #08090a;
+            border-radius: 2px;
+        }
+
+        .paper-sheet {
+            background-color: #dfc7a5;
+            background-image: radial-gradient(#ba9e79 1.3px, transparent 1.3px);
+            background-size: 14px 14px;
+            border-radius: 6px;
+            border: 1px solid #9e825d;
+            padding: clamp(8px, 1.6vh, 18px) clamp(8px, 2.5vw, 18px);
+            box-shadow: inset 0 0 20px rgba(70, 45, 18, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            flex: 1;
+            min-height: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Paper Header */
+        .paper-title {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: clamp(1.4rem, 3.8vh, 2.6rem);
+            font-weight: 900;
+            letter-spacing: clamp(2px, 0.8vw, 4px);
+            color: #120e0a;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .star-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: clamp(1px, 0.3vh, 2px);
+        }
+
+        .star-divider::before, .star-divider::after {
+            content: '';
+            height: 1px;
+            width: clamp(25px, 8vw, 50px);
+            background-color: #4a3822;
+        }
+
+        .star-divider span {
+            padding: 0 8px;
+            font-size: clamp(0.5rem, 1.2vh, 0.65rem);
+            color: #120e0a;
+        }
+
+        /* Portrait Avatar */
+        .avatar-container {
+            position: relative;
+            width: clamp(75px, 18vh, 155px);
+            height: clamp(75px, 18vh, 155px);
+            border-radius: 50%;
+            border: 3px solid #6e5330;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            background: #211a13;
+            flex-shrink: 0;
+        }
+
+        .avatar-frame-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #211a13;
+        }
+
+        .edit-portrait-btn {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: clamp(22px, 3.8vh, 34px);
+            height: clamp(22px, 3.8vh, 34px);
+            background: #1a1714;
+            border: 2px solid #6e5330;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .edit-portrait-btn svg {
+            width: clamp(10px, 1.8vh, 14px);
+            height: clamp(10px, 1.8vh, 14px);
+            fill: #ffffff;
+        }
+
+        /* Info Fields */
+        .info-field {
+            width: 100%;
+            padding: clamp(2px, 0.6vh, 8px) 0;
+            display: flex;
+            align-items: center;
+            gap: clamp(8px, 2vw, 14px);
+            min-height: 0;
+        }
+
+        .field-icon-box {
+            width: clamp(28px, 4.4vh, 44px);
+            height: clamp(28px, 4.4vh, 44px);
+            border-radius: clamp(6px, 1.2vw, 10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: #1f1912;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .field-icon-box svg {
+            width: clamp(14px, 2.2vh, 20px);
+            height: clamp(14px, 2.2vh, 20px);
+        }
+
+        .field-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .field-label {
+            font-size: clamp(0.5rem, 1.1vh, 0.6rem);
+            font-weight: 800;
+            color: #524231;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1px;
+            white-space: nowrap;
+        }
+
+        .field-value-primary {
+            font-size: clamp(0.85rem, 2vh, 1.4rem);
+            font-weight: 900;
+            color: #120e0a;
+            line-height: 1.1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .field-value-bold {
+            font-size: clamp(0.68rem, 1.5vh, 1.05rem);
+            font-weight: 900;
+            color: #120e0a;
+            text-transform: uppercase;
+            line-height: 1.1;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .auth-status-btn {
+            background-color: #120f0c;
+            color: #ffffff;
+            border-radius: 6px;
+            padding: clamp(3px, 0.6vh, 5px) clamp(6px, 1.2vw, 10px);
+            display: inline-flex;
+            align-items: center;
+            gap: clamp(4px, 1vw, 8px);
+            font-size: clamp(0.58rem, 1.2vh, 0.72rem);
+            font-weight: 700;
+            margin-top: 2px;
+            width: fit-content;
+            white-space: nowrap;
+        }
+
+        .google-g-logo {
+            width: clamp(10px, 1.8vh, 14px);
+            height: clamp(10px, 1.8vh, 14px);
+            flex-shrink: 0;
+        }
+
+        .account-id-subtext {
+            font-size: clamp(0.48rem, 1vh, 0.58rem);
+            color: #524231;
+            margin-top: 2px;
+            font-family: monospace;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ==========================================================================
+           4. FOOTER BACK BUTTON
+           ========================================================================== */
+        .footer-nav {
+            width: 100%;
+            max-width: min(420px, 92vw);
+            display: flex;
+            justify-content: flex-start;
+            flex-shrink: 0;
+            padding-top: clamp(4px, 1vh, 8px);
+        }
+
+        .back-btn {
+            background: #14110e;
+            border: 1px solid #2e261d;
+            color: #ffffff;
+            padding: clamp(5px, 1vh, 8px) clamp(10px, 2vw, 16px);
+            border-radius: 6px;
+            font-size: clamp(0.65rem, 1.4vh, 0.78rem);
+            font-weight: 900;
+            letter-spacing: 0.8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .back-btn svg {
+            width: clamp(10px, 1.6vh, 12px);
+            height: clamp(10px, 1.6vh, 12px);
+            fill: #ffffff;
+        }
+
+        /* ==========================================================================
+           5. RESPONSIVE MEDIA QUERIES
+           ========================================================================== */
+
+        /* 320px - Extra Ultra-Small Phones */
+        @media screen and (max-width: 320px) {
+            .paper-sheet {
+                padding: 6px 8px;
+            }
+            .avatar-container {
+                width: clamp(55px, 14vh, 75px);
+                height: clamp(55px, 14vh, 75px);
+            }
+            .info-field {
+                gap: 6px;
+            }
+            .field-icon-box {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        /* 360px - Small Mobile Screens */
+        @media screen and (min-width: 321px) and (max-width: 360px) {
+            .paper-sheet {
+                padding: 8px 10px;
+            }
+            .avatar-container {
+                width: clamp(65px, 15vh, 90px);
+                height: clamp(65px, 15vh, 90px);
+            }
+            .info-field {
+                gap: 8px;
+            }
+            .field-icon-box {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* 390px - iPhone Standard Sizes */
+        @media screen and (min-width: 361px) and (max-width: 390px) {
+            .wrapper, .top-bar, .footer-nav {
+                max-width: 380px;
+            }
+        }
+
+        /* 414px - Plus / Max Mobile Screens */
+        @media screen and (min-width: 391px) and (max-width: 414px) {
+            .wrapper, .top-bar, .footer-nav {
+                max-width: 400px;
+            }
+        }
+
+        /* 480px - Large Mobile & Foldable Inner Displays */
+        @media screen and (min-width: 415px) and (max-width: 480px) {
+            .wrapper, .top-bar, .footer-nav {
+                max-width: 420px;
+            }
+        }
+
+        /* 600px - Small Tablets & Large Foldables */
+        @media screen and (min-width: 481px) and (max-width: 600px) {
+            .wrapper, .top-bar, .footer-nav {
+                max-width: 430px;
+            }
+        }
+
+        /* 768px - iPad Portrait / Mid-Size Tablets */
+        @media screen and (min-width: 601px) and (max-width: 768px) and (orientation: portrait) {
+            .wrapper, .top-bar, .footer-nav {
+                max-width: 440px;
+            }
+            .clipboard {
+                max-height: 85vh;
+            }
+        }
+
+        /* 820px & 1024px - Large Tablets & iPads Portrait */
+        @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+            .wrapper, .top-bar, .footer-nav {
+                max-width: 450px;
+            }
+            .clipboard {
+                max-height: 82vh;
+            }
+        }
+
+        /* 1280px - Laptops & Desktop Displays */
+        @media screen and (min-width: 1025px) and (max-width: 1280px) {
+            .wrapper, .top-bar, .footer-nav {
+                max-width: 430px;
+            }
+            body {
+                justify-content: center;
+                gap: 10px;
+            }
+            .wrapper {
+                flex: 0 1 660px;
+            }
+        }
+
+        /* 1600px+ Ultra-Wide & TVs */
+        @media screen and (min-width: 1281px) {
+            .wrapper, .top-bar, .footer-nav {
+                max-width: 440px;
+            }
+            body {
+                justify-content: center;
+                gap: 12px;
+            }
+            .wrapper {
+                flex: 0 1 680px;
+            }
+        }
+
+        /* Landscape Mode Fixes for Short Height Screens (Phones / Small Tablets Landscape) */
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding-top: 2px;
+                padding-bottom: 2px;
+                justify-content: space-between;
+            }
+            .top-bar {
+                max-width: min(520px, 95vw);
+                padding-bottom: 0px;
+            }
+            .wrapper {
+                max-width: min(520px, 95vw);
+            }
+            .footer-nav {
+                max-width: min(520px, 95vw);
+                padding-top: 2px;
+            }
+            .clipboard {
+                padding-top: 12px;
+                padding-bottom: 4px;
+            }
+            .clip-hardware {
+                height: 16px;
+                top: -4px;
+            }
+            .clip-hardware-dot {
+                display: none;
+            }
+            .paper-sheet {
+                padding: 4px 12px;
+            }
+            .paper-title {
+                font-size: 1.2rem;
+            }
+            .star-divider {
+                margin-top: 0;
+            }
+            .avatar-container {
+                width: 50px;
+                height: 50px;
+            }
+            .edit-portrait-btn {
+                width: 18px;
+                height: 18px;
+            }
+            .info-field {
+                padding: 1px 0;
+                gap: 8px;
+            }
+            .field-icon-box {
+                width: 24px;
+                height: 24px;
+            }
+            .field-label {
+                font-size: 0.48rem;
+            }
+            .field-value-primary {
+                font-size: 0.75rem;
+            }
+            .field-value-bold {
+                font-size: 0.62rem;
+            }
+            .auth-status-btn {
+                padding: 2px 6px;
+                font-size: 0.52rem;
+            }
+            .account-id-subtext {
+                font-size: 0.45rem;
+                margin-top: 0;
+            }
+            .back-btn {
+                padding: 3px 10px;
+                font-size: 0.62rem;
+            }
+        }
+
+        /* Very Short Heights Edge Case (Landscape under 380px) */
+        @media screen and (max-height: 380px) and (orientation: landscape) {
+            .paper-title {
+                font-size: 1rem;
+            }
+            .avatar-container {
+                width: 40px;
+                height: 40px;
+            }
+            .edit-portrait-btn {
+                width: 14px;
+                height: 14px;
+                bottom: 0px;
+                right: 0px;
+            }
+            .field-icon-box {
+                width: 20px;
+                height: 20px;
+            }
+            .field-value-primary {
+                font-size: 0.68rem;
+            }
+            .field-value-bold {
+                font-size: 0.55rem;
+            }
+            .auth-status-btn {
+                padding: 1px 4px;
+                font-size: 0.48rem;
+            }
+        }
+
+        /* Avatar Selector Modal Styles */
+        .avatar-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .avatar-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .avatar-modal {
+            background: #1f1912;
+            border: 2px solid #6e5330;
+            border-radius: 12px;
+            padding: 16px;
+            width: 90%;
+            max-width: 340px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .avatar-modal-title {
+            color: #dfc7a5;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .avatar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .avatar-option {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 2px solid #3d2f21;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .avatar-option:hover, .avatar-option:active {
+            transform: scale(1.05);
+            border-color: #eab308;
+        }
+
+        .avatar-modal-close {
+            background: #120f0c;
+            border: 1px solid #3d2f21;
+            color: #dfc7a5;
+            padding: 6px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* View Toggle System */
+        .view-section {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .view-section.active-view {
+            display: flex;
+        }
+
+        /* Cash Store Styles */
+        .store-section-badge {
+            align-self: flex-start;
+            background: #1d4ed8;
+            color: #ffffff;
+            font-size: clamp(0.5rem, 1.1vh, 0.62rem);
+            font-weight: 900;
+            padding: 2px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            border: 1px solid #1e3a8a;
+        }
+
+        .store-section-badge.green {
+            background: #15803d;
+            border-color: #166534;
+        }
+
+        .store-card {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid #b89c79;
+            border-radius: 8px;
+            padding: clamp(4px, 1vh, 8px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .store-card-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .store-item-icon {
+            width: clamp(32px, 5vh, 48px);
+            height: clamp(32px, 5vh, 48px);
+            object-fit: contain;
+        }
+
+        .store-item-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .store-item-title {
+            font-size: clamp(0.65rem, 1.4vh, 0.85rem);
+            font-weight: 900;
+            color: #120e0a;
+            text-transform: uppercase;
+        }
+
+        .store-item-sub {
+            font-size: clamp(0.55rem, 1.2vh, 0.7rem);
+            font-weight: 800;
+            color: #15803d;
+        }
+
+        .store-item-desc {
+            font-size: clamp(0.48rem, 1vh, 0.58rem);
+            color: #524231;
+            font-weight: 700;
+        }
+
+        .green-action-btn {
+            background: linear-gradient(180deg, #22c55e 0%, #15803d 100%);
+            border: 1px solid #166534;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: clamp(0.65rem, 1.4vh, 0.85rem);
+            padding: clamp(6px, 1.2vh, 10px) clamp(10px, 2vw, 16px);
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .cash-list-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(4px, 0.8vh, 8px);
+        }
+
+        .cash-row {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid #b89c79;
+            border-radius: 8px;
+            padding: clamp(4px, 0.8vh, 6px) clamp(8px, 1.5vw, 12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .cash-row-val {
+            font-size: clamp(0.9rem, 2vh, 1.2rem);
+            font-weight: 900;
+            color: #120e0a;
+        }
+
+        .best-value-ribbon {
+            position: absolute;
+            left: -4px;
+            bottom: -4px;
+            background: #b91c1c;
+            color: #ffffff;
+            font-size: 0.45rem;
+            font-weight: 900;
+            padding: 1px 4px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .store-notice-box {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px dashed #a38763;
+            border-radius: 8px;
+            padding: clamp(6px, 1vh, 10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .notice-icon-safe {
+            width: clamp(28px, 4.5vh, 40px);
+            height: clamp(28px, 4.5vh, 40px);
+            background: #1f1912;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dfc7a5;
+            flex-shrink: 0;
+        }
+
+        .notice-text-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .notice-title {
+            font-size: clamp(0.55rem, 1.1vh, 0.65rem);
+            font-weight: 900;
+            color: #120e0a;
+            text-transform: uppercase;
+        }
+
+        .notice-desc {
+            font-size: clamp(0.48rem, 1vh, 0.58rem);
+            color: #4a3822;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .watermark-seal {
+            width: clamp(36px, 6vh, 50px);
+            height: clamp(36px, 6vh, 50px);
+            opacity: 0.35;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Status Bar -->
+    <header class="top-bar">
+        <div class="status-pill">
+            <span class="level-badge-star">&#9733;</span>
+            <div class="rank-info">
+                <span class="rank-title">NOVICE P.I.</span>
+                <span class="rank-subtitle">Level 1</span>
+                <div class="level-progress-bg">
+                    <div class="level-progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cash-pill">
+            <div class="cash-icon">$</div>
+            <span class="cash-amount">R12 450</span>
+            <button class="add-cash-btn" aria-label="Add Cash">+</button>
+        </div>
+
+        <div class="profile-top-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <span>PROFILE</span>
+        </div>
+    </header>
+
+    <!-- Main Board Container -->
+    <div class="wrapper">
+        <div class="clipboard">
+            <div class="clip-hardware">
+                <div class="clip-hardware-dot"></div>
+                <div class="clip-indent"></div>
+            </div>
+
+            <main class="paper-sheet">
+                <!-- VIEW 1: PROFILE -->
+                <div class="view-section active-view" id="profileView">
+                    <h1 class="paper-title">PROFILE</h1>
+                    <div class="star-divider"><span>&#9733;</span></div>
+
+                    <!-- Avatar -->
+                    <div class="avatar-container">
+                        <div class="avatar-frame-inner" id="avatarFrame">
+                            <svg viewBox="0 0 100 100" style="width:100%; height:100%;">
+                                <circle cx="50" cy="50" r="50" fill="#1f1912"/>
+                                <circle cx="50" cy="40" r="19" fill="#dfc7a5"/>
+                                <path d="M 20 88 C 20 63, 80 63, 80 88 Z" fill="#dfc7a5"/>
+                            </svg>
+                        </div>
+                        <button class="edit-portrait-btn" id="editAvatarBtn" aria-label="Edit Profile Picture">
+                            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                        </button>
+                    </div>
+
+                    <!-- Field 1: Detective Name -->
+                    <div class="info-field">
+                        <div class="field-icon-box">
+                            <svg viewBox="0 0 24 24" fill="#dfc7a5">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                        <div class="field-content">
+                            <span class="field-label">Detective Name</span>
+                            <span class="field-value-primary">Paul</span>
+                        </div>
+                    </div>
+
+                    <!-- Field 2: Current Rank -->
+                    <div class="info-field">
+                        <div class="field-icon-box">
+                            <svg viewBox="0 0 100 100" style="width:100%; height:100%; max-width:32px; max-height:32px;">
+                                <path d="M 50 10 L 85 25 V 50 C 85 72, 50 90, 50 90 C 50 90, 15 72, 15 50 V 25 Z" fill="#9e732d" stroke="#120f0c" stroke-width="3"/>
+                                <path d="M 50 16 L 80 29 V 48 C 80 67, 50 83, 50 83 C 50 83, 20 67, 20 48 V 29 Z" fill="#d4af37"/>
+                                <polygon points="50,30 54,40 65,40 56,47 59,58 50,51 41,58 44,47 35,40 46,40" fill="#120f0c"/>
+                                <text x="50" y="70" font-size="10" font-weight="900" fill="#120f0c" text-anchor="middle" font-family="sans-serif">P.I.</text>
+                            </svg>
+                        </div>
+                        <div class="field-content">
+                            <span class="field-label">Current Rank</span>
+                            <span class="field-value-bold">NOVICE PRIVATE INVESTIGATOR (P.I.)</span>
+                        </div>
+                    </div>
+
+                    <!-- Field 3: Level -->
+                    <div class="info-field">
+                        <div class="field-icon-box">
+                            <svg viewBox="0 0 24 24" fill="#eab308">
+                                <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.09-4-4L2 15.08l1.5 1.41z"/>
+                            </svg>
+                        </div>
+                        <div class="field-content">
+                            <span class="field-label">Level</span>
+                            <span class="field-value-primary">Level 1</span>
+                        </div>
+                    </div>
+
+                    <!-- Field 4: Account -->
+                    <div class="info-field">
+                        <div class="field-icon-box">
+                            <svg viewBox="0 0 24 24" fill="#dfc7a5">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                            </svg>
+                        </div>
+                        <div class="field-content">
+                            <span class="field-label">Account</span>
+                            <div class="auth-status-btn">
+                                <svg class="google-g-logo" viewBox="0 0 24 24">
+                                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                                </svg>
+                                Signed in with Google
+                            </div>
+                            <span class="account-id-subtext">Account ID: 9F3A-7B2C-1D4E-5F6A</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 2: CASH STORE -->
+                <div class="view-section" id="cashStoreView">
+                    <h1 class="paper-title">CASH STORE</h1>
+                    <div class="star-divider"><span>&#9733;</span></div>
+
+                    <!-- Free Cash Section -->
+                    <span class="store-section-badge">FREE CASH</span>
+                    <div class="store-card">
+                        <div class="store-card-left">
+                            <svg class="store-item-icon" viewBox="0 0 64 64">
+                                <rect x="8" y="16" width="48" height="36" rx="6" fill="#65a30d" stroke="#1e293b" stroke-width="3"/>
+                                <rect x="12" y="20" width="40" height="28" rx="3" fill="#84cc16"/>
+                                <polygon points="26,26 42,34 26,42" fill="#ffffff"/>
+                            </svg>
+                            <div class="store-item-info">
+                                <span class="store-item-title">WATCH REWARDED AD</span>
+                                <span class="store-item-sub">+R500 CASH</span>
+                                <span class="store-item-desc">10 ads remaining today</span>
+                            </div>
+                        </div>
+                        <button class="green-action-btn">WATCH AD</button>
+                    </div>
+
+                    <!-- Buy Cash Section -->
+                    <span class="store-section-badge green">BUY CASH</span>
+                    <div class="cash-list-container">
+                        <div class="cash-row">
+                            <span class="cash-row-val">R25,000</span>
+                            <button class="green-action-btn">R14.99</button>
+                        </div>
+                        <div class="cash-row">
+                            <span class="cash-row-val">R100,000</span>
+                            <button class="green-action-btn">R39.99</button>
+                        </div>
+                        <div class="cash-row">
+                            <span class="cash-row-val">R500,000</span>
+                            <button class="green-action-btn">R99.99</button>
+                        </div>
+                        <div class="cash-row">
+                            <span class="best-value-ribbon">BEST VALUE</span>
+                            <span class="cash-row-val">R2,000,000</span>
+                            <button class="green-action-btn">R249.99</button>
+                        </div>
+                        <div class="cash-row">
+                            <span class="cash-row-val">R5,000,000</span>
+                            <button class="green-action-btn">R499.99</button>
+                        </div>
+                    </div>
+
+                    <!-- Notice Box -->
+                    <div class="store-notice-box">
+                        <div class="notice-icon-safe">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                            </svg>
+                        </div>
+                        <div class="notice-text-content">
+                            <span class="notice-title">IMPORTANT</span>
+                            <span class="notice-desc">All purchases are final and non-refundable. Play fair and have fun!</span>
+                        </div>
+                        <svg class="watermark-seal" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#4a3822" stroke-width="4"/>
+                            <polygon points="50,15 61,38 85,38 66,52 73,75 50,60 27,75 34,52 15,38 39,38" fill="#4a3822"/>
+                        </svg>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+
+        <!-- Footer Back Button -->
+        <footer class="footer-nav">
+            <button class="back-btn">
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                BACK
+            </button>
+        </footer>
+    </div>
+
+    <!-- Avatar Selection Modal -->
+    <div class="avatar-modal-overlay" id="avatarModal">
+        <div class="avatar-modal">
+            <div class="avatar-modal-title">Select Avatar</div>
+            <div class="avatar-grid">
+                <img src="assets/black-male.png" alt="Black Male" class="avatar-option" data-src="assets/black-male.png">
+                <img src="assets/white-male.png" alt="White Male" class="avatar-option" data-src="assets/white-male.png">
+                <img src="assets/mixed-male.png" alt="Mixed Male" class="avatar-option" data-src="assets/mixed-male.png">
+                <img src="assets/black-female.png" alt="Black Female" class="avatar-option" data-src="assets/black-female.png">
+                <img src="assets/white-female.png" alt="White Female" class="avatar-option" data-src="assets/white-female.png">
+                <img src="assets/mixed-female.png" alt="Mixed Female" class="avatar-option" data-src="assets/mixed-female.png">
+            </div>
+            <button class="avatar-modal-close" id="closeAvatarModal">CANCEL</button>
+        </div>
+    </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const editBtn = document.getElementById('editAvatarBtn');
+            const modal = document.getElementById('avatarModal');
+            const closeBtn = document.getElementById('closeAvatarModal');
+            const avatarFrame = document.getElementById('avatarFrame');
+            const avatarOptions = document.querySelectorAll('.avatar-option');
+
+            // View Toggle Elements
+            const addCashBtn = document.querySelector('.add-cash-btn');
+            const cashPill = document.querySelector('.cash-pill');
+            const profileTopBtn = document.querySelector('.profile-top-btn');
+            const backBtn = document.querySelector('.back-btn');
+            const profileView = document.getElementById('profileView');
+            const cashStoreView = document.getElementById('cashStoreView');
+
+            function showCashStore() {
+                profileView.classList.remove('active-view');
+                cashStoreView.classList.add('active-view');
+            }
+
+            function showProfile() {
+                cashStoreView.classList.remove('active-view');
+                profileView.classList.add('active-view');
+            }
+
+            // Click Events to Open Cash Store
+            if (addCashBtn) addCashBtn.addEventListener('click', showCashStore);
+            if (cashPill) cashPill.addEventListener('click', showCashStore);
+
+            // Click Event to Return to Profile
+            if (profileTopBtn) profileTopBtn.addEventListener('click', showProfile);
+
+            // Footer Back Button logic
+            if (backBtn) {
+                backBtn.addEventListener('click', () => {
+                    if (cashStoreView.classList.contains('active-view')) {
+                        showProfile();
+                    } else {
+                        // Action for back button on Profile view (e.g. return to main menu)
+                    }
+                });
+            }
+
+            // Modal Functionality
+            if (editBtn) {
+                editBtn.addEventListener('click', () => {
+                    modal.classList.add('active');
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                    }
+                });
+            }
+
+            avatarOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const selectedSrc = option.getAttribute('data-src');
+                    avatarFrame.innerHTML = `<img src="${selectedSrc}" alt="Detective Avatar" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">`;
+                    modal.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
