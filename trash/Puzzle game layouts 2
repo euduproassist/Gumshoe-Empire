@@ -1,0 +1,648 @@
+# WORD FORGE
+
+## Screen Flow
+
+The game should feel like opening an old government language training file.
+
+Everything is clean.
+
+No floating particles.
+
+No unnecessary animations.
+
+No clutter.
+
+Every screen looks like an official language training document stored inside an old archive.
+
+The visual style should use:
+
+* Dark walnut wood
+* Aged paper
+* Black ink
+* Brass and gold accents
+* Olive-green buttons
+
+---
+
+# SCREEN 1
+
+## Splash Screen
+
+Background
+
+Dark brown leather texture.
+
+Center
+
+```text
+WORD FORGE
+```
+
+Below
+
+```text
+Master English
+One Puzzle at a Time
+```
+
+Bottom
+
+Small loading indicator.
+
+Duration
+
+2 seconds.
+
+Automatically continues to the Home Screen.
+
+---
+
+# SCREEN 2
+
+# Home Screen
+
+The Home Screen is the player's headquarters.
+
+The background resembles an old language training file placed on a wooden desk.
+
+Top
+
+Large title.
+
+```text
+WORD FORGE
+```
+
+Below
+
+Word of the Day
+
+```text
+RESILIENT
+
+Able to recover quickly after difficulties.
+```
+
+---
+
+Center
+
+Large olive-green button.
+
+```text
+CONTINUE LEARNING
+```
+
+If it's the player's first launch:
+
+```text
+START LEARNING
+```
+
+This is always the largest button.
+
+One tap immediately opens the player's most recent Academy and Level.
+
+---
+
+Below
+
+Current Progress Card
+
+```text
+Current Academy
+
+Synonyms
+
+Current Level
+
+Explorer
+
+Overall Progress
+
+58%
+```
+
+Simple horizontal progress bar.
+
+---
+
+Bottom Navigation
+
+```text
+ACADEMIES
+
+STATISTICS
+
+SHOP
+
+SETTINGS
+```
+
+Bottom Status Bar
+
+```text
+Coins
+
+1245
+
+Hints
+
+18
+```
+
+Nothing else.
+
+No Daily Challenge.
+
+No Weekly Challenge.
+
+No Events.
+
+No notifications.
+
+No advertisements on the Home Screen.
+
+---
+
+# SCREEN 3
+
+# Academies
+
+The screen resembles an old filing cabinet.
+
+Every Academy appears as a vintage paper folder.
+
+Example
+
+```text
+📁 Synonyms
+
+58% Complete
+```
+
+```text
+📁 Antonyms
+
+12% Complete
+```
+
+```text
+📁 Rhyming Words
+
+0% Complete
+```
+
+All Academies are available from the beginning.
+
+None are locked.
+
+Completed Academies receive a gold **MASTERED** stamp.
+
+Each folder displays:
+
+* Academy Name
+* Completion Percentage
+* Mastered Stamp (if completed)
+
+Selecting a folder opens that Academy.
+
+---
+
+# SCREEN 4
+
+# Academy Levels
+
+After opening an Academy, the player sees its progression.
+
+Example
+
+```text
+SYNONYM ACADEMY
+```
+
+---
+
+```text
+✓ Foundation
+```
+
+Unlocked.
+
+Replay anytime.
+
+---
+
+```text
+✓ Explorer
+```
+
+Unlocked.
+
+Replay anytime.
+
+---
+
+```text
+🔒 Practitioner
+```
+
+Complete Explorer first.
+
+---
+
+```text
+🔒 Master
+```
+
+Complete Practitioner first.
+
+---
+
+```text
+🔒 Legend
+```
+
+Complete Master first.
+
+Every completed level remains unlocked forever and can be replayed at any time.
+
+---
+
+# SCREEN 5
+
+# Puzzle Screen
+
+The most important screen.
+
+Everything happens here.
+
+Background
+
+Old paper.
+
+Wooden border.
+
+Top
+
+```text
+ACADEMY
+
+Synonyms
+```
+
+Below
+
+```text
+LEVEL
+
+Explorer
+```
+
+Below
+
+Relationship
+
+```text
+Synonym
+```
+
+Large Main Word
+
+```text
+HAPPY
+```
+
+Answer Boxes
+
+```text
+_ _ _
+```
+
+Bottom Half
+
+Large Letter Wheel.
+
+Simple.
+
+No glowing effects.
+
+No flashy animations.
+
+Only letters arranged in a clean circle.
+
+Bottom
+
+```text
+Hints
+
+Coins
+```
+
+Nothing else.
+
+No timer.
+
+No lives.
+
+No score countdown.
+
+No distractions.
+
+---
+
+# SCREEN 6
+
+# Hint Popup
+
+Simple aged-paper popup.
+
+```text
+Need Help?
+```
+
+Options
+
+```text
+Reveal 1 Letter
+
+10 Coins
+
+----------------
+
+Watch Advertisement
+
+Receive 1 Free Letter
+
+----------------
+
+Cancel
+```
+
+No dramatic graphics.
+
+Simple and clean.
+
+---
+
+# SCREEN 7
+
+# Puzzle Complete
+
+Styled like an official completion certificate.
+
+Header
+
+```text
+Puzzle Solved
+```
+
+Rewards
+
+```text
++30 Coins
+
++12 XP
+```
+
+Statistics
+
+```text
+Accuracy
+
+100%
+
+Time
+
+32 sec
+```
+
+Buttons
+
+```text
+NEXT PUZZLE
+
+HOME
+```
+
+If it was the final puzzle in the level, the **Next Puzzle** button changes to:
+
+```text
+NEXT LEVEL
+```
+
+If it was the final level in the Academy:
+
+```text
+ACADEMY COMPLETE
+```
+
+A gold **MASTERED** stamp appears across the certificate.
+
+---
+
+# SCREEN 8
+
+# Statistics
+
+Designed like an old government report.
+
+Sections
+
+```text
+Words Solved
+
+842
+
+----------------
+
+Vocabulary Learned
+
+842
+
+----------------
+
+Academies Mastered
+
+6
+
+----------------
+
+Levels Completed
+
+28
+
+----------------
+
+Overall Mastery
+
+43%
+
+----------------
+
+Accuracy
+
+94%
+
+----------------
+
+Average Solve Time
+
+27 sec
+
+----------------
+
+Fastest Solve
+
+5 sec
+
+----------------
+
+Longest Streak
+
+97
+
+----------------
+
+Hints Used
+
+41
+
+----------------
+
+Coins Earned
+
+15,320
+
+----------------
+
+XP Earned
+
+9,850
+```
+
+Everything is aligned neatly like an official training record.
+
+---
+
+# SCREEN 9
+
+# Shop
+
+Designed as a language supply office.
+
+Header
+
+```text
+Hint Supply
+```
+
+Cards
+
+```text
+Small Pack
+
+20 Hints
+
+R19
+```
+
+```text
+Medium Pack
+
+60 Hints
+
+R49
+```
+
+```text
+Large Pack
+
+150 Hints
+
+R99
+```
+
+Bottom
+
+```text
+Watch Advertisement
+
+Receive
+
+1 Free Hint
+```
+
+No skins.
+
+No decorations.
+
+No cosmetics.
+
+Only items that help gameplay.
+
+---
+
+# SCREEN 10
+
+# Settings
+
+Simple paper checklist.
+
+```text
+Music
+
+ON / OFF
+
+----------------
+
+Sound
+
+ON / OFF
+
+----------------
+
+Language
+
+English
+
+----------------
+
+Reset Progress
+
+----------------
+
+Restore Purchases
+
+----------------
+
+About
+```
+
+Minimal.
+
+Simple.
+
+Easy to navigate.
+
+---
+
+# Overall Visual Identity
+
+The entire game should feel like opening an official English training archive from another era.
+
+Every screen should communicate:
+
+* Knowledge
+* Mastery
+* Progress
+* Focus
+
+Not:
+
+* Bright arcade colors
+* Cartoon graphics
+* Flashy effects
+* Busy interfaces
+
+The experience should feel calm, premium, and timeless—like studying from a beautifully preserved vintage language manual rather than playing a typical mobile game.
