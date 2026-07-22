@@ -1,0 +1,616 @@
+I actually like the **old detective-folder / paper-file aesthetic** from your screenshots. Not the layout, but the **color palette**:
+
+* Dark brown wood
+* Aged paper
+* Black headers
+* Gold accents
+* Olive green buttons
+* Vintage government file feeling
+
+That theme will make your game feel timeless and distinguish it from the bright blue/purple look that most word games use.
+
+---
+
+# ACCOUNT SYSTEM
+
+## Does the player need to sign in?
+
+### No.
+
+There is **no login screen.**
+
+No Google Sign-In.
+
+No email.
+
+No password.
+
+No username.
+
+No account creation.
+
+No cloud save.
+
+Everything is stored locally on the player's device.
+
+Google Play Billing handles purchases behind the scenes.
+
+Your game never asks the player to log in.
+
+---
+
+## The only limitation
+
+If the player:
+
+* deletes the game
+* clears app storage
+* changes phones
+
+their progress is lost.
+
+Purchased non-consumable items (if you ever add them) can be restored using **Restore Purchases** in Settings.
+
+For Version 1, this is perfectly acceptable.
+
+---
+
+# SCREEN FLOW
+
+The game should feel like opening an old government language training file.
+
+Everything is clean.
+
+No floating particles.
+
+No unnecessary animations.
+
+No clutter.
+
+Every screen looks like an official training document.
+
+---
+
+# SCREEN 1
+
+## Splash Screen
+
+Background
+
+Dark brown leather texture.
+
+Middle
+
+Large logo.
+
+```
+WORD FORGE
+```
+
+Below
+
+```
+Master English
+One Puzzle at a Time
+```
+
+Bottom
+
+Tiny loading indicator.
+
+Duration
+
+2 seconds.
+
+Automatically continues.
+
+---
+
+# SCREEN 2
+
+# Home Screen
+
+This becomes the player's headquarters.
+
+The background resembles an old paper document lying on a wooden desk.
+
+Top
+
+Large title.
+
+```
+WORD FORGE
+```
+
+Below
+
+Word of the Day
+
+Example
+
+```
+RESILIENT
+
+Able to recover quickly after difficulties.
+```
+
+Small reward underneath
+
+```
+Today's Puzzle Bonus
+
++20 Coins
+```
+
+---
+
+Center
+
+Large button
+
+```
+CONTINUE LEARNING
+```
+
+If first launch
+
+```
+START LEARNING
+```
+
+This is the largest button.
+
+One tap immediately loads the player's current puzzle.
+
+---
+
+Below
+
+Current Progress Card
+
+```
+Current Academy
+
+Synonyms
+
+Level 8
+
+58% Complete
+```
+
+Simple horizontal progress bar.
+
+---
+
+Below
+
+Daily Challenge Card
+
+```
+Daily Challenge
+
+Reward
+
+100 Coins
+
+PLAY
+```
+
+---
+
+Bottom
+
+Four buttons
+
+```
+ACADEMIES
+
+STATISTICS
+
+SHOP
+
+SETTINGS
+```
+
+Bottom status bar
+
+```
+Coins
+
+1245
+
+Hints
+
+18
+```
+
+Nothing else.
+
+---
+
+# SCREEN 3
+
+# Academies
+
+Looks like an old filing cabinet.
+
+Every academy appears as a paper folder.
+
+Example
+
+```
+📁 Synonyms
+
+Completed
+
+58%
+```
+
+Locked academies
+
+Paper is darker.
+
+Small padlock.
+
+Example
+
+```
+📁 Antonyms
+
+LOCKED
+```
+
+Unlocked academies become lighter paper.
+
+Completed academies receive a gold stamp.
+
+---
+
+# SCREEN 4
+
+# Puzzle Screen
+
+The most important screen.
+
+Everything happens here.
+
+Background
+
+Old paper.
+
+Wood border.
+
+Top
+
+```
+ACADEMY
+
+Synonyms
+```
+
+Below
+
+Large word.
+
+```
+HAPPY
+```
+
+Underneath
+
+Empty answer boxes.
+
+```
+_ _ _
+```
+
+Bottom half
+
+Letter wheel.
+
+Simple.
+
+No glowing effects.
+
+No flashy animations.
+
+Only the letters.
+
+Bottom
+
+```
+Hints
+
+Coins
+```
+
+Nothing else.
+
+No timer.
+
+No lives.
+
+No distractions.
+
+---
+
+# SCREEN 5
+
+# Hint Popup
+
+Simple paper popup.
+
+```
+Need Help?
+```
+
+Options
+
+```
+Reveal 1 Letter
+
+10 Coins
+
+----------------
+
+Watch Ad
+
+Free Letter
+
+----------------
+
+Cancel
+```
+
+No dramatic graphics.
+
+---
+
+# SCREEN 6
+
+# Level Complete
+
+Paper certificate.
+
+```
+Puzzle Solved
+```
+
+Rewards
+
+```
++30 Coins
+
++12 XP
+```
+
+Statistics
+
+```
+Accuracy
+
+100%
+
+Time
+
+32 sec
+```
+
+Buttons
+
+```
+NEXT PUZZLE
+
+HOME
+```
+
+---
+
+# SCREEN 7
+
+# Daily Challenge
+
+Same puzzle layout.
+
+Different reward.
+
+Header
+
+```
+Daily Challenge
+```
+
+Reward
+
+```
+100 Coins
+
+Daily Badge
+```
+
+---
+
+# SCREEN 8
+
+# Statistics
+
+Looks like an old report.
+
+Sections
+
+```
+Words Learned
+
+842
+
+----------------
+
+Academies Completed
+
+6
+
+----------------
+
+Current Streak
+
+18
+
+----------------
+
+Longest Streak
+
+97
+
+----------------
+
+Accuracy
+
+94%
+
+----------------
+
+Hints Used
+
+41
+
+----------------
+
+Coins Earned
+
+15 320
+```
+
+Everything aligned like an official report.
+
+---
+
+# SCREEN 9
+
+# Shop
+
+Looks like a supply office.
+
+Header
+
+```
+Hint Supply
+```
+
+Cards
+
+```
+Small Pack
+
+20 Hints
+
+R19
+```
+
+```
+Medium Pack
+
+60 Hints
+
+R49
+```
+
+```
+Large Pack
+
+150 Hints
+
+R99
+```
+
+Bottom
+
+```
+Watch Advertisement
+
+Receive
+
+1 Free Hint
+```
+
+No cosmetics.
+
+No skins.
+
+No office upgrades.
+
+No decorations.
+
+Only hints.
+
+---
+
+# SCREEN 10
+
+# Settings
+
+Simple paper checklist.
+
+```
+Music
+
+ON/OFF
+
+----------------
+
+Sound
+
+ON/OFF
+
+----------------
+
+Language
+
+English
+
+----------------
+
+Reset Progress
+
+----------------
+
+Restore Purchases
+
+----------------
+
+About
+```
+
+Very clean.
+
+---
+
+# Visual Identity
+
+The game should feel like:
+
+* Opening an old dictionary.
+* Reading an old government training manual.
+* Working through official language exercises.
+* Vintage.
+* Warm.
+* Calm.
+
+Not modern neon.
+
+Not cartoon.
+
+Not childish.
+
+Think:
+
+* aged paper
+* dark walnut wood
+* brass/gold accents
+* black ink
+* olive-green buttons
+
+The visual style itself should communicate:
+
+> "This is where serious word mastery happens."
+
+That identity would immediately separate your game from the bright, colorful look used by most existing word games.
