@@ -1,0 +1,685 @@
+I actually think we should make one important change before you start building.
+
+Don't call them **modes**.
+
+Call them **Academies** or **Courses**.
+
+That makes the game feel like you're mastering English instead of switching game modes.
+
+---
+
+# Working Title
+
+**Word Forge** *(Temporary Name)*
+
+*"Master English one puzzle at a time."*
+
+---
+
+# Core Concept
+
+Word Forge is a single-screen educational word puzzle game that transforms English learning into an addictive challenge.
+
+Unlike traditional word games where players simply create random words from letters, every puzzle is built around **a specific relationship between words**.
+
+Players don't just spell.
+
+They think.
+
+Every puzzle strengthens vocabulary, reasoning, language comprehension, spelling, and critical thinking.
+
+The gameplay remains simple enough for children while remaining challenging enough for adults.
+
+---
+
+# Gameplay
+
+Every level contains:
+
+### 1. Relationship
+
+At the top of the screen.
+
+Example
+
+> **Synonym**
+
+---
+
+### 2. Main Word
+
+Example
+
+> HAPPY
+
+---
+
+### 3. Empty Answer Boxes
+
+```text
+_ _ _
+```
+
+Nothing is revealed.
+
+The player must figure everything out.
+
+---
+
+### 4. Letter Circle
+
+Example
+
+```text
+J
+Y
+O
+F
+L
+U
+```
+
+Players drag letters together.
+
+When correct...
+
+The puzzle completes.
+
+Coins are awarded.
+
+XP is awarded.
+
+The next puzzle loads instantly.
+
+No loading screens.
+
+No moving around.
+
+No animations that interrupt gameplay.
+
+Fast.
+
+Simple.
+
+Addictive.
+
+---
+
+# Academies
+
+Instead of choosing random puzzle modes, players progress through different English academies.
+
+---
+
+## 📘 Academy 1 — Synonyms
+
+Find words with similar meanings.
+
+Example
+
+HAPPY
+
+↓
+
+JOY
+
+---
+
+## 📕 Academy 2 — Antonyms
+
+Find opposite meanings.
+
+Example
+
+HOT
+
+↓
+
+COLD
+
+---
+
+## 🎵 Academy 3 — Rhyming Words
+
+Find words that rhyme.
+
+Example
+
+LIGHT
+
+↓
+
+NIGHT
+
+---
+
+## 🔤 Academy 4 — Prefixes
+
+Create new words using prefixes.
+
+Example
+
+HAPPY
+
+↓
+
+UN
+
+↓
+
+UNHAPPY
+
+---
+
+## 🔤 Academy 5 — Suffixes
+
+Complete words using suffixes.
+
+Example
+
+HELP
+
+↓
+
+FUL
+
+↓
+
+HELPFUL
+
+---
+
+## 📦 Academy 6 — Compound Words
+
+Complete compound words.
+
+Example
+
+SUN
+
+↓
+
+FLOWER
+
+↓
+
+SUNFLOWER
+
+---
+
+## 👶 Academy 7 — Plurals
+
+Example
+
+CHILD
+
+↓
+
+CHILDREN
+
+---
+
+## 👂 Academy 8 — Homophones
+
+Words that sound alike.
+
+Example
+
+SEA
+
+↓
+
+SEE
+
+---
+
+## 🔊 Academy 9 — Homonyms
+
+Same spelling.
+
+Different meanings.
+
+Example
+
+BAT
+
+(animal)
+
+BAT
+
+(baseball)
+
+---
+
+## 🧠 Academy 10 — Word Families
+
+Example
+
+ACT
+
+↓
+
+ACTION
+
+↓
+
+ACTIVE
+
+↓
+
+ACTIVITY
+
+---
+
+## 📝 Academy 11 — Verb Forms
+
+Example
+
+RUN
+
+↓
+
+RAN
+
+↓
+
+RUNNING
+
+---
+
+## 📚 Academy 12 — Nouns
+
+Identify or build nouns.
+
+---
+
+## ⚡ Academy 13 — Verbs
+
+Build action words.
+
+---
+
+## 🎨 Academy 14 — Adjectives
+
+Describe words.
+
+---
+
+## 🚀 Academy 15 — Adverbs
+
+Describe actions.
+
+---
+
+## 🔠 Academy 16 — Anagrams
+
+Rearrange letters.
+
+Example
+
+LISTEN
+
+↓
+
+SILENT
+
+---
+
+## 🧩 Academy 17 — Missing Letters
+
+Complete partially hidden words.
+
+Example
+
+APPL_
+
+↓
+
+APPLE
+
+---
+
+## 🔍 Academy 18 — Hidden Word
+
+Use clues to discover one hidden word.
+
+---
+
+## 🌍 Academy 19 — Countries & Capitals
+
+Example
+
+France
+
+↓
+
+Paris
+
+---
+
+## 🦁 Academy 20 — Animals
+
+Example
+
+Cub
+
+↓
+
+Lion
+
+---
+
+## 🌱 Academy 21 — Nature
+
+Plants.
+
+Trees.
+
+Flowers.
+
+Weather.
+
+---
+
+## 🔬 Academy 22 — Science
+
+Chemistry.
+
+Biology.
+
+Physics.
+
+---
+
+## 🌌 Academy 23 — Space
+
+Planets.
+
+Stars.
+
+Constellations.
+
+---
+
+## 🏛 Academy 24 — History
+
+Historical people.
+
+Events.
+
+Civilizations.
+
+---
+
+## 💻 Academy 25 — Technology
+
+Programming.
+
+Computers.
+
+Internet.
+
+---
+
+## 🏥 Academy 26 — Medical Vocabulary
+
+Body parts.
+
+Diseases.
+
+Medicine.
+
+---
+
+## ⚖ Academy 27 — Legal Vocabulary
+
+Law.
+
+Court.
+
+Crime.
+
+Justice.
+
+---
+
+## 💼 Academy 28 — Business English
+
+Economics.
+
+Finance.
+
+Marketing.
+
+---
+
+## ✈ Academy 29 — Travel English
+
+Airport.
+
+Hotel.
+
+Transport.
+
+---
+
+## 🍽 Academy 30 — Food & Cooking
+
+Ingredients.
+
+Recipes.
+
+Kitchen vocabulary.
+
+---
+
+## 🏠 Academy 31 — Everyday English
+
+Common household vocabulary.
+
+---
+
+## 💬 Academy 32 — Idioms
+
+Example
+
+Break the ice.
+
+Piece of cake.
+
+---
+
+## 🗣 Academy 33 — Phrasal Verbs
+
+Example
+
+Wake up.
+
+Give up.
+
+Carry on.
+
+---
+
+## 🎓 Academy 34 — Academic Vocabulary
+
+SAT.
+
+IELTS.
+
+TOEFL.
+
+University English.
+
+---
+
+## ⭐ Academy 35 — Mixed Challenge
+
+Everything combined.
+
+No category warning.
+
+Anything can appear.
+
+---
+
+# Difficulty Progression
+
+Every academy has:
+
+Beginner
+
+Intermediate
+
+Advanced
+
+Expert
+
+Master
+
+Legend
+
+Vocabulary becomes increasingly difficult while keeping the gameplay identical.
+
+---
+
+# Hint System
+
+The player **never** receives the answer immediately.
+
+Hints only reveal letters.
+
+Example
+
+```text
+_ _ _ _
+```
+
+↓
+
+```text
+_ O _ _
+```
+
+↓
+
+```text
+_ O R _
+```
+
+↓
+
+```text
+W O R D
+```
+
+Hints are limited per puzzle.
+
+No "remove wrong letters."
+
+No automatic solving.
+
+---
+
+# Coins
+
+Earned by:
+
+* Solving puzzles
+* Perfect streaks
+* Daily challenges
+* Weekly challenges
+* Academy completion
+* Achievements
+
+---
+
+# Monetization
+
+Revenue comes from only three things:
+
+* Rewarded Ads for extra hints
+* Purchasing Hint Packs
+* Optional Starter Packs
+
+No lives.
+
+No timers.
+
+No energy system.
+
+No forced waiting.
+
+---
+
+# Progression
+
+Players unlock:
+
+* New Academies
+* Harder vocabulary
+* Daily Challenges
+* Weekly Challenges
+* Endless Mode
+* Mixed Challenge Mode
+
+---
+
+# Statistics
+
+Track:
+
+* Total words solved
+* Vocabulary learned
+* Academies completed
+* Accuracy
+* Average solve time
+* Fastest solve
+* Longest streak
+* Hints used
+* Coins earned
+* XP earned
+* Mastery percentage for every Academy
+
+---
+
+# Save System
+
+Everything is stored locally.
+
+No account.
+
+No login.
+
+No internet.
+
+No database.
+
+No monthly server costs.
+
+The game works completely offline.
+
+---
+
+# Target Audience
+
+* Children learning English
+* High school students
+* University students
+* Adults wanting to improve vocabulary
+* ESL learners
+* Teachers
+* Parents
+* Puzzle lovers
+
+---
+
+# Why this game has potential
+
+Most word games teach players to **find words**.
+
+Word Forge teaches players to **understand relationships between words**.
+
+That gives it a stronger educational identity than Wordle or Wordscapes while keeping the gameplay just as simple.
+
+The one thing I'd add in the future is a **personal vocabulary notebook**: every new word the player solves gets saved automatically with its meaning and an example sentence, so the game becomes a growing dictionary of words they've actually learned. I think that would make the educational value much stronger without changing the core gameplay.
