@@ -1,0 +1,372 @@
+I actually think this makes the game stronger.
+
+Instead of trying to keep players busy with daily tasks, events, and timers, the **Academies become the entire game**. The challenge comes from mastering English, not from logging in every day.
+
+I'd also keep **all Academies unlocked from the beginning**. That lets players learn what interests them. A child might start with Animals, while an adult preparing for IELTS might go straight to Academic Vocabulary.
+
+The progression happens **inside** each Academy.
+
+---
+
+# Working Title
+
+**Word Forge** *(Temporary Name)*
+
+*"Master English One Puzzle at a Time."*
+
+---
+
+# Core Concept
+
+Word Forge is a single-screen educational word puzzle game that transforms English learning into an addictive challenge.
+
+Unlike traditional word games where players simply create random words from letters, every puzzle is built around **a specific relationship between words**.
+
+Players don't just spell.
+
+They think.
+
+Every puzzle strengthens vocabulary, reasoning, spelling, language comprehension, and critical thinking.
+
+The gameplay is simple enough for children while remaining challenging for adults.
+
+---
+
+# Gameplay
+
+Every puzzle contains:
+
+### 1. Relationship
+
+Displayed at the top.
+
+Example
+
+```
+Synonym
+```
+
+---
+
+### 2. Main Word
+
+Example
+
+```
+HAPPY
+```
+
+---
+
+### 3. Empty Answer Boxes
+
+```
+_ _ _
+```
+
+The player must determine the correct answer.
+
+---
+
+### 4. Letter Wheel
+
+Example
+
+```
+J
+Y
+O
+F
+L
+U
+```
+
+Players drag letters together.
+
+When correct:
+
+* Puzzle completes
+* Coins are awarded
+* XP is awarded
+* Next puzzle loads instantly
+
+No loading screens.
+
+No interruptions.
+
+Fast.
+
+Simple.
+
+Addictive.
+
+---
+
+# Academies
+
+Word Forge is divided into English Academies.
+
+Each Academy teaches one specific area of English.
+
+Unlike traditional games, **every Academy is available from the beginning.**
+
+Players choose what they want to master.
+
+Examples include:
+
+* Synonyms
+* Antonyms
+* Rhyming Words
+* Prefixes
+* Suffixes
+* Compound Words
+* Plurals
+* Homophones
+* Homonyms
+* Word Families
+* Verb Forms
+* Nouns
+* Verbs
+* Adjectives
+* Adverbs
+* Anagrams
+* Missing Letters
+* Hidden Words
+* Countries & Capitals
+* Animals
+* Nature
+* Science
+* Space
+* History
+* Technology
+* Medical Vocabulary
+* Legal Vocabulary
+* Business English
+* Travel English
+* Food & Cooking
+* Everyday English
+* Idioms
+* Phrasal Verbs
+* Academic Vocabulary
+* Mixed Challenge
+
+---
+
+# Academy Progression
+
+Every Academy contains six mastery levels.
+
+Only the first level is unlocked initially.
+
+The remaining levels unlock as the previous level is completed.
+
+```
+Foundation
+    ↓
+Explorer
+    ↓
+Practitioner
+    ↓
+Scholar
+    ↓
+Master
+    ↓
+Legend
+```
+
+Each level contains its own collection of puzzles.
+
+Vocabulary difficulty increases naturally from one level to the next.
+
+---
+
+# Replay System
+
+Completed levels remain permanently unlocked.
+
+Players may replay any completed level whenever they wish.
+
+Replaying levels allows players to:
+
+* Improve accuracy
+* Earn additional coins
+* Improve completion statistics
+* Practice difficult vocabulary
+
+---
+
+# Example
+
+```
+Synonym Academy
+
+✓ Foundation
+
+✓ Explorer
+
+✓ Practitioner
+
+🔒 Scholar
+
+🔒 Master
+
+🔒 Legend
+```
+
+---
+
+# Hint System
+
+Hints never reveal the complete answer.
+
+They only reveal one letter at a time.
+
+Example
+
+```
+_ _ _ _
+```
+
+↓
+
+```
+_ O _ _
+```
+
+↓
+
+```
+_ O R _
+```
+
+↓
+
+```
+W O R D
+```
+
+Players decide whether to continue using hints or solve the puzzle themselves.
+
+---
+
+# Coins
+
+Coins are earned by:
+
+* Solving puzzles
+* Perfect solves
+* Completing levels
+* Completing Academies
+* Unlocking achievements
+* Replaying completed levels
+
+---
+
+# Monetization
+
+Revenue comes from only three sources:
+
+* Rewarded advertisements for one free hint
+* Hint Packs
+* Optional Starter Pack
+
+There are:
+
+* No lives
+* No timers
+* No energy system
+* No forced waiting
+* No paywalls blocking gameplay
+
+---
+
+# Progression
+
+Players progress by mastering Academies.
+
+Each completed level unlocks the next level within that Academy.
+
+Completing all levels awards Academy Mastery.
+
+The ultimate goal is to achieve 100% mastery across every Academy.
+
+---
+
+# Statistics
+
+Track:
+
+* Total Words Solved
+* Vocabulary Learned
+* Academies Completed
+* Levels Completed
+* Overall Mastery
+* Accuracy
+* Average Solve Time
+* Fastest Solve
+* Longest Streak
+* Hints Used
+* Coins Earned
+* XP Earned
+* Mastery Percentage for Every Academy
+
+---
+
+# Vocabulary Notebook *(Future Update)*
+
+Every successfully solved word is automatically saved.
+
+Each entry contains:
+
+* Word
+* Meaning
+* Example Sentence
+* Academy
+* Date Learned
+
+The notebook gradually becomes a personal dictionary built entirely from words the player has learned.
+
+---
+
+# Save System
+
+Everything is stored locally.
+
+There is:
+
+* No account
+* No login
+* No email
+* No password
+* No cloud save
+* No database
+* No monthly server costs
+
+The game works completely offline.
+
+If the app is deleted or app data is cleared, progress is lost. Purchased non-consumable items can be restored through **Restore Purchases**.
+
+---
+
+# Target Audience
+
+* Children learning English
+* High school students
+* University students
+* Adults improving vocabulary
+* ESL learners
+* Teachers
+* Parents
+* Puzzle enthusiasts
+
+---
+
+# Why Word Forge Stands Out
+
+Most word games teach players to **find words**.
+
+Word Forge teaches players to **understand relationships between words**.
+
+Every Academy focuses on a different aspect of English, while the gameplay remains familiar, fast, and easy to learn.
+
+There are no artificial time limits, no energy systems, and no distractions—just a clear path from **Foundation** to **Legend**, allowing players to master English one puzzle at a time.
