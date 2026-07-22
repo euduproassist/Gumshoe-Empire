@@ -1,0 +1,574 @@
+Here's a much stronger master prompt you can give Gemini. It is designed to force it to think like a professional game designer, detective writer, and puzzle designer—not just generate a list of missions.
+
+---
+
+# MASTER PROMPT
+
+You are NOT an AI assistant.
+
+You are a team consisting of:
+
+* A AAA detective game designer.
+* A professional puzzle designer.
+* A criminal investigator with 30+ years of experience.
+* A thriller movie writer.
+* A behavioral psychologist specializing in addictive gameplay.
+* A mobile game retention expert.
+
+Your job is to design the ENTIRE single-player campaign for my detective game.
+
+DO NOT rush.
+
+Take your time.
+
+I want QUALITY over speed.
+
+---
+
+# THE GAME
+
+This is a serious detective game.
+
+It is NOT a kids game.
+
+It is NOT a joke game.
+
+It is NOT a simple hidden-object game.
+
+The player is slowly becoming one of the greatest investigators in history.
+
+The player starts with almost no experience.
+
+Every promotion should make the player FEEL they truly became better.
+
+Every promotion should unlock a completely different level of thinking.
+
+I want players to say:
+
+> "Wow...this game became much harder."
+
+NOT
+
+> "It's just the same mission with different pictures."
+
+---
+
+# THERE ARE EXACTLY 15 PROMOTIONS
+
+Every promotion contains EXACTLY 10 missions.
+
+Total:
+
+150 UNIQUE MISSIONS
+
+Do NOT skip any.
+
+Do NOT shorten anything.
+
+Generate ALL 150.
+
+---
+
+# PROMOTIONS
+
+Level 1 — Trainee Investigator
+
+Level 2 — Junior Investigator
+
+Level 3 — Private Investigator
+
+Level 4 — Senior Investigator
+
+Level 5 — Lead Investigator
+
+Level 6 — Supervising Investigator
+
+Level 7 — Case Manager
+
+Level 8 — Operations Manager
+
+Level 9 — Agency Director
+
+Level 10 — Chief Investigator
+
+Level 11 — Regional Director
+
+Level 12 — Executive Director
+
+Level 13 — Managing Director
+
+Level 14 — Agency President
+
+Level 15 — Founder & Chairman
+
+---
+
+# VERY IMPORTANT
+
+Each promotion MUST feel like a promotion.
+
+The easiest mission in Level 6 should still be MUCH harder than the hardest mission in Level 3.
+
+The player should immediately notice the difference.
+
+Exactly how real careers work.
+
+Example:
+
+A trainee might interview witnesses.
+
+A Chief Investigator coordinates multi-city homicide investigations.
+
+They are NOT the same difficulty.
+
+Do NOT repeat ideas.
+
+---
+
+# MISSION DIFFICULTY
+
+Within every promotion:
+
+Mission 1
+
+easy
+
+Mission 2
+
+slightly harder
+
+Mission 3
+
+harder
+
+Mission 4
+
+harder
+
+Mission 5
+
+medium
+
+Mission 6
+
+medium-hard
+
+Mission 7
+
+hard
+
+Mission 8
+
+very hard
+
+Mission 9
+
+extremely hard
+
+Mission 10
+
+the boss mission
+
+Mission 10 should feel like beating a movie.
+
+---
+
+# EVERY MISSION MUST HAVE
+
+Mission number
+
+Mission title
+
+Story introduction
+
+Mission objective
+
+Difficulty
+
+Estimated solving time
+
+Mission description
+
+Why this mission belongs to this promotion
+
+Why it is harder than the previous mission
+
+---
+
+# GAMEPLAY TYPES
+
+DO NOT ONLY USE ONE TYPE.
+
+Mix everything.
+
+Examples:
+
+Crime scene investigation
+
+Find contradictions
+
+Analyze CCTV
+
+Audio analysis
+
+Fingerprint comparison
+
+Phone records
+
+Financial fraud
+
+Insurance fraud
+
+Kidnapping
+
+Murder
+
+Poisoning
+
+Corporate espionage
+
+Cybercrime
+
+Political corruption
+
+Cold cases
+
+Blackmail
+
+Forgery
+
+Identity theft
+
+Serial killers
+
+Missing children
+
+Missing persons
+
+Arson
+
+Robbery
+
+Art theft
+
+Museum theft
+
+Diamond theft
+
+Drug trafficking
+
+Human trafficking
+
+Money laundering
+
+International crime
+
+Witness interrogation
+
+Suspect interrogation
+
+Crime reconstruction
+
+Digital forensics
+
+Password recovery
+
+Fake documents
+
+DNA evidence
+
+Autopsy reports
+
+Ballistics
+
+Vehicle tracking
+
+Timeline reconstruction
+
+Map investigation
+
+Hidden messages
+
+Secret codes
+
+Morse code
+
+Cipher cracking
+
+Encryption
+
+Satellite images
+
+AI-generated evidence
+
+False evidence
+
+Double agents
+
+Leaks
+
+Corporate sabotage
+
+Military intelligence
+
+Counterintelligence
+
+International investigations
+
+Deep conspiracies
+
+Government secrets
+
+Organized crime
+
+And MANY MORE.
+
+---
+
+# VERY IMPORTANT
+
+NO REPETITIVE MISSIONS.
+
+If a CCTV mission appears in Level 2...
+
+The next CCTV mission should be completely different.
+
+Maybe:
+
+Multiple camera angles
+
+Missing timestamps
+
+Corrupted footage
+
+Swapped videos
+
+Edited footage
+
+Fake timestamps
+
+Night vision
+
+AI-enhanced reconstruction
+
+Etc.
+
+---
+
+# PUZZLES
+
+Players must THINK.
+
+Never ask:
+
+"What color is the shirt?"
+
+Never ask:
+
+"Click the knife."
+
+Never ask:
+
+"Find the fingerprint."
+
+Those are boring.
+
+Instead:
+
+The fingerprint belongs to TWO suspects.
+
+Determine who touched the object FIRST using pressure marks.
+
+Or
+
+Three witnesses all tell different stories.
+
+Determine who lied using the CCTV timestamps.
+
+Or
+
+A suspect claims he was at work.
+
+Phone GPS says otherwise.
+
+Traffic cameras say otherwise.
+
+Restaurant receipt says otherwise.
+
+Find the contradiction.
+
+---
+
+# PLAYER EMOTIONS
+
+I want the player to feel:
+
+Curiosity
+
+Pressure
+
+Victory
+
+Relief
+
+Pride
+
+Excitement
+
+Tension
+
+Suspense
+
+Shock
+
+Mind blown
+
+Never boredom.
+
+---
+
+# HINT SYSTEM
+
+Every mission should naturally make the player WANT hints.
+
+Not because it is impossible.
+
+Because it is cleverly designed.
+
+The player should think:
+
+"I almost have it..."
+
+Then buy or watch ads for hints.
+
+The hint should never instantly reveal the answer.
+
+Hint 1
+
+Small clue.
+
+Hint 2
+
+Bigger clue.
+
+Hint 3
+
+Almost solves it.
+
+---
+
+# STORYTELLING
+
+Every mission should feel like an episode.
+
+Mission introductions should read like Netflix detective shows.
+
+Use cinematic storytelling.
+
+Use mystery.
+
+Use twists.
+
+Use betrayals.
+
+Use suspense.
+
+---
+
+# REALISM
+
+Everything should feel believable.
+
+Use actual investigative techniques.
+
+Think like:
+
+FBI
+
+Private Investigators
+
+Interpol
+
+Digital Forensics
+
+Crime Analysts
+
+Fraud Investigators
+
+Cybercrime Units
+
+Financial Investigators
+
+Homicide Detectives
+
+Counterintelligence Officers
+
+---
+
+# LEVEL 15
+
+The Founder & Chairman should not personally dust for fingerprints anymore.
+
+At this level the player handles:
+
+National crises
+
+International conspiracies
+
+Massive criminal organizations
+
+Agency-wide decisions
+
+Political pressure
+
+Media pressure
+
+Multiple investigation teams
+
+Conflicting evidence from dozens of investigators
+
+Entire organizations depending on their decisions
+
+Mission 10 of Level 15 should feel like the ending of a blockbuster detective movie.
+
+---
+
+# OUTPUT FORMAT
+
+Generate ALL 15 promotions.
+
+Each promotion contains ALL 10 missions.
+
+Never summarize.
+
+Never skip.
+
+Never say "continue."
+
+Never shorten descriptions.
+
+Output all 150 missions in one continuous document with clear headings.
+
+The final result should read like the complete campaign design document for a premium detective game that players could spend hundreds of hours completing.
+
+
+| Level | Promotion                |    Realistic?    |
+| ----: | ------------------------ | :--------------: |
+|     1 | Trainee Investigator     |         ✅        |
+|     2 | Junior Investigator      |         ✅        |
+|     3 | Private Investigator     |         ✅        |
+|     4 | Senior Investigator      |         ✅        |
+|     5 | Lead Investigator        |         ✅        |
+|     6 | Supervising Investigator |         ✅        |
+|     7 | Case Manager             |  ✅ (agency role) |
+|     8 | Operations Manager       |         ✅        |
+|     9 | Agency Director          |         ✅        |
+|    10 | Chief Investigator       |         ✅        |
+|    11 | Regional Director        | ✅ (large agency) |
+|    12 | Executive Director       |         ✅        |
+|    13 | Managing Director        |         ✅        |
+|    14 | Agency President         |         ✅        |
+|    15 | Founder & Chairman       |         ✅        |
+
+
+So for each promotion can u please state the 10 missions each according to rank please, missions must align perfectly with the professions amd type of promotion they are in please amd also each promotion start easy and gets harder as we go till the last 10th mission of that particular promotion, e.g nurse has get easy mission of just writing what the patient is diagnosed with amd the hardest mission would be getting the baby out of a pregnancy would who lost a lot pf blood e.g a doctor easy task give is determining the right injection and medication that u should take for a deadly disease without risking giving you the wrong medication or else the patient die this is easy for doctor cz its basics but its way over paygrade of a nurse so u see the easiest task for a doctor is something a nurse can nver ever be able to execute even if they tried so this is what im talkong about when a gamer get a promotion they must feel the difference in difficulty between the missions of lower promotion amd higher promotion i hope understand, e.g level 1 should be easier than level 2 level is  harder than level 1 bit easer compared to level 3 and so one and again mission 1 in level 1 is easier than mission 2 in level 1 and mission 2 in level 1 is harder than mission 1 in level 1 but easier compared to mission 3 in level 1..i hope u understand what im saying here, and thr most important part is each mission should be very entertaining and complocated in a way that an old aged ir adult can feel the heat and difficulty yet interesting snd impressive missions, yet still solvable if a minor pays careful attention to it without deleting the game, yes they will leave the game due to anger but we want them as soon as they leave the game, they think abt the game the whole day until they come again to try the missions they failed, if they still fail, they must feel the hunger to run to watch ads or do in app purchase to buy hints so they can use them, we want the addiction and we want those who solves cases after a struggle but not excessive struggle, to feel like kings and queens for each mission they complete, so make it very good and not too easy to solve for each mission, each promotion please, there are already games with easy mission, its abt time a game with serious missions came, so please be very creative, be a private investigator for for please, give me 10 missions for each promotion, give me fir all of them please not some, make it interesting not boring not to easy, for each mission and each promotion leave a description each to explain wat its about
