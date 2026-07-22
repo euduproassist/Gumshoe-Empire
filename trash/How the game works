@@ -1,590 +1,545 @@
-I actually think you've arrived at a much stronger concept than "just another detective game."
+# **INTELLIGENCE ANALYST**
 
-What you're building is not simply a mission game anymore. It's becoming a **Private Investigator Life Simulator** with detective gameplay.
-
-Here's how I'd describe the complete game.
+## *Think Like an Investigator. Decide Like an Agency.*
 
 ---
 
-# Game Overview
+## Game Overview
 
-**Working Title:** Private Investigator
+**Intelligence Analyst** is a single-player investigative puzzle game where the player works as an Intelligence Analyst inside one of the country's most secretive investigative agencies.
 
-**Genre:**
+Unlike traditional detective games, you never chase suspects through the streets.
 
-* Detective Simulation
-* Crime Investigation
-* Career Progression
-* Life Simulation
-* Story-driven Single Player
+You never shoot anyone.
 
-The player begins as an unknown trainee private investigator operating from a tiny one-room apartment.
+You never dust for fingerprints yourself.
 
-They have no reputation.
+You never physically visit crime scenes.
 
-No car.
+Instead...
 
-Very little money.
+**Every piece of evidence comes to you.**
 
-No advanced equipment.
+Your job is to think.
 
-No clients.
-
-No office.
-
-No employees.
-
-The player's dream is to become the world's greatest private investigator and eventually own the most respected investigation agency in the country.
+Every decision you make determines whether justice is served...or the wrong person is arrested.
 
 ---
 
-# Core Gameplay Loop
+# The Story
 
-Every day follows a satisfying cycle.
+You have just been recruited into the National Intelligence Analysis Bureau (NIAB), one of the most respected investigative organizations in the country.
 
-Wake up → Prepare → Receive a case → Travel → Investigate → Solve → Get paid → Upgrade life → Repeat.
+Field investigators, police officers, forensic teams, banks, telecom companies, cybercrime units, prosecutors, and intelligence agents all gather evidence.
 
-The game never feels repetitive because every case is different and the player's life steadily improves.
+They send everything to one person...
 
----
+**You.**
 
-# The Home
+You're the analyst.
 
-The home is the player's headquarters.
+The person everyone depends on.
 
-Almost everything begins and ends here.
+Without your analysis...
 
-This is where the player:
-
-* Wakes up
-* Changes clothes
-* Reviews active investigations
-* Accepts new cases
-* Stores evidence
-* Organizes investigation files
-* Purchases equipment
-* Upgrades the house
-* Parks vehicles
-* Reads emails
-* Receives client calls
-* Reviews completed missions
-* Collects salary and rewards
-
-The home becomes a visible representation of the player's success.
+Cases collapse.
 
 ---
 
-## Starting Home
+# Your Office
 
-At the beginning the player owns only:
+The entire game takes place inside your office.
 
-* One small bedroom
-* Tiny bathroom
-* Cheap desk
-* Old computer
-* Basic evidence shelf
-* Foldable chair
-* Small wardrobe
+Everything happens here.
 
-Everything feels cheap.
+This office is your headquarters.
 
----
+Your workplace.
 
-## House Upgrades
+Your laboratory.
 
-As money increases the player can buy:
+Your battlefield.
 
-* Better flooring
-* Better walls
-* Larger bedroom
-* Garage
-* Office room
-* Evidence archive
-* Private crime lab
-* Trophy room
-* Luxury furniture
-* Security cameras
-* Outdoor parking
-* Swimming pool
-* Modern mansion
+As your career grows...
 
-Players should instantly notice their progress every time they return home.
+Your office grows with you.
+
+You begin with almost nothing.
+
+One desk.
+
+One computer.
+
+One monitor.
+
+A broken chair.
+
+A small filing cabinet.
+
+As promotions come...
+
+Your office slowly transforms into one of the most advanced intelligence centers in the world.
 
 ---
 
-# Receiving Cases
+# Career Progression
 
-Cases arrive through different methods.
+You don't simply unlock harder missions.
+
+You build a career.
+
+Promotions include:
+
+* Trainee Investigator
+* Junior Investigator
+* Private Investigator
+* Senior Investigator
+* Lead Investigator
+* Supervising Investigator
+* Case Manager
+* Operations Manager
+* Agency Director
+* Chief Investigator
+* Regional Director
+* Executive Director
+* Managing Director
+* Agency President
+* Founder & Chairman
+
+Every promotion introduces completely new investigation methods.
+
+The hardest mission from one rank should feel easy compared to the easiest mission in the next.
+
+---
+
+# How Cases Arrive
+
+Every morning your assistant enters your office.
+
+> "Morning, Analyst."
+
+She places today's case file on your desk.
+
+Some days it's simple.
+
+Some days it changes the country.
+
+She explains the assignment.
+
+She tells you the restrictions.
+
+She tells you what the client expects.
+
+Then she leaves.
+
+Now...
+
+It's your turn.
+
+---
+
+# Case File
+
+Each case contains professionally organized evidence.
+
+Examples include:
+
+* Witness interviews
+* CCTV photographs
+* CCTV videos
+* Phone records
+* GPS history
+* Financial transactions
+* Bank statements
+* Insurance claims
+* Email conversations
+* Chat logs
+* Crime scene photographs
+* Fingerprints
+* DNA reports
+* Autopsy reports
+* Access card logs
+* Vehicle tracking
+* Security reports
+* Satellite images
+* Audio recordings
+* Social media activity
+* Business records
+* Contracts
+* Maps
+* Time schedules
+* Digital forensic reports
+
+The evidence is rarely complete.
+
+Some evidence is misleading.
+
+Some evidence is fake.
+
+Some evidence contradicts another.
+
+Some evidence is missing.
+
+Finding the truth is your responsibility.
+
+---
+
+# Investigation Process
+
+You don't search for clues.
+
+You analyze them.
+
+Every case becomes a giant puzzle.
+
+You compare documents.
+
+Match timelines.
+
+Study photographs.
+
+Read statements.
+
+Notice contradictions.
+
+Connect seemingly unrelated events.
+
+Discover hidden relationships.
+
+Eventually...
+
+A theory begins forming inside your head.
+
+---
+
+# Investigation Board
+
+Every case includes an interactive analysis board.
+
+Think of it as your detective wall.
+
+You drag evidence.
+
+Connect suspects.
+
+Link locations.
+
+Match timelines.
+
+Highlight contradictions.
+
+Organize theories.
+
+Move documents around.
+
+Cross-reference information.
+
+When enough connections make sense...
+
+The case begins solving itself.
+
+---
+
+# Question System
+
+Throughout every investigation you'll answer investigation questions.
 
 Examples:
 
-Phone rings.
+Which witness is lying?
 
-A desperate client calls.
+Who entered the building first?
 
-Police requests assistance.
+Which phone belongs to the second suspect?
 
-Insurance companies hire you.
+What happened between 9:17 PM and 9:26 PM?
 
-Corporate companies hire you.
+Which transaction is suspicious?
 
-Anonymous emails.
+Who had the strongest motive?
 
-Cold cases become available.
+Which evidence is fabricated?
 
-Emergency investigations.
+What sequence of events actually happened?
 
-Higher promotions unlock bigger clients.
+Each correct answer unlocks more evidence.
 
----
-
-# Travelling
-
-Instead of teleporting, players travel through the city.
-
-Early game:
-
-Walk.
-
-Taxi.
-
-Bus.
-
-Train.
-
-Later:
-
-Motorcycle.
-
-Cheap car.
-
-Sedan.
-
-SUV.
-
-Luxury vehicles.
-
-Helicopter (late game if desired).
-
-Travel itself is short—not a driving simulator—but it makes the world feel alive.
+Wrong answers create problems.
 
 ---
 
-# The City
+# Multiple Ways To Lose
 
-The city contains places that matter.
+Unlike many puzzle games...
+
+You can fail.
 
 Examples:
 
-Police station
+Accuse the wrong suspect.
 
-Courthouse
+Ignore important evidence.
 
-Crime lab
+Trust fake evidence.
 
-Forensic supplier
+Miss the real timeline.
 
-Electronics shop
+Overlook a contradiction.
 
-Clothing store
+Allow the criminal to escape.
 
-Car dealership
+Destroy your credibility.
 
-Fuel station
-
-Pawn shop
-
-Museum
-
-Bank
-
-Hospital
-
-University
-
-Warehouse district
-
-Residential neighborhoods
-
-Luxury suburbs
-
-Industrial zone
-
-Forest roads
-
-Beach
-
-Airport
-
-Each location becomes available naturally through investigations.
-
----
-
-# Crime Scenes
-
-This is where the real gameplay happens.
-
-Every crime scene is handcrafted.
-
-No random hidden-object gameplay.
-
-Instead players investigate like a real detective.
+Some missions also include restrictions.
 
 Examples:
 
-Photograph evidence.
+Solve without accusing innocent people.
 
-Collect fingerprints.
+Protect undercover agents.
 
-Collect DNA.
+Prevent information leaks.
 
-Interview witnesses.
+Avoid unnecessary arrests.
 
-Analyze footprints.
+Keep political pressure under control.
 
-Measure blood spatter.
+Protect witnesses.
 
-Inspect broken locks.
+Break the restrictions...
 
-Read financial records.
-
-Recover deleted files.
-
-Reconstruct timelines.
-
-Compare conflicting statements.
-
-Crack codes.
-
-Study CCTV.
-
-Analyze phone data.
-
-Every investigation feels like solving a movie.
+You fail.
 
 ---
 
-# Missions
+# Performance Rating
 
-Every promotion contains 10 carefully designed missions.
+Every case receives a professional evaluation.
 
-Each mission:
+Factors include:
 
-Feels cinematic.
+Accuracy
 
-Contains multiple suspects.
+Reasoning quality
 
-Contains twists.
+Evidence usage
 
-Requires thinking.
+Time taken
 
-Has optional evidence.
+Hints used
 
-Has multiple puzzle types.
+Collateral mistakes
 
-Gets progressively harder.
+Final report quality
 
-Mission 10 is always the "boss case" of that promotion.
+Ranks range from:
 
----
+Poor
 
-# Detective Notebook
+Fair
 
-The notebook becomes the player's brain.
+Good
 
-It automatically stores:
+Excellent
 
-Evidence
+Outstanding
 
-Witnesses
-
-Photos
-
-Phone numbers
-
-Maps
-
-Suspect profiles
-
-Timelines
-
-Contradictions
-
-Objectives
-
-Hints
-
-Case summary
-
-Nothing is forgotten.
-
-Players can always revisit clues.
-
----
-
-# Equipment
-
-Equipment matters.
-
-Better tools make investigations easier.
-
-Examples:
-
-Fingerprint powder
-
-UV flashlight
-
-Digital camera
-
-Professional DSLR
-
-Evidence bags
-
-Audio recorder
-
-Drone
-
-Laptop
-
-Signal scanner
-
-DNA kit
-
-Ballistic analyzer
-
-Thermal camera
-
-Crime scene laser scanner
-
-High-end forensic tablet
-
-Every purchase feels meaningful.
-
----
-
-# Clothing
-
-Players unlock detective fashion.
-
-Examples:
-
-Casual wear
-
-Business wear
-
-Classic trench coat
-
-Leather jacket
-
-Formal investigator suit
-
-Agency uniform
-
-Luxury watches
-
-Shoes
-
-Gloves
-
-Hats
-
-Glasses
-
-Players can customize their investigator while keeping a serious detective style.
-
----
-
-# Vehicles
-
-Vehicles represent success.
-
-Progression:
-
-No vehicle
-
-Bus
-
-Old hatchback
-
-Used sedan
-
-Modern sedan
-
-SUV
-
-Luxury SUV
-
-Sports sedan
-
-Executive limousine
-
-Luxury electric vehicle
-
-Every upgrade makes the player feel richer.
-
----
-
-# Economy
-
-Money is intentionally valuable.
-
-The player spends it on:
-
-House upgrades
-
-Cars
-
-Clothing
-
-Equipment
-
-Agency repairs
-
-Crime lab analysis
-
-Optional forensic services
-
-Advanced investigation tools
-
-Hints
-
-Vehicle maintenance
-
-Premium office upgrades
-
-Money should never become useless.
-
----
-
-# Optional Investigation Costs
-
-Sometimes players can pay for additional help.
-
-Examples:
-
-DNA analysis
-
-Fingerprint enhancement
-
-Satellite image enhancement
-
-Phone extraction
-
-Facial recognition
-
-Chemical analysis
-
-These are optional shortcuts, not requirements.
-
-Skilled players can often solve the case without paying.
-
----
-
-# Reputation
-
-The player earns reputation.
-
-Higher reputation unlocks:
-
-Better clients
-
-Bigger rewards
-
-Harder cases
-
-Exclusive investigations
-
-Corporate contracts
-
-Government contracts
-
-Eventually international cases.
-
----
-
-# Promotions
-
-The player climbs from:
-
-Trainee Investigator
-
-...
-
-all the way to
-
-Founder & Chairman
-
-Each promotion unlocks:
-
-New gameplay
-
-Harder investigations
-
-Better rewards
-
-Higher expectations
-
-Players genuinely feel they earned it.
+Legendary Analysis
 
 ---
 
 # Hints
 
-Hints are valuable.
+Every investigation includes an assistant.
 
-Instead of revealing answers:
+She never solves the case.
 
-Hint 1 nudges the player.
+Instead...
 
-Hint 2 narrows the search.
+She nudges you.
 
-Hint 3 points to the critical clue.
+Hint 1
 
-The final deduction is still made by the player.
+> "You should probably compare the bank statement with the timeline."
 
----
+Hint 2
 
-# Ads & In-App Purchases
+> "Someone's story doesn't match their phone location."
 
-Ads and purchases are optional accelerators, not mandatory progress blockers.
+Hint 3
 
-Players can use them to:
+> "You're looking at the wrong suspect."
 
-* Get extra Detective Credits
-* Buy additional hints
-* Speed up optional lab analyses
-* Repair equipment immediately
-* Earn temporary reputation boosts
-* Unlock cosmetic clothing faster
+Hints never reveal answers.
 
-A player who never spends money should still be able to finish the entire game.
+They simply redirect your attention.
 
 ---
 
-# Endgame
+# Difficulty Progression
 
-By the end of the game the player owns:
+Cases evolve dramatically.
 
-A luxury home
+Early game:
 
-A garage full of vehicles
+One suspect.
 
-Elite forensic equipment
+Three witnesses.
 
-A famous investigation agency
+Five pieces of evidence.
 
-A worldwide reputation
+Simple theft.
 
-A trophy room filled with solved landmark cases
+Later:
 
-Clients travel from across the country to hire them.
+Seven suspects.
 
-The final missions feel like blockbuster detective thrillers involving international conspiracies, organized crime, and agency-wide operations.
+Forty pieces of evidence.
+
+Multiple fake clues.
+
+Hidden financial fraud.
+
+Corporate corruption.
+
+International communications.
+
+Cybercrime.
+
+Money laundering.
+
+Organized crime.
+
+Government conspiracies.
+
+The final missions feel like entire detective movies.
 
 ---
 
-## One suggestion I'd add
+# Office Upgrades
 
-I would introduce an **Agency Headquarters** after around Level 8 or 9.
+Money earned from investigations can improve your office.
 
-At first, the player works entirely from home. That's realistic for a new private investigator. But as they become an Operations Manager or Agency Director, they can purchase a professional office where assistants, analysts, and investigators work under them. Home remains their personal space, while the agency becomes a visible symbol of their career growth. This gives players another major long-term goal beyond just upgrading the house.
+You begin with:
+
+Old desk
+
+Cheap chair
+
+Single monitor
+
+Tiny filing cabinet
+
+Eventually you'll own:
+
+Executive office
+
+Evidence wall
+
+Triple monitors
+
+Digital investigation board
+
+Cybercrime workstation
+
+Satellite intelligence display
+
+Forensic analysis terminal
+
+DNA workstation
+
+Secure archive
+
+Financial crime terminal
+
+International communication center
+
+Command office
+
+These upgrades are mostly cosmetic and thematic—they make your headquarters feel more prestigious rather than making cases easier.
+
+---
+
+# Economy
+
+Players earn money after every completed investigation.
+
+Money can be spent on:
+
+Office upgrades
+
+Hint purchases
+
+Special office decorations
+
+Achievement displays
+
+Agency trophies
+
+Advanced workstation themes
+
+---
+
+# Rewarded Ads
+
+Players who don't want to spend real money can watch rewarded ads for:
+
+Small cash bonuses
+
+One investigation hint
+
+Extra investigation attempts after failure
+
+Daily bonus rewards
+
+---
+
+# In-App Purchases
+
+Optional purchases include:
+
+Cash bundles
+
+Hint bundles
+
+Premium office themes
+
+Collector decorations
+
+No purchase is required to complete the game.
+
+Skill always matters more than spending.
+
+---
+
+# Offline First
+
+The game is designed to work almost entirely offline.
+
+Progress is stored locally on the player's device.
+
+This keeps operating costs extremely low and allows the game to scale to millions of players without requiring expensive online infrastructure for core gameplay.
+
+---
+
+# The End Goal
+
+By the end of the game, the player has gone from analyzing simple stolen backpacks to solving international conspiracies involving governments, corporations, intelligence agencies, organized crime, cyber warfare, and financial empires.
+
+The player never becomes a superhero.
+
+They become something far more dangerous:
+
+**The person everyone depends on to find the truth.**
+
+When the evidence doesn't make sense...
+
+When investigators are confused...
+
+When prosecutors are stuck...
+
+When entire agencies disagree...
+
+The file lands on one desk.
+
+**Yours.**
