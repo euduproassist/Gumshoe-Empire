@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Word Forge Experience</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsive Mobile Shell to keep exact proportions across all screens */
+        .phone-viewport {
+            position: relative;
+            width: 100%;
+            max-width: 430px;
+            height: 100%;
+            max-height: 932px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* Screen Wrapper */
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .screen.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Screen 1: Logo Splash */
+        #screen-1 {
+            background-color: #000;
+            background-image: url('assets/logo.png');
+        }
+
+        /* Screen 2 & 3 Backgrounds */
+        #screen-2 {
+            background-image: url('assets/load.png');
+        }
+
+        #screen-3 {
+            background-image: url('assets/menu.png');
+        }
+
+        /* Screen 5: Settings Screen Background */
+        #screen-settings {
+            background-image: url('assets/settings.png');
+        }
+
+        /* Screen 6: Academies / Topics Screen Background */
+        #screen-topics {
+            background-image: url('assets/topic.png');
+        }
+
+        /* Shop Vertical Carousel Screen Container */
+        #screen-4 {
+            background-image: url('assets/pass.png');
+            overflow: hidden;
+        }
+
+        .shop-carousel-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shop-carousel-track {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 300%;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .shop-slide {
+            width: 100%;
+            height: 33.3333%;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        /* Explicitly mapping all three exact asset files: Pass (Top), Coins (Middle), Ads (Bottom) */
+        #shop-slide-1 {
+            background-image: url('assets/pass.png');
+        }
+
+        #shop-slide-2 {
+            background-image: url('assets/coins.png');
+        }
+
+        #shop-slide-3 {
+            background-image: url('assets/ads.png');
+        }
+
+        /* Loading Status Text Slot */
+        .loading-text-slot {
+            position: absolute;
+            top: 76.8%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #1a2b4c;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        /* Loading Bar Slot */
+        .loading-slot {
+            position: absolute;
+            top: 80.5%;
+            left: 10.5%;
+            width: 79%;
+            height: 14px;
+            background: transparent;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .loading-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #3b6ef3, #7697ff);
+            border-radius: 20px;
+            transition: width 0.05s linear;
+        }
+
+        /* Percentage Text Slot */
+        .percentage-slot {
+            position: absolute;
+            top: 84.2%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #1a2b4c;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* Menu Screen Triggers (Aligned perfectly with asset graphics) */
+        .journey-slot {
+            position: absolute;
+            top: 51.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 73%;
+            height: 60px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+
+        .how-it-works-slot {
+            position: absolute;
+            top: 76.5%;
+            left: 10.5%;
+            width: 38.5%;
+            height: 54px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+
+        .settings-slot {
+            position: absolute;
+            top: 76.5%;
+            right: 10.5%;
+            width: 38.5%;
+            height: 54px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+
+        .menu-status-bar-slot {
+            position: absolute;
+            top: 86.6%;
+            left: 10.5%;
+            width: 79%;
+            height: 56px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+
+        /* Topics Screen Triggers (Aligned perfectly with 1000170550.png) */
+        .topics-back-slot {
+            position: absolute;
+            top: 2.2%;
+            left: 2.8%;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 20;
+        }
+
+        .topic-card-slot {
+            position: absolute;
+            left: 8.5%;
+            width: 40.5%;
+            height: 72px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 18px;
+        }
+
+        .topic-card-left-1 { top: 21.3%; }
+        .topic-card-left-2 { top: 31.3%; }
+        .topic-card-left-3 { top: 41.3%; }
+        .topic-card-left-4 { top: 51.3%; }
+        .topic-card-left-5 { top: 61.3%; }
+
+        .topic-card-right-slot {
+            position: absolute;
+            right: 8.5%;
+            width: 40.5%;
+            height: 72px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 18px;
+        }
+
+        .topic-card-right-1 { top: 21.3%; }
+        .topic-card-right-2 { top: 31.3%; }
+        .topic-card-right-3 { top: 41.3%; }
+        .topic-card-right-4 { top: 51.3%; }
+        .topic-card-right-5 { top: 61.3%; }
+
+        .topics-academies-nav-slot {
+            position: absolute;
+            top: 82.3%;
+            left: 8.5%;
+            width: 25.5%;
+            height: 52px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+            z-index: 10;
+        }
+
+        .topics-shop-slot {
+            position: absolute;
+            top: 82.3%;
+            left: 37.2%;
+            width: 25.5%;
+            height: 52px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+            z-index: 10;
+        }
+
+        .topics-settings-slot {
+            position: absolute;
+            top: 82.3%;
+            right: 8.5%;
+            width: 25.5%;
+            height: 52px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+            z-index: 10;
+        }
+
+        .topics-status-bar-slot {
+            position: absolute;
+            top: 90.1%;
+            left: 8.5%;
+            width: 83%;
+            height: 54px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+            z-index: 10;
+        }
+
+        /* Settings Screen Triggers (Aligned perfectly with 1000170343.png) */
+        .settings-back-slot {
+            position: absolute;
+            top: 2.2%;
+            left: 2.8%;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 20;
+        }
+
+        .setting-row-slot {
+            position: absolute;
+            left: 11.5%;
+            width: 77%;
+            height: 52px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .setting-row-1 { top: 20.2%; }
+        .setting-row-2 { top: 31.2%; }
+        .setting-row-3 { top: 42.2%; }
+        .setting-row-4 { top: 53.2%; }
+        .setting-row-5 { top: 64.2%; }
+        .setting-row-6 { top: 75.2%; }
+        .setting-row-7 { top: 86.2%; }
+
+        /* Shop Screens Triggers (Aligned perfectly with Pass, Coins, Ads shop views) */
+        .shop-back-slot {
+            position: absolute;
+            top: 2.2%;
+            left: 2.8%;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 20;
+        }
+
+        .shop-item-slot {
+            position: absolute;
+            left: 9.5%;
+            width: 81%;
+            height: 120px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .shop-item-1 { top: 17.5%; }
+        .shop-item-2 { top: 36.5%; }
+        .shop-item-3 { top: 55.5%; }
+        .shop-item-4 { top: 74.5%; }
+
+        .shop-footer-bar-slot {
+            position: absolute;
+            top: 90.1%;
+            left: 9.5%;
+            width: 81%;
+            height: 54px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-viewport">
+        <!-- SCREEN 1: Logo Splash -->
+        <div class="screen active" id="screen-1"></div>
+
+        <!-- SCREEN 2: Loading State -->
+        <div class="screen" id="screen-2">
+            <div class="loading-text-slot" id="loading-text">Preparing your journey</div>
+            <div class="loading-slot">
+                <div class="loading-fill" id="progress-fill"></div>
+            </div>
+            <div class="percentage-slot" id="percent-count">0%</div>
+        </div>
+
+        <!-- SCREEN 3: Main Menu -->
+        <div class="screen" id="screen-3">
+            <button class="journey-slot" onclick="openTopics()"></button>
+            <button class="how-it-works-slot" onclick="openHowItWorks()"></button>
+            <button class="settings-slot" onclick="openSettings()"></button>
+            <div class="menu-status-bar-slot" onclick="openShop()"></div>
+        </div>
+
+        <!-- SCREEN 4: Shop / Vertical Swipe Carousel Screen -->
+        <div class="screen" id="screen-4">
+            <button class="shop-back-slot" onclick="closeShop()"></button>
+            <div class="shop-carousel-container" id="carousel-container">
+                <div class="shop-carousel-track" id="carousel-track">
+                    <!-- Slide 1: Pass Screen (Top) -->
+                    <div class="shop-slide" id="shop-slide-1">
+                        <button class="shop-item-slot shop-item-1" onclick="handleShopAction('Weekly Pass')"></button>
+                        <button class="shop-item-slot shop-item-2" onclick="handleShopAction('Monthly Pass')"></button>
+                        <button class="shop-item-slot shop-item-3" onclick="handleShopAction('Yearly Pass')"></button>
+                        <button class="shop-item-slot shop-item-4" onclick="handleShopAction('Lifetime Pass')"></button>
+                        <div class="shop-footer-bar-slot" onclick="openShop()"></div>
+                    </div>
+                    <!-- Slide 2: Coins Screen (Middle) -->
+                    <div class="shop-slide" id="shop-slide-2">
+                        <button class="shop-item-slot shop-item-1" onclick="handleShopAction('Small Coin Pack')"></button>
+                        <button class="shop-item-slot shop-item-2" onclick="handleShopAction('Bronze Pack')"></button>
+                        <button class="shop-item-slot shop-item-3" onclick="handleShopAction('Silver Pack')"></button>
+                        <button class="shop-item-slot shop-item-4" onclick="handleShopAction('Gold/Platinum/Diamond Pack')"></button>
+                        <div class="shop-footer-bar-slot" onclick="openShop()"></div>
+                    </div>
+                    <!-- Slide 3: Ads Screen (Bottom) -->
+                    <div class="shop-slide" id="shop-slide-3">
+                        <button class="shop-item-slot shop-item-1" onclick="handleShopAction('Remove Ads - 7 Days')"></button>
+                        <button class="shop-item-slot shop-item-2" onclick="handleShopAction('Remove Ads - 30 Days')"></button>
+                        <button class="shop-item-slot shop-item-3" onclick="handleShopAction('Remove Ads - 1 Year')"></button>
+                        <button class="shop-item-slot shop-item-4" onclick="handleShopAction('Remove Ads - Forever')"></button>
+                        <div class="shop-footer-bar-slot" onclick="openShop()"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN 5: Settings Screen -->
+        <div class="screen" id="screen-settings">
+            <button class="settings-back-slot" onclick="closeSettings()"></button>
+            <button class="setting-row-slot setting-row-1" onclick="toggleSetting('Music')"></button>
+            <button class="setting-row-slot setting-row-2" onclick="toggleSetting('Sound')"></button>
+            <button class="setting-row-slot setting-row-3" onclick="handleSettingAction('Language')"></button>
+            <button class="setting-row-slot setting-row-4" onclick="handleSettingAction('Help & Support')"></button>
+            <button class="setting-row-slot setting-row-5" onclick="handleSettingAction('Privacy Policy')"></button>
+            <button class="setting-row-slot setting-row-6" onclick="handleSettingAction('Terms of Service')"></button>
+            <button class="setting-row-slot setting-row-7" onclick="handleSettingAction('About')"></button>
+        </div>
+
+        <!-- SCREEN 6: Academies / Topics Screen -->
+        <div class="screen" id="screen-topics">
+            <button class="topics-back-slot" onclick="closeTopics()"></button>
+            
+            <button class="topic-card-slot topic-card-left-1" onclick="openTopicDetail('Homophones')"></button>
+            <button class="topic-card-slot topic-card-left-2" onclick="openTopicDetail('Homonyms')"></button>
+            <button class="topic-card-slot topic-card-left-3" onclick="openTopicDetail('Prefixes')"></button>
+            <button class="topic-card-slot topic-card-left-4" onclick="openTopicDetail('Rhyming Words')"></button>
+
+            <button class="topic-card-right-slot topic-card-right-1" onclick="openTopicDetail('Compound Words')"></button>
+            <button class="topic-card-right-slot topic-card-right-2" onclick="openTopicDetail('Word Families')"></button>
+            <button class="topic-card-right-slot topic-card-right-3" onclick="openTopicDetail('Suffixes')"></button>
+            <button class="topic-card-right-slot topic-card-right-4" onclick="openTopicDetail('Lexis')"></button>
+
+            <button class="topics-academies-nav-slot" onclick="openTopics()"></button>
+            <button class="topics-shop-slot" onclick="openShop()"></button>
+            <button class="topics-settings-slot" onclick="openSettingsFromTopics()"></button>
+            <div class="topics-status-bar-slot" onclick="openShop()"></div>
+        </div>
+    </div>
+
+    <script>
+        const screen1 = document.getElementById('screen-1');
+        const screen2 = document.getElementById('screen-2');
+        const screen3 = document.getElementById('screen-3');
+        const screen4 = document.getElementById('screen-4');
+        const screenSettings = document.getElementById('screen-settings');
+        const screenTopics = document.getElementById('screen-topics');
+        const progressFill = document.getElementById('progress-fill');
+        const percentCount = document.getElementById('percent-count');
+        const loadingText = document.getElementById('loading-text');
+        const carouselTrack = document.getElementById('carousel-track');
+        const carouselContainer = document.getElementById('carousel-container');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                screen1.classList.remove('active');
+                screen2.classList.add('active');
+                
+                let dotCount = 0;
+                const dotInterval = setInterval(() => {
+                    dotCount = (dotCount + 1) % 4;
+                    let dots = '.'.repeat(dotCount);
+                    loadingText.innerText = "Preparing your journey" + dots;
+                }, 400);
+
+                let currentProgress = 0;
+                const loadingInterval = setInterval(() => {
+                    currentProgress += 1;
+                    if (currentProgress <= 100) {
+                        progressFill.style.width = currentProgress + '%';
+                        percentCount.innerText = currentProgress + '%';
+                    } else {
+                        clearInterval(loadingInterval);
+                        clearInterval(dotInterval);
+                        setTimeout(() => {
+                            screen2.classList.remove('active');
+                            screen3.classList.add('active');
+                        }, 300);
+                    }
+                }, 25);
+            }, 3000);
+        });
+
+        let currentSlideIndex = 0;
+        const totalSlides = 3;
+
+        function goToSlide(index, instant = false) {
+            currentSlideIndex = Math.max(0, Math.min(index, totalSlides - 1));
+            if (instant) {
+                carouselTrack.style.transition = 'none';
+            } else {
+                carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            }
+            const percentage = currentSlideIndex * -(100 / totalSlides);
+            carouselTrack.style.transform = `translateY(${percentage}%)`;
+
+            if (instant) {
+                carouselTrack.offsetHeight;
+                carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            }
+        }
+
+        function openShop() {
+            screen3.classList.remove('active');
+            screenTopics.classList.remove('active');
+            screen4.classList.add('active');
+
+            goToSlide(2, true);
+
+            setTimeout(() => {
+                goToSlide(1);
+            }, 400);
+
+            setTimeout(() => {
+                goToSlide(0);
+            }, 1200);
+        }
+
+        function closeShop() {
+            screen4.classList.remove('active');
+            screen3.classList.add('active');
+        }
+
+        function openSettings() {
+            screen3.classList.remove('active');
+            screenTopics.classList.remove('active');
+            screenSettings.classList.add('active');
+        }
+
+        function openSettingsFromTopics() {
+            screenTopics.classList.remove('active');
+            screenSettings.classList.add('active');
+        }
+
+        function closeSettings() {
+            screenSettings.classList.remove('active');
+            screen3.classList.add('active');
+        }
+
+        function openTopics() {
+            screen3.classList.remove('active');
+            screenTopics.classList.add('active');
+        }
+
+        function closeTopics() {
+            screenTopics.classList.remove('active');
+            screen3.classList.add('active');
+        }
+
+        function openHowItWorks() {
+            // Placeholder action for How It Works
+        }
+
+        function openTopicDetail(topicName) {
+            // Placeholder action for individual topic cards
+        }
+
+        function handleShopAction(itemTitle) {
+            // Placeholder action for shop items/buttons
+        }
+
+        function toggleSetting(settingName) {
+            // Placeholder action for toggle settings
+        }
+
+        function handleSettingAction(settingName) {
+            // Placeholder action for general settings options
+        }
+
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].clientY;
+            handleVerticalSwipe();
+        }, { passive: true });
+
+        function handleVerticalSwipe() {
+            const swipeThreshold = 40;
+            const diff = touchStartY - touchEndY;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    if (currentSlideIndex < totalSlides - 1) {
+                        goToSlide(currentSlideIndex + 1);
+                    }
+                } else {
+                    if (currentSlideIndex > 0) {
+                        goToSlide(currentSlideIndex - 1);
+                    }
+                }
+            }
+        }
+
+        let isMouseDown = false;
+        let mouseStartY = 0;
+
+        carouselContainer.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            mouseStartY = e.clientY;
+        });
+
+        window.addEventListener('mouseup', (e) => {
+            if (!isMouseDown) return;
+            isMouseDown = false;
+            const mouseEndY = e.clientY;
+            const diff = mouseStartY - mouseEndY;
+            const swipeThreshold = 40;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    if (currentSlideIndex < totalSlides - 1) {
+                        goToSlide(currentSlideIndex + 1);
+                    }
+                } else {
+                    if (currentSlideIndex > 0) {
+                        goToSlide(currentSlideIndex - 1);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
